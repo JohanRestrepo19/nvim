@@ -46,7 +46,6 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "windwp/nvim-autopairs"
   use "numToStr/Comment.nvim"
-  use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
@@ -55,6 +54,7 @@ return packer.startup(function(use)
 
   -- Dependencies
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use 'kyazdani42/nvim-web-devicons'
 
   -- Colorschemes
   use "lunarvim/colorschemes"
@@ -80,7 +80,8 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig" --enable LSP
   use "williamboman/nvim-lsp-installer" --simple to use lenguage server installer
-  use "jose-elias-alvarez/null-ls.nvim"
+  use "jose-elias-alvarez/null-ls.nvim" --Formatting
+
 
   --Telescope
   use "nvim-telescope/telescope.nvim"
