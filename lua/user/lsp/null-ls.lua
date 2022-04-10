@@ -17,7 +17,11 @@ on_attach = function (client)
     end
   end,
   sources = {
+    -- Formatters
     null_ls.builtins.formatting.autopep8,
     null_ls.builtins.formatting.prettier,
+
+    -- Diagnostics
+    null_ls.builtins.diagnostics.flake8,
   }
 })
