@@ -12,3 +12,10 @@ colorscheme gruvbox-material
 " let g:lightline.colorscheme = 'gruvbox_material'
 ]]
 
+
+
+-- Transparent background
+vim.cmd([[
+highlight Normal guibg=none
+highlight NonText guibg=none
+]])
