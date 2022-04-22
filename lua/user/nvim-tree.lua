@@ -42,6 +42,7 @@ nvim_tree.setup {
     "dashboard",
     "alpha",
   },
+  -- TODO: find an alternative way to auto close the file explorer
   -- auto_close = true,
   open_on_tab = false,
   hijack_cursor = false,

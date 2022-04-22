@@ -9,7 +9,7 @@ if not status_ok then
 end
 
 -- Transparent background
-vim.cmd([[
-highlight Normal guibg=none
-highlight NonText guibg=none
-]])
+-- vim.cmd([[
+-- highlight Normal guibg=none
+-- highlight NonText guibg=none
+-- ]])
