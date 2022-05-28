@@ -1,25 +1,5 @@
 -- following options are the default
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-vim.g.nvim_tree_icons = {
-  default = "",
-  symlink = "",
-  git = {
-    unstaged = "",
-    staged = "S",
-    unmerged = "",
-    renamed = "➜",
-    deleted = "",
-    untracked = "U",
-    ignored = "◌",
-  },
-  folder = {
-    default = "",
-    open = "",
-    empty = "",
-    empty_open = "",
-    symlink = "",
-  },
-}
 
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
@@ -33,73 +13,6 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
--- nvim_tree.setup {
---   disable_netrw = true,
---   hijack_netrw = true,
---   open_on_setup = false,
---   ignore_ft_on_setup = {
---     "startify",
---     "dashboard",
---     "alpha",
---   },
---   -- TODO: find an alternative way to auto close the file explorer
---   -- auto_close = true,
---   open_on_tab = false,
---   hijack_cursor = false,
---   update_cwd = true,
---   update_to_buf_dir = {
---     enable = true,
---     auto_open = true,
---   },
---   diagnostics = {
---     enable = true,
---     icons = {
---       hint = "",
---       info = "",
---       warning = "",
---       error = "",
---     },
---   },
---   update_focused_file = {
---     enable = true,
---     update_cwd = true,
---     ignore_list = {},
---   },
---   git = {
---     enable = true,
---     ignore = false,
---     timeout = 500,
---   },
---   view = {
---     width = 25,
---     height = 30,
---     hide_root_folder = false,
---     side = "left",
---     auto_resize = true,
---     mappings = {
---       custom_only = false,
---       list = {
---         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
---         { key = "h", cb = tree_cb "close_node" },
---         { key = "v", cb = tree_cb "vsplit" },
---       },
---     },
---     number = false,
---     relativenumber = false,
---   },
---   quit_on_open = 0,
---   git_hl = 1,
---   disable_window_picker = 0,
---   root_folder_modifier = ":t",
---   show_icons = {
---     git = 1,
---     folders = 1,
---     files = 1,
---     folder_arrows = 1,
---     tree_width = 30,
---   },
--- }
-
 nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -112,6 +25,8 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
   open_on_tab = false,
   sort_by = "name",
   update_cwd = false,
+
+
   view = {
     width = 20,
     height = 30,
@@ -130,6 +45,8 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
       },
     },
   },
+
+
   renderer = {
     indent_markers = {
       enable = false,
@@ -141,22 +58,46 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
     },
     icons = {
       webdev_colors = true,
+      glyphs ={
+        default = "",
+        symlink = "",
+        git = {
+          unstaged = "",
+          staged = "S",
+          unmerged = "",
+          renamed = "➜",
+          deleted = "",
+          untracked = "U",
+          ignored = "◌",
+        },
+        folder = {
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+        },
+      }
     },
   },
+
   hijack_directories = {
     enable = true,
     auto_open = true,
   },
+
   update_focused_file = {
     enable = false,
     update_cwd = false,
     ignore_list = {},
   },
+
   ignore_ft_on_setup = {},
   system_open = {
     cmd = "",
     args = {},
   },
+
   diagnostics = {
     enable = false,
     show_on_dirs = false,
@@ -167,16 +108,19 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
       error = "",
     },
   },
+
   filters = {
     dotfiles = false,
     custom = {},
     exclude = {},
   },
+
   git = {
     enable = true,
-    ignore = true,
+    ignore = false,
     timeout = 400,
   },
+
   actions = {
     use_system_clipboard = true,
     change_dir = {
@@ -197,10 +141,12 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
       },
     },
   },
+
   trash = {
     cmd = "trash",
     require_confirm = true,
   },
+
   log = {
     enable = false,
     truncate = false,
@@ -213,4 +159,5 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
       profile = false,
     },
   },
+
 } -- END_DEFAULT_OPTS

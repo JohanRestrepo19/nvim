@@ -19,7 +19,7 @@ on_attach = function (client)
   sources = {
     -- Formatters
     null_ls.builtins.formatting.autopep8,
-    -- null_ls.builtins.formatting.prettier,
+    null_ls.builtins.formatting.prettier,
 
     -- Diagnostics
     null_ls.builtins.diagnostics.flake8,

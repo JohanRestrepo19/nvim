@@ -6,16 +6,9 @@ if has('termguicolors')
 endif
 
 set background=dark
-let g:gruvbox_material_background = 'medium'
+let g:gruvbox_material_background = ''
+let g:gruvbox_material_palette = 'mix'
 let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_transparent_background = 1
 colorscheme gruvbox-material
-" let g:lightline.colorscheme = 'gruvbox_material'
 ]]
-
-
-
--- Transparent background
-vim.cmd([[
-highlight Normal ctermbg=none guibg=none
-highlight NonText ctermbg=none guibg=none
-]])
