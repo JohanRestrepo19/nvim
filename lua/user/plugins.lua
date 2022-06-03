@@ -63,8 +63,6 @@ return packer.startup(function(use)
   use "sainnhe/gruvbox-material"
   use "Mofiqul/vscode.nvim"
   use "ellisonleao/gruvbox.nvim"
-  use "shaunsingh/nord.nvim"
-  use "tanvirtin/monokai.nvim"
   use "marko-cerovac/material.nvim"
 
   -- cmp plugins
