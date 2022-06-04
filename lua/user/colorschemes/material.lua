@@ -1,4 +1,4 @@
-vim.g.material_style = "darker" -- darker, lighter, oceaninc, palenight, deep ocean
+vim.g.material_style = "oceaninc" -- darker, lighter, oceaninc, palenight, deep ocean
 
 require('material').setup({
   contrast = {
@@ -6,12 +6,12 @@ require('material').setup({
     floating_windows = true,
     line_numbers = false,
     sign_column = false,
-    cursor_line = false,
+    cursor_line = true,
     non_current_windows = false,
     popup_menu = false
   },
   italics = {
-    comments = false,
+    comments = true,
     strings = true,
     keywords = true,
     functions = true,
@@ -24,7 +24,7 @@ require('material').setup({
   },
   disable = {
     borders = false,
-    background = true,
+    background = false,
     term_colors = false,
     eob_lines = false
   }
