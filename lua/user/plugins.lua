@@ -51,7 +51,7 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'akinsho/toggleterm.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
-  use 'andweeb/presence.nvim'
+  -- use 'andweeb/presence.nvim'
 
   -- Dependencies
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
