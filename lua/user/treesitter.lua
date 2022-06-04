@@ -4,6 +4,9 @@ if not status_ok then
 end
 
 configs.setup {
+  autotag = {
+    enable = true
+  },
   ensure_installed = "",
   sync_install = false,
   ignore_install = { "" }, -- List of parsers to ignore installing
@@ -16,7 +19,7 @@ configs.setup {
   indent = { enable = true, disable = { "yaml" } },
 
   rainbow = {
-    enable = false,
+    enable = true,
     -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int

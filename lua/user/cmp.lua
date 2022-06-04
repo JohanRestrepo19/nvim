@@ -50,6 +50,12 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
+  },
+
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
 		["<C-j>"] = cmp.mapping.select_next_item(),
@@ -94,6 +100,15 @@ cmp.setup {
       "s",
     }),
   },
+  
+  sources = cmp.config.sources ({
+    { name = "nvim_lsp"},
+    { name = "nvim_lua"},
+    { name = "luasnip" },
+    { name = "buffer" },
+    { name = "path" },
+  }),
+
   formatting = {
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
@@ -110,24 +125,12 @@ cmp.setup {
       return vim_item
     end,
   },
-  sources = {
-    { name = "nvim_lsp"},
-    { name = "nvim_lua"},
-    { name = "luasnip" },
-    { name = "buffer" },
-    { name = "path" },
-  },
+
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  -- documentation = {
-  --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  -- },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered()
-  },
+
   experimental = {
     ghost_text = false,
     native_menu = false,

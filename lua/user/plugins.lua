@@ -45,6 +45,7 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "windwp/nvim-autopairs"
+  use "windwp/nvim-ts-autotag"
   use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-tree.lua'
   use 'akinsho/bufferline.nvim'
