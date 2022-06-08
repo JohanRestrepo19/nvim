@@ -52,7 +52,7 @@ return packer.startup(function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'akinsho/toggleterm.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
-  -- use 'andweeb/presence.nvim'
+  use 'andweeb/presence.nvim'
 
   -- Dependencies
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
@@ -65,6 +65,7 @@ return packer.startup(function(use)
   use "Mofiqul/vscode.nvim"
   use "ellisonleao/gruvbox.nvim"
   use "marko-cerovac/material.nvim"
+  use "folke/tokyonight.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin

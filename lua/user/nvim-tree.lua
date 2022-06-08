@@ -49,7 +49,7 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
 
   renderer = {
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
         corner = "└ ",
         edge = "│ ",
@@ -71,11 +71,14 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
           ignored = "◌",
         },
         folder = {
+          arrow_closed = "",
+          arrow_open = "",
           default = "",
           open = "",
           empty = "",
           empty_open = "",
           symlink = "",
+          symlink_open = "",
         },
       }
     },
@@ -129,7 +132,7 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
       restrict_above_cwd = false,
     },
     open_file = {
-      quit_on_open = false,
+      quit_on_open = true,
       resize_window = false,
       window_picker = {
         enable = true,
