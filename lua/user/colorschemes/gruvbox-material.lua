@@ -6,10 +6,10 @@ if has('termguicolors')
 endif
 
 set background=dark
-let g:gruvbox_material_background = 'medium'
-let g:gruvbox_material_palette = 'mix' "material, mix, original
+let g:gruvbox_material_background = 'soft' "soft, medium, hard
+let g:gruvbox_material_palette = 'original' "material, mix, original
 let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_enable_bold = 0
 let g:gruvbox_material_enable_italic = 1
 let g:gruvbox_material_transparent_background = 1
 colorscheme gruvbox-material
