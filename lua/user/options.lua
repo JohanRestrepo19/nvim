@@ -27,12 +27,12 @@ vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.smartindent = true
 vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
-vim.opt.relativenumber = true                  -- set relative numbered lines
-vim.opt.numberwidth = 1                         -- set number column width to 2 {default 4}
-vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
+vim.opt.relativenumber = false                  -- set relative numbered lines
+vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
+-- vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = false                            -- display lines as one long line
-vim.opt.scrolloff = 8                           -- is one of my fav
-vim.opt.sidescrolloff = 8
+vim.opt.scrolloff = 10                           -- is one of my fav
+vim.opt.sidescrolloff = 10
 -- vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
 vim.opt.shortmess:append "c"
