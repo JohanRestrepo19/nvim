@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'akinsho/toggleterm.nvim'
-  -- use 'lukas-reineke/indent-blankline.nvim'
   use 'andweeb/presence.nvim'
 
   -- Dependencies
@@ -78,7 +77,6 @@ return packer.startup(function(use)
 
   --Function signatures
   use "ray-x/lsp_signature.nvim"
-  -- use "glepnir/lspsaga.nvim"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine

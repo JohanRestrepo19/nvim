@@ -3,10 +3,11 @@ if not status_ok then
   return
 end
 
+-- Main
 require("user.lsp.lsp-installer")
 require("user.lsp.handlers").setup()
 
--- require("user.lsp.lspsaga")
+-- Secondary
 require("user.lsp.lsp-signature")
 require("user.lsp.null-ls")
 
