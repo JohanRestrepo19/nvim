@@ -76,7 +76,7 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lua"
 
   --Function signatures
-  use "ray-x/lsp_signature.nvim"
+  -- use "ray-x/lsp_signature.nvim"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -86,6 +86,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" --enable LSP
   use "williamboman/nvim-lsp-installer" --simple to use lenguage server installer
   use "jose-elias-alvarez/null-ls.nvim" --Formatting
+  use 'tami5/lspsaga.nvim'
 
 
   --Telescope

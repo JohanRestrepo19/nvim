@@ -23,5 +23,6 @@ on_attach = function (client)
 
     -- Diagnostics
     null_ls.builtins.diagnostics.flake8,
+    null_ls.builtins.diagnostics.eslint
   }
 })
