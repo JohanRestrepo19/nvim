@@ -49,7 +49,7 @@ nvim_tree.setup{ -- BEGIN_DEFAULT_OPTS
 
   renderer = {
     indent_markers = {
-      enable = true,
+      enable = false,
       icons = {
         corner = "└ ",
         edge = "│ ",

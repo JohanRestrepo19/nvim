@@ -62,7 +62,6 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "sainnhe/gruvbox-material"
   use "Mofiqul/vscode.nvim"
-  use "ellisonleao/gruvbox.nvim"
   use "marko-cerovac/material.nvim"
   use "folke/tokyonight.nvim"
 
