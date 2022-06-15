@@ -45,7 +45,6 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "windwp/nvim-autopairs"
-  use "windwp/nvim-ts-autotag"
   use "numToStr/Comment.nvim"
   use 'kyazdani42/nvim-tree.lua'
   use 'akinsho/bufferline.nvim'
@@ -69,13 +68,9 @@ return packer.startup(function(use)
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-
-  --Function signatures
-  -- use "ray-x/lsp_signature.nvim"
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -85,6 +80,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" --enable LSP
   use "williamboman/nvim-lsp-installer" --simple to use lenguage server installer
   use "jose-elias-alvarez/null-ls.nvim" --Formatting
+  use "ray-x/lsp_signature.nvim"
   use 'tami5/lspsaga.nvim'
 
 
@@ -96,8 +92,7 @@ return packer.startup(function(use)
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate"
   }
-  use "p00f/nvim-ts-rainbow"
-  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "windwp/nvim-ts-autotag"
 
   -- Git
   use "lewis6991/gitsigns.nvim"

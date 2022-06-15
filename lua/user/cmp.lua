@@ -15,23 +15,22 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
---   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
   Field = "",
-  Variable = "",
+  Variable = "",
   Class = "",
   Interface = "",
-  Module = "",
+  Module = "",
   Property = "",
   Unit = "",
   Value = "",
   Enum = "",
-  Keyword = "",
-  Snippet = "",
+  Keyword = "",
+  Snippet = "",
   Color = "",
   File = "",
   Reference = "",
@@ -43,6 +42,7 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
+
 
 cmp.setup {
   snippet = {
@@ -58,7 +58,7 @@ cmp.setup {
 
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -100,10 +100,10 @@ cmp.setup {
       "s",
     }),
   },
-  
-  sources = cmp.config.sources ({
-    { name = "nvim_lsp"},
-    { name = "nvim_lua"},
+
+  sources = cmp.config.sources({
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },

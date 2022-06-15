@@ -4,6 +4,9 @@ if not status_ok then
   return
 end
 
+local formatting = null_ls.builtins.formatting
+local diagnostics = null_ls.builtins.diagnostics
+
 null_ls.setup({
 on_attach = function (client)
     --Format on save
@@ -18,11 +21,11 @@ on_attach = function (client)
   end,
   sources = {
     -- Formatters
-    null_ls.builtins.formatting.autopep8,
-    null_ls.builtins.formatting.prettier,
+    formatting.autopep8,
+    formatting.prettier,
 
     -- Diagnostics
-    null_ls.builtins.diagnostics.flake8,
-    null_ls.builtins.diagnostics.eslint
+    diagnostics.flake8,
+    diagnostics.eslint
   }
 })
