@@ -42,60 +42,61 @@ packer.init {
 -- Install your plugins here
 return packer.startup(function(use)
   -- My plugins here
-  use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "windwp/nvim-autopairs"
-  use "numToStr/Comment.nvim"
-  use 'kyazdani42/nvim-tree.lua'
-  use 'akinsho/bufferline.nvim'
-  use 'nvim-lualine/lualine.nvim'
-  use 'akinsho/toggleterm.nvim'
-  use 'andweeb/presence.nvim'
+  use { 'wbthomason/packer.nvim', commit = '' } -- Have packer manage itself
+  use { 'nvim-lua/popup.nvim', commit = '' } -- An implementation of the Popup API from vim in Neovim
+  use { 'windwp/nvim-autopairs', commit = '' }
+  use { 'numToStr/Comment.nvim', commit = '' }
+  use { 'JoosepAlviste/nvim-ts-context-commentstring', commit = ''}
+  use { 'kyazdani42/nvim-tree.lua', commit = '' }
+  use { 'akinsho/bufferline.nvim', commit = '' }
+  use { 'nvim-lualine/lualine.nvim', commit = '' }
+  use { 'akinsho/toggleterm.nvim', commit = '' }
+  use { 'andweeb/presence.nvim', commit = '' }
 
   -- Dependencies
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use 'kyazdani42/nvim-web-devicons'
+  use { 'nvim-lua/plenary.nvim', commit = '' } -- Useful lua functions used ny lots of plugins
+  use { 'kyazdani42/nvim-web-devicons', commit = '' }
 
   -- Colorschemes
-  use "lunarvim/colorschemes"
-  use "lunarvim/darkplus.nvim"
-  use "sainnhe/gruvbox-material"
-  use "Mofiqul/vscode.nvim"
-  use "marko-cerovac/material.nvim"
-  use "folke/tokyonight.nvim"
+  use { 'lunarvim/colorschemes', commit = '' }
+  use { 'lunarvim/darkplus.nvim', commit = '' }
+  use { 'sainnhe/gruvbox-material', commit = '' }
+  use { 'Mofiqul/vscode.nvim', commit = '' }
+  use { 'marko-cerovac/material.nvim', commit = '' }
+  use { 'folke/tokyonight.nvim', commit = '' }
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
-  use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua"
+  use { 'hrsh7th/nvim-cmp', commit = '' } -- The completion plugin
+  use { 'hrsh7th/cmp-buffer', commit = '' } -- buffer completions
+  use { 'hrsh7th/cmp-path', commit = '' } -- path completions
+  use { 'saadparwaiz1/cmp_luasnip', commit = '' } -- snippet completions
+  use { 'hrsh7th/cmp-nvim-lsp', commit = '' }
+  use { 'hrsh7th/cmp-nvim-lua', commit = '' }
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use { 'L3MON4D3/LuaSnip', commit = '' } --snippet engine
+  use { 'rafamadriz/friendly-snippets', commit = '' } -- a bunch of snippets to use
 
   -- LSP
-  use "neovim/nvim-lspconfig" --enable LSP
-  use "williamboman/nvim-lsp-installer" --simple to use lenguage server installer
-  use "jose-elias-alvarez/null-ls.nvim" --Formatting
-  use "ray-x/lsp_signature.nvim"
-  use 'tami5/lspsaga.nvim'
+  use { 'neovim/nvim-lspconfig', commit = '' } --enable LSP
+  use { 'williamboman/nvim-lsp-installer', commit = '' } --simple to use lenguage server installer
+  use { 'jose-elias-alvarez/null-ls.nvim', commit = '' } --Formatting
+  use { 'ray-x/lsp_signature.nvim', commit = '' }
+  use { 'tami5/lspsaga.nvim', commit = '' }
 
 
   --Telescope
-  use "nvim-telescope/telescope.nvim"
+  use { 'nvim-telescope/telescope.nvim', commit = '' }
 
   -- Treesitter
   use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate"
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
-  use "windwp/nvim-ts-autotag"
+  use { 'windwp/nvim-ts-autotag', commit = '' }
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  use { 'lewis6991/gitsigns.nvim', commit = '' }
 
 
   -- Automatically set up your configuration after cloning packer.nvim
