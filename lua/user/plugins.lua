@@ -52,6 +52,11 @@ return packer.startup(function(use)
   use { 'nvim-lualine/lualine.nvim', commit = '' }
   use { 'akinsho/toggleterm.nvim', commit = '' }
   use { 'andweeb/presence.nvim', commit = '' }
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = 'cd app && npm install',
+    ft = 'markdown'
+  }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim', commit = '' } -- Useful lua functions used ny lots of plugins
@@ -93,6 +98,7 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   }
+  use { 'p00f/nvim-ts-rainbow', commit = ''}
   use { 'windwp/nvim-ts-autotag', commit = '' }
 
   -- Git
