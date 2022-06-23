@@ -51,7 +51,6 @@ return packer.startup(function(use)
   use { 'akinsho/bufferline.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'akinsho/toggleterm.nvim' }
-  use { 'andweeb/presence.nvim' }
   use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
@@ -69,7 +68,8 @@ return packer.startup(function(use)
   use { 'Mofiqul/vscode.nvim' }
   use { 'marko-cerovac/material.nvim' }
   use { 'folke/tokyonight.nvim' }
-  use { 'morhetz/gruvbox' }
+  -- use { 'morhetz/gruvbox' }
+  use { 'gruvbox-community/gruvbox' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
