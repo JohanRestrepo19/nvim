@@ -2,8 +2,8 @@ vim.g.material_style = "darker" -- darker, lighter, oceaninc, palenight, deep oc
 
 require('material').setup({
   contrast = {
-    sidebars = true,
-    floating_windows = true,
+    sidebars = false,
+    floating_windows = false,
     line_numbers = false,
     sign_column = false,
     cursor_line = true,
@@ -20,7 +20,7 @@ require('material').setup({
   contrast_filetypes = {},
   high_visibility = {
     lighter = false,
-    darker = false
+    darker = true
   },
   disable = {
     borders = false,

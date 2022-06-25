@@ -50,7 +50,6 @@ return packer.startup(function(use)
   use { 'kyazdani42/nvim-tree.lua' }
   use { 'akinsho/bufferline.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
-  use { 'akinsho/toggleterm.nvim' }
   use {
     'iamcco/markdown-preview.nvim',
     run = 'cd app && npm install',
