@@ -4,8 +4,8 @@ if not status_ok then
   return
 end
 
-local custom_gruvbox = require 'lualine.themes.gruvbox_dark'
 -- Change the background of lualine_a section for normal mode
+local custom_gruvbox = require 'lualine.themes.gruvbox_dark'
 custom_gruvbox.normal.a.bg = '#b8bb26'
 
 lualine.setup {
