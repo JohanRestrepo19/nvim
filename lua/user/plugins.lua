@@ -67,8 +67,8 @@ return packer.startup(function(use)
   use { 'Mofiqul/vscode.nvim' }
   use { 'marko-cerovac/material.nvim' }
   use { 'folke/tokyonight.nvim' }
-  -- use { 'morhetz/gruvbox' }
   use { 'gruvbox-community/gruvbox' }
+  use { 'dracula/vim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
