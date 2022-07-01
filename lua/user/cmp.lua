@@ -82,18 +82,6 @@ cmp.setup {
     documentation = cmp.config.window.bordered()
   },
 
-  -- window = {
-  --     -- documentation = "native",
-  --     documentation = {
-  --       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  --       winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-  --     },
-  --     completion = {
-  --       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-  --       winhighlight = "NormalFloat:Pmenu,NormalFloat:Pmenu,CursorLine:PmenuSel,Search:None",
-  --     },
-  --   },
-
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),

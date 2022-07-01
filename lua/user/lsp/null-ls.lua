@@ -8,7 +8,7 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-on_attach = function (client)
+  on_attach = function(client)
     --Format on save
     if client.resolved_capabilities.document_formatting then
       vim.cmd([[
