@@ -61,11 +61,7 @@ return packer.startup(function(use)
   use { 'kyazdani42/nvim-web-devicons' }
 
   -- Colorschemes
-  use { 'lunarvim/colorschemes' }
-  use { 'lunarvim/darkplus.nvim' }
   use { 'sainnhe/gruvbox-material' }
-  use { 'Mofiqul/vscode.nvim' }
-  use { 'marko-cerovac/material.nvim' }
   use { 'folke/tokyonight.nvim' }
   use { 'gruvbox-community/gruvbox' }
   use { 'dracula/vim' }
@@ -89,6 +85,7 @@ return packer.startup(function(use)
   use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
   -- use { 'ray-x/lsp_signature.nvim' }
   use { 'tami5/lspsaga.nvim' }
+  use { 'folke/lsp-colors.nvim' }
 
 
   --Telescope

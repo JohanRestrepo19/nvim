@@ -10,8 +10,16 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Fixes Autocomment in newlines
-vim.api.nvim_create_autocmd({'BufWinEnter'}, {
-  callback = function ()
+vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
+  callback = function()
     vim.cmd "set formatoptions-=cro"
   end,
 })
+
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]

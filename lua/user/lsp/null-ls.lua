@@ -10,7 +10,7 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
   on_attach = function(client)
     --Format on save
-    if client.resolved_capabilities.document_formatting then
+    if client.server_capabilities.document_formatting then
       vim.cmd([[
         augroup LspFormatting
           autocmd! * <buffer>

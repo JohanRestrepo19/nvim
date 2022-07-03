@@ -48,7 +48,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.s
 -- Highlight function
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.document_highlight then
     vim.api.nvim_exec(
       [[
       augroup lsp_document_highlight
@@ -72,7 +72,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
 
   --Format on save
-  if client.resolved_capabilities.document_formatting then
+  if client.server_capabilities.document_formatting then
     vim.cmd([[
       augroup LspFormatting
         autocmd! * <buffer>
@@ -83,15 +83,15 @@ local on_attach = function(client, bufnr)
 
 
   if client.name == "tsserver" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 
   if client.name == "html" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 
   if client.name == "jsonls" then
-    client.resolved_capabilities.document_formatting = false
+    client.server_capabilities.document_formatting = false
   end
 
   lsp_highlight_document(client)
@@ -113,10 +113,23 @@ nvim_lsp['tsserver'].setup {
 nvim_lsp['sumneko_lua'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  flags = lsp_flags
+  flags = lsp_flags,
+  settings = {}
 }
 
 nvim_lsp['pyright'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags
+}
+
+nvim_lsp['intelephense'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags
+}
+
+nvim_lsp['tailwindcss'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
   flags = lsp_flags

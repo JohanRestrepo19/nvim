@@ -42,31 +42,31 @@ local kind_icons = {
   -- Operator = "",
   -- TypeParameter = "",
 
-    Text = '', -- Text
-    Method = '', -- Method
-    Function = '', -- Function
-    Constructor = '', -- Constructor
-    Field = '', -- Field
-    Variable = '', -- Variable
-    Class = '', -- Class
-    Interface = 'ﰮ', -- Interface
-    Module = '', -- Module
-    Property = '', -- Property
-    Unit = '', -- Unit
-    Value = '', -- Value
-    Enum = '', -- Enum
-    Keyword = '', -- Keyword
-    Snippet = '﬌', -- Snippet
-    Color = '', -- Color
-    File = '', -- File
-    Reference = '', -- Reference
-    Folder = '', -- Folder
-    EnumMember = '', -- EnumMember
-    Constant = '', -- Constant
-    Struct = '', -- Struct
-    Event = '', -- Event
-    Operator = 'ﬦ', -- Operator
-    TypeParameter = '', -- TypeParameter
+  Text = '', -- Text
+  Method = '', -- Method
+  Function = '', -- Function
+  Constructor = '', -- Constructor
+  Field = '', -- Field
+  Variable = '', -- Variable
+  Class = '', -- Class
+  Interface = 'ﰮ', -- Interface
+  Module = '', -- Module
+  Property = '', -- Property
+  Unit = '', -- Unit
+  Value = '', -- Value
+  Enum = '', -- Enum
+  Keyword = '', -- Keyword
+  Snippet = '﬌', -- Snippet
+  Color = '', -- Color
+  File = '', -- File
+  Reference = '', -- Reference
+  Folder = '', -- Folder
+  EnumMember = '', -- EnumMember
+  Constant = '', -- Constant
+  Struct = '', -- Struct
+  Event = '', -- Event
+  Operator = 'ﬦ', -- Operator
+  TypeParameter = '', -- TypeParameter
 }
 
 
@@ -128,11 +128,11 @@ cmp.setup {
   },
 
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
     { name = "nvim_lua" },
-    { name = "luasnip" },
-    { name = "buffer" },
+    { name = "nvim_lsp" },
     { name = "path" },
+    { name = "luasnip" },
+    { name = "buffer", keyword_length = 5 },
   }),
 
   formatting = {
@@ -143,10 +143,10 @@ cmp.setup {
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        nvim_lua = "[NVIM_LUA]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
+        nvim_lua = "[nvim_lua]",
+        luasnip = "[snip]",
+        buffer = "[buf]",
+        path = "[path]",
       })[entry.source.name]
       return vim_item
     end,
