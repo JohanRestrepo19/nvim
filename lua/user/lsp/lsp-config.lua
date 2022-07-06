@@ -67,20 +67,15 @@ local on_attach = function(client, bufnr)
 
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
-  vim.keymap.set('n', 'gr', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', 'grr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, bufopts)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
 
-  --Format on save
-  if client.server_capabilities.document_formatting then
-    vim.cmd([[
-      augroup LspFormatting
-        autocmd! * <buffer>
-        autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
-      augroup END
-      ]])
+  if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
   end
-
 
   if client.name == "tsserver" then
     client.server_capabilities.document_formatting = false

@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -19,20 +19,26 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- Split window
+keymap('n', 'sv', '<Cmd> vsplit <CR>', opts)
+keymap('n', 'ss', '<Cmd> split <CR>', opts)
 
--- - Quick save
+-- Better window navigation
+keymap('n', 'sh', '<C-w>h', opts)
+keymap('n', 'sj', '<C-w>j', opts)
+keymap('n', 'sk', '<C-w>k', opts)
+keymap('n', 'sl', '<C-w>l', opts)
+
+-- keymap("n", "<C-h>", "<C-w>h", opts)
+-- keymap("n", "<C-j>", "<C-w>j", opts)
+-- keymap("n", "<C-k>", "<C-w>k", opts)
+-- keymap("n", "<C-l>", "<C-w>l", opts)
+
+
+-- Quick save
 keymap("n", "<leader>w", ":w<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<A-k>", ":resize -2<CR>", opts)
-keymap("n", "<A-j>", ":resize +2<CR>", opts)
-keymap("n", "<A-h>", ":vertical resize -2<CR>", opts)
-keymap("n", "<A-l>", ":vertical resize +2<CR>", opts)
 
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)

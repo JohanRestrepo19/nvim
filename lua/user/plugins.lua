@@ -55,6 +55,7 @@ return packer.startup(function(use)
     run = 'cd app && npm install',
     ft = 'markdown'
   }
+  use { 'norcalli/nvim-colorizer.lua' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
@@ -62,9 +63,11 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { 'sainnhe/gruvbox-material' }
+  use { 'ellisonleao/gruvbox.nvim' }
   use { 'folke/tokyonight.nvim' }
-  use { 'gruvbox-community/gruvbox' }
+  -- use { 'gruvbox-community/gruvbox' }
   use { 'dracula/vim' }
+  use { 'ishan9299/nvim-solarized-lua' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin

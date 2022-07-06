@@ -1,4 +1,4 @@
 vim.cmd [[
 colorscheme dracula
-hi! Normal ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
 ]]
