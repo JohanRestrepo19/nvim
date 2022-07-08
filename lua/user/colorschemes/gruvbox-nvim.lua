@@ -14,12 +14,10 @@ gruvbox.setup({
   invert_signs = false,
   invert_tabline = false,
   invert_intend_guides = false,
-  contrast = "hard", -- can be "hard" or "soft"
-  overrides = {
-    SingColumn = { bg = "#ff9900" }
-  },
+  contrast = "soft", -- can be "hard" or "soft"
+  overrides = {},
 })
 vim.cmd([[
 colorscheme gruvbox
-hi! Normal ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
 ]])

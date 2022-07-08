@@ -1,7 +1,8 @@
 vim.cmd([[
-let g:neosolarized_contrast = "high"
+" let g:neosolarized_contrast = "high"
 let g:neosolarized_termtrans=1
 ]])
+
 vim.cmd([[
 " Name:     NeoSolarized: Colorscheme for truecolor vim
 " Author:   iCyMind <icyminnd@gmail.com>

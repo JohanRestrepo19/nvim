@@ -56,6 +56,7 @@ return packer.startup(function(use)
     ft = 'markdown'
   }
   use { 'norcalli/nvim-colorizer.lua' }
+  use { 'andweeb/presence.nvim' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins

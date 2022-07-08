@@ -36,7 +36,7 @@ keymap('n', 'sl', '<C-w>l', opts)
 
 
 -- Quick save
-keymap("n", "<leader>w", ":w<cr>", opts)
+-- keymap("n", "<leader>w", ":w<cr>", opts)
 
 -- Resize with arrows
 

@@ -70,11 +70,15 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'grr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, bufopts)
+  vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting_seq_sync, bufopts)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
 
-  if client.server_capabilities.documentFormattingProvider then
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+  -- Formatting
+if client.server_capabilities.documentFormattingProvider then
+    vim.api.nvim_command [[augroup Format]]
+    vim.api.nvim_command [[autocmd! * <buffer>]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
+    vim.api.nvim_command [[augroup END]]
   end
 
   if client.name == "tsserver" then

@@ -6,6 +6,7 @@ end
 
 -- Change the background of lualine_a section for normal mode
 local custom_gruvbox = require 'lualine.themes.gruvbox_dark'
+
 custom_gruvbox.normal.a.bg = '#b8bb26'
 
 lualine.setup {
@@ -24,11 +25,8 @@ lualine.setup {
   },
   sections = {
     lualine_a = { 'mode' },
-    -- lualine_b = { 'branch', 'diff', 'diagnostics' },
-    -- lualine_b = { 'branch', 'diff'},
     lualine_b = { 'branch' },
-    -- lualine_c = { 'filename' },
-    -- lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_c = { 'filename' },
     lualine_x = {
       {
         'diagnostics', sources = { "nvim_diagnostic" }, symbols = { error = ' ', warn = ' ', info = ' ',
