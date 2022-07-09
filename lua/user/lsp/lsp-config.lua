@@ -6,6 +6,10 @@ local signs = {
   { name = "DiagnosticSignWarn", text = "" },
   { name = "DiagnosticSignHint", text = "" },
   { name = "DiagnosticSignInfo", text = "" },
+  -- { name = "DiagnosticSignError", text = "" },
+  -- { name = "DiagnosticSignWarn", text = "" },
+  -- { name = "DiagnosticSignHint", text = "" },
+  -- { name = "DiagnosticSignInfo", text = "" },
 }
 
 for _, sign in ipairs(signs) do
@@ -74,7 +78,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
 
   -- Formatting
-if client.server_capabilities.documentFormattingProvider then
+  if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()]]
@@ -104,6 +108,12 @@ local lsp_flags = {
 
 
 nvim_lsp['tsserver'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags
+}
+
+nvim_lsp['jsonls'].setup {
   on_attach = on_attach,
   capabilities = capabilities,
   flags = lsp_flags
