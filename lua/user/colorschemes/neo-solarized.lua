@@ -1,6 +1,6 @@
 vim.cmd([[
-" let g:neosolarized_contrast = "high"
 syntax enable
+let g:neosolarized_contrast="normal"
 let g:neosolarized_termtrans=1
 ]])
 

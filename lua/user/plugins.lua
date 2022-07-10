@@ -69,6 +69,7 @@ return packer.startup(function(use)
   -- use { 'gruvbox-community/gruvbox' }
   use { 'dracula/vim' }
   use { 'ishan9299/nvim-solarized-lua' }
+  use { 'Mofiqul/vscode.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin

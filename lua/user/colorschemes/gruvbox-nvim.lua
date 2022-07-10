@@ -19,5 +19,5 @@ gruvbox.setup({
 })
 vim.cmd([[
 colorscheme gruvbox
-" hi! Normal ctermbg=NONE guibg=NONE
+hi! Normal ctermbg=NONE guibg=NONE
 ]])

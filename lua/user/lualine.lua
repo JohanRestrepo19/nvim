@@ -11,7 +11,7 @@ custom_gruvbox.normal.a.bg = '#b8bb26'
 
 lualine.setup {
   options = {
-    icons_enabled = true,
+    -- icons_enabled = true,
     theme = 'solarized_dark',
     -- theme = 'auto',
     -- theme = custom_gruvbox,

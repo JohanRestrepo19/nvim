@@ -19,6 +19,11 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- Tabs
+keymap('n', 'te', '<Cmd>tabedit<Cr> ', opts)
+keymap('n', '<S-Tab>', '<Cmd>tabprev<Cr>', opts)
+keymap('n', '<tab>', '<Cmd>tabnext<Cr>', opts)
+
 -- Split window
 keymap('n', 'sv', '<Cmd> vsplit <CR>', opts)
 keymap('n', 'ss', '<Cmd> split <CR>', opts)
@@ -48,7 +53,7 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader><TAB>", ":bdelete<CR>", opts)
+keymap("n", "<leader><Tab>", ":bdelete<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
