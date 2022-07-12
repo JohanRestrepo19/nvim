@@ -32,19 +32,19 @@ configs.setup {
 
   rainbow = {
     colors = {
-      "#fafafa",
-      "#9F51B6",
-      "#F7C244",
-      "#F07850",
-      "#9CDD29",
-      "#C497D4",
+      -- "#fafafa",
+      -- "#9F51B6",
+      -- "#F7C244",
+      -- "#F07850",
+      -- "#9CDD29",
+      -- "#C497D4",
       --  Gruvbox
-      -- "#a89984",
-      -- "#689d6a",
-      -- "#458588",
-      -- "#d79921",
-      -- "#98971a",
-      -- "#fb4934",
+      "#a89984",
+      "#689d6a",
+      "#458588",
+      "#d79921",
+      "#98971a",
+      "#fb4934",
 
       -- "Cornsilk",
       -- "LawnGreen",
@@ -53,7 +53,7 @@ configs.setup {
       -- "Orchid",
       -- "Salmon",
     }, -- table of hex strings
-    enable = false,
+    enable = true,
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
