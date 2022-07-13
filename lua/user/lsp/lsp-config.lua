@@ -6,10 +6,6 @@ local signs = {
   { name = "DiagnosticSignWarn", text = "" },
   { name = "DiagnosticSignHint", text = "" },
   { name = "DiagnosticSignInfo", text = "" },
-  -- { name = "DiagnosticSignError", text = "" },
-  -- { name = "DiagnosticSignWarn", text = "" },
-  -- { name = "DiagnosticSignHint", text = "" },
-  -- { name = "DiagnosticSignInfo", text = "" },
 }
 
 for _, sign in ipairs(signs) do
@@ -85,16 +81,12 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[augroup END]]
   end
 
-  if client.name == "tsserver" then
-    client.server_capabilities.document_formatting = false
-  end
-
-  if client.name == "html" then
-    client.server_capabilities.document_formatting = false
-  end
-
-  if client.name == "jsonls" then
-    client.server_capabilities.document_formatting = false
+  -- Disable formatting capabilities for the specified languages
+  local languages = { 'tsserver', 'html', 'jsonls' }
+  for _, value in pairs(languages) do
+    if client.name == value then
+      client.server_capabilities.document_formatting = false
+    end
   end
 
   lsp_highlight_document(client)
@@ -106,40 +98,19 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-
-nvim_lsp['tsserver'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags
+local servers = {
+  'tsserver',
+  'jsonls',
+  'sumneko_lua',
+  'pyright',
+  'intelephense',
+  'tailwindcss',
 }
 
-nvim_lsp['jsonls'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags
-}
-
-nvim_lsp['sumneko_lua'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags,
-  settings = {}
-}
-
-nvim_lsp['pyright'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags
-}
-
-nvim_lsp['intelephense'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags
-}
-
-nvim_lsp['tailwindcss'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags
-}
+for _, value in pairs(servers) do
+  nvim_lsp[value].setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags
+  }
+end

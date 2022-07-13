@@ -1,4 +1,5 @@
 local status_ok, gruvbox = pcall(require, 'gruvbox')
+local colors = require('gruvbox.palette')
 if not status_ok then
   return
 end
@@ -15,7 +16,8 @@ gruvbox.setup({
   invert_tabline = false,
   invert_intend_guides = false,
   contrast = "soft", -- can be "hard" or "soft"
-  overrides = {},
+  overrides = {
+  },
 })
 vim.cmd([[
 colorscheme gruvbox
