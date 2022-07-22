@@ -38,10 +38,9 @@ packer.init {
   },
 }
 
-
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
+  -- Utils
   use { 'wbthomason/packer.nvim' } -- Have packer manage itself
   use { 'nvim-lua/popup.nvim' } -- An implementation of the Popup API from vim in Neovim
   use { 'windwp/nvim-autopairs' }
@@ -64,12 +63,8 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { 'sainnhe/gruvbox-material' }
-  use { 'ellisonleao/gruvbox.nvim' }
-  use { 'folke/tokyonight.nvim' }
-  -- use { 'gruvbox-community/gruvbox' }
-  use { 'dracula/vim' }
-  use { 'ishan9299/nvim-solarized-lua' }
   use { 'Mofiqul/vscode.nvim' }
+  use { 'navarasu/onedark.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
@@ -91,7 +86,6 @@ return packer.startup(function(use)
   -- use { 'ray-x/lsp_signature.nvim' }
   use { 'tami5/lspsaga.nvim' }
   use { 'folke/lsp-colors.nvim' }
-
 
   --Telescope
   use { 'nvim-telescope/telescope.nvim' }

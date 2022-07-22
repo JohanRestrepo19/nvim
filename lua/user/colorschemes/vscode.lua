@@ -1,6 +1,11 @@
 vim.o.background = 'dark'
-vim.g.vscode_transparent = 1
-vim.g.vscode_italic_comment = 1
-vim.g.vscode_disable_nvimtree_bg = true
+local c = require('vscode.colors')
 
-vim.cmd([[colorscheme vscode]])
+require('vscode').setup({
+  transparent = true,
+  italic_comments = true,
+  disable_nvimtree_bg = true,
+  color_overrides = {
+    Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
+  },
+})
