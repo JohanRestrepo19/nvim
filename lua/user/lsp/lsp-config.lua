@@ -82,7 +82,7 @@ local lsp_flags = {
 
 local servers = {
   'tsserver',
-  'jsonls',
+  -- 'jsonls',
   'sumneko_lua',
   'pyright',
   'intelephense',
