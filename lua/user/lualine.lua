@@ -12,11 +12,13 @@ custom_gruvbox.normal.a.bg = '#b8bb26'
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
-    -- theme = 'auto',
+    -- theme = 'solarized_dark',
+    theme = 'auto',
     -- theme = custom_gruvbox,
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
+    -- component_separators = '|',
+    -- section_separators = { left = '', right = '' },
     disabled_filetypes = { 'packer' },
     always_divide_middle = true,
     globalstatus = false,

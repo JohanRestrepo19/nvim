@@ -15,7 +15,7 @@ end
 local config = {
   -- disable virtual text
   virtual_text = {
-    spacing = 4,
+    spacing = 2,
     prefix = ''
   },
   -- show signs
@@ -81,15 +81,16 @@ local lsp_flags = {
 }
 
 local servers = {
+  'cssls',
+  'clangd',
+  'emmet_ls',
+  'html',
+  'intelephense',
+  'pyright',
+  'sumneko_lua',
   'tsserver',
   -- 'jsonls',
-  'sumneko_lua',
-  'pyright',
-  'intelephense',
-  'tailwindcss',
-  'html',
-  'cssls',
-  'emmet_ls',
+  -- 'tailwindcss',
 }
 
 for _, value in pairs(servers) do
