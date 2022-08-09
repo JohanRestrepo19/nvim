@@ -56,6 +56,7 @@ return packer.startup(function(use)
   }
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'andweeb/presence.nvim' }
+  use { 'onsails/lspkind-nvim' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
@@ -65,6 +66,10 @@ return packer.startup(function(use)
   use { 'sainnhe/gruvbox-material' }
   use { 'Mofiqul/vscode.nvim' }
   use { 'navarasu/onedark.nvim' }
+  use {
+    'svrana/neosolarized.nvim',
+    requires = { 'tjdevries/colorbuddy.nvim' }
+  }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
@@ -95,7 +100,7 @@ return packer.startup(function(use)
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
   }
-  use { 'p00f/nvim-ts-rainbow' }
+  -- use { 'p00f/nvim-ts-rainbow' }
   use { 'windwp/nvim-ts-autotag' }
 
   -- Git

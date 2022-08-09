@@ -1,12 +1,7 @@
-local status_ok, configs = pcall(require, "nvim-treesitter.configs")
-if not status_ok then
-  return
-end
+local status, ts = pcall(require, "nvim-treesitter.configs")
+if not status then return end
 
-configs.setup {
-  autotag = {
-    enable = true
-  },
+ts.setup {
 
   context_commentstring = {
     enable = true,
@@ -18,17 +13,24 @@ configs.setup {
     enable_autocmd = false,
   },
 
-  ensure_installed = "all",
 
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = { "" }, -- list of language that will be disabled
-    additional_vim_regex_highlighting = true,
+    disable = {}, -- list of language that will be disabled
+  },
 
+  indent = {
+    enable = true,
+    disable = { "yaml" }
+  },
+
+  ensure_installed = "all",
+
+  autotag = {
+    enable = true
   },
 
   ignore_install = { "" }, -- List of parsers to ignore installing
-  indent = { enable = true, disable = { "yaml" } },
 
   rainbow = {
     colors = {
@@ -38,22 +40,8 @@ configs.setup {
       "#F07850",
       "#9CDD29",
       "#C497D4",
-      --  Gruvbox
-      -- "#a89984",
-      -- "#689d6a",
-      -- "#458588",
-      -- "#d79921",
-      -- "#98971a",
-      -- "#fb4934",
-
-      -- "Cornsilk",
-      -- "LawnGreen",
-      -- "Gold",
-      -- "DodgerBlue",
-      -- "Orchid",
-      -- "Salmon",
     }, -- table of hex strings
-    enable = true,
+    enable = false,
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
     extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int

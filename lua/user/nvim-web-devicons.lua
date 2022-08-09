@@ -1,9 +1,7 @@
-local status_ok, nvim_web_devicons = pcall(require, "nvim-web-devicons")
-if not status_ok then
-  return
-end
+local status, icons = pcall(require, "nvim-web-devicons")
+if not status then return end
 
-nvim_web_devicons.set_icon {
+icons.set_icon {
   sh = {
     icon = "",
     color = "#1DC123",

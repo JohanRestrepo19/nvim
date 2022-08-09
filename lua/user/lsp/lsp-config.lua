@@ -1,5 +1,7 @@
 require("nvim-lsp-installer").setup {}
-local nvim_lsp = require("lspconfig")
+-- local nvim_lsp = require("lspconfig")
+local status, nvim_lsp = pcall(require, 'lspconfig')
+if not status then return end
 
 local signs = {
   { name = "DiagnosticSignError", text = "" },
@@ -65,6 +67,7 @@ local on_attach = function(client, bufnr)
   end
 
   -- Disable formatting capabilities for the specified languages
+
   local languages = { 'tsserver', 'html', 'jsonls' }
   for _, value in pairs(languages) do
     if client.name == value then
@@ -87,7 +90,6 @@ local servers = {
   'html',
   'intelephense',
   'pyright',
-  'sumneko_lua',
   'tsserver',
   -- 'jsonls',
   -- 'tailwindcss',
@@ -100,3 +102,21 @@ for _, value in pairs(servers) do
     flags = lsp_flags
   }
 end
+
+-- Special languages
+nvim_lsp['sumneko_lua'].setup {
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the 'vim' global
+        globals = { 'vim' }
+      }
+    },
+
+    workspace = {
+      -- Make the server aware of Neovim runtime files
+      library = vim.api.nvim_get_runtime_file('', true)
+    }
+  }
+}
