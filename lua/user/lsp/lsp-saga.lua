@@ -1,30 +1,14 @@
-local status_ok, saga = pcall(require, 'lspsaga')
+local status, saga = pcall(require, 'lspsaga')
+if not status then return end
 
-if not status_ok then
-  return
-end
-
-saga.setup = {
-  error_sign = '',
-  warn_sign = '',
-  hint_sign = '',
-  infor_sign = '',
-  border_style = "round",
-  -- diagnostic sign
-  -- error_sign = "",
-  -- warn_sign = "",
-  -- hint_sign = "",
-  -- infor_sign = "",
+saga.init_lsp_saga {
+  server_filetype_map = {}
 }
 
-vim.cmd [[
-nnoremap <silent> <C-j> <Cmd>Lspsaga diagnostic_jump_next<CR>
-nnoremap <silent> <C-k> <Cmd>Lspsaga diagnostic_jump_prev<CR>
-nnoremap <silent> gx <Cmd>Lspsaga code_action<CR>
-inoremap <silent> <C-k> <Cmd>Lspsaga signature_help<CR>
-" nnoremap <silent>K <Cmd>Lspsaga hover_doc<CR>
-"nnoremap <silent> K <Cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
-" nnoremap <silent> gh <Cmd>Lspsaga lsp_finder<CR>
-" nnoremap <silent> gp <Cmd>Lspsaga preview_definition<CR>
-" nnoremap <silent> gr <Cmd>Lspsaga rename<CR>
-]]
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<cr>', opts)
+vim.keymap.set('n', 'K', '<Cmd>Lspsaga hover_doc<cr>', opts)
+vim.keymap.set('i', '<C-k>', '<Cmd>Lspsaga signature_help<cr>', opts)
+vim.keymap.set('n', 'gp', '<Cmd>Lspsaga preview_definition<cr>', opts)
+vim.keymap.set('n', 'grr', '<Cmd>Lspsaga rename<cr>', opts)

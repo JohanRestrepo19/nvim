@@ -64,8 +64,6 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { 'sainnhe/gruvbox-material' }
-  use { 'Mofiqul/vscode.nvim' }
-  use { 'navarasu/onedark.nvim' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
@@ -89,7 +87,7 @@ return packer.startup(function(use)
   use { 'williamboman/nvim-lsp-installer' } --simple to use lenguage server installer
   use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
   -- use { 'ray-x/lsp_signature.nvim' }
-  use { 'tami5/lspsaga.nvim' }
+  use { 'glepnir/lspsaga.nvim' }
   use { 'folke/lsp-colors.nvim' }
 
   --Telescope
