@@ -11,24 +11,44 @@ bufferline.setup {
     color_icons = true
   },
   highlights = {
+
     separator = {
-      fg = '#073642',
-      bg = '#002b36'
+      fg = '#242424',
+      bg = '#3d3d3d'
     },
     separator_selected = {
-      fg = '#073642'
+      fg = '#242424'
     },
     background = {
-      fg = '#657b83',
-      bg = '#002b36'
+      fg = '#fdf6e3',
+      bg = '#3d3d3d'
     },
     buffer_selected = {
       fg = '#fdf6e3',
       bold = true
     },
     fill = {
-      bg = '#073642'
+      bg = '#242424'
     }
+
+    --[[ separator = { ]]
+    --[[   fg = '#073642', ]]
+    --[[   bg = '#002b36' ]]
+    --[[ }, ]]
+    --[[ separator_selected = { ]]
+    --[[   fg = '#073642' ]]
+    --[[ }, ]]
+    --[[ background = { ]]
+    --[[   fg = '#657b83', ]]
+    --[[   bg = '#002b36' ]]
+    --[[ }, ]]
+    --[[ buffer_selected = { ]]
+    --[[   fg = '#fdf6e3', ]]
+    --[[   bold = true ]]
+    --[[ }, ]]
+    --[[ fill = { ]]
+    --[[   bg = '#073642' ]]
+    --[[ } ]]
   },
 }
 

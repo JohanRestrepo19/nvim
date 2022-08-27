@@ -1,11 +1,13 @@
 local status, lualine = pcall(require, 'lualine')
-
 if not status then return end
+
+local custom_gruvbox = require('lualine.themes.gruvbox')
+custom_gruvbox.normal.a.bg = '#b8bb26'
 
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    theme = custom_gruvbox,
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     disabled_filetypes = { 'packer' },
