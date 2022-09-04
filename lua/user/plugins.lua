@@ -40,6 +40,9 @@ return packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
+  use { 'Mofiqul/vscode.nvim' }
+  use { 'Mofiqul/dracula.nvim' }
+  use { 'folke/tokyonight.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
@@ -58,7 +61,6 @@ return packer.startup(function(use)
   use { 'neovim/nvim-lspconfig' } --enable LSP
   use { 'williamboman/nvim-lsp-installer' } --simple to use lenguage server installer
   use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
-  -- use { 'ray-x/lsp_signature.nvim' }
   use { 'glepnir/lspsaga.nvim' }
   use { 'folke/lsp-colors.nvim' }
 

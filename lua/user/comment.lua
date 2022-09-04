@@ -1,11 +1,9 @@
-local status_ok, Comment = pcall(require, 'Comment')
+local status, Comment = pcall(require, 'Comment')
 
-if not status_ok then
-  return
-end
+if not status then return end
 
-Comment.setup{
-  pre_hook = function (ctx)
+Comment.setup {
+  pre_hook = function(ctx)
     local U = require 'Comment.utils'
 
     local location = nil

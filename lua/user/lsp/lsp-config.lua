@@ -52,6 +52,7 @@ local on_attach = function(client, bufnr)
 
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
+  vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 
   -- Formatting
   if client.server_capabilities.documentFormattingProvider then
