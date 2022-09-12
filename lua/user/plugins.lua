@@ -29,6 +29,7 @@ return packer.startup(function(use)
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'andweeb/presence.nvim' }
   use { 'onsails/lspkind-nvim' }
+  use { 'RRethy/vim-illuminate' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
@@ -40,9 +41,7 @@ return packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use { 'Mofiqul/vscode.nvim' }
-  use { 'Mofiqul/dracula.nvim' }
-  use { 'folke/tokyonight.nvim' }
+  use { 'marko-cerovac/material.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin

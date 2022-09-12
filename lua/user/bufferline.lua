@@ -12,6 +12,8 @@ bufferline.setup {
   },
   highlights = {
 
+    -- TODO: Implementar los colores correspondientes para el tema oceanic-material
+    -- Gruvbox Material
     --[[ separator = { ]]
     --[[   fg = '#242424', ]]
     --[[   bg = '#3d3d3d' ]]
@@ -31,6 +33,7 @@ bufferline.setup {
     --[[   bg = '#242424' ]]
     --[[ } ]]
 
+    -- Neosolarized
     separator = {
       fg = '#073642',
       bg = '#002b36'

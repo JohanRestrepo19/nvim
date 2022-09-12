@@ -9,10 +9,13 @@ null_ls.setup({
   sources = {
     -- Formatters
     formatting.autopep8,
-    formatting.prettier,
+    formatting.prettierd,
 
     -- Diagnostics
     diagnostics.flake8,
-    diagnostics.eslint
+    --[[ diagnostics.eslint, ]]
+    diagnostics.eslint_d.with({
+      diagnostics_format = '[eslint] #{m}\n(#{c})'
+    })
   }
 })
