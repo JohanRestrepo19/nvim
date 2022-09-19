@@ -41,6 +41,7 @@ return packer.startup(function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
+  use { 'navarasu/onedark.nvim' }
   use { 'marko-cerovac/material.nvim' }
 
   -- cmp plugins
@@ -74,7 +75,6 @@ return packer.startup(function(use)
   }
   use { 'p00f/nvim-ts-rainbow' }
 
-  -- use { 'p00f/nvim-ts-rainbow' }
   use { 'windwp/nvim-ts-autotag' }
 
   -- Git

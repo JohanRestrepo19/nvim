@@ -4,7 +4,7 @@ if not status then return end
 material.setup({
   contrast = {
     sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
-    floating_windows = true, -- Enable contrast for floating windows
+    floating_windows = false, -- Enable contrast for floating windows
     line_numbers = false, -- Enable contrast background for line numbers
     sign_column = false, -- Enable contrast background for the sign column
     cursor_line = false, -- Enable darker background for the cursor line
@@ -28,7 +28,7 @@ material.setup({
 
   high_visibility = {
     lighter = false, -- Enable higher contrast text for lighter style
-    darker = false -- Enable higher contrast text for darker style
+    darker = true -- Enable higher contrast text for darker style
   },
 
   disable = {
@@ -39,7 +39,7 @@ material.setup({
     eob_lines = false -- Hide the end-of-buffer lines
   },
 
-  lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+  lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
 
   async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
 
@@ -66,5 +66,5 @@ material.setup({
   }
 })
 
-vim.g.material_style = "oceanic"
+vim.g.material_style = "darker"
 vim.cmd [[colorscheme material]]
