@@ -26,7 +26,7 @@ local on_attach = function(client, bufnr)
   local languages = { 'tsserver', 'html', 'jsonls' }
   for _, value in pairs(languages) do
     if client.name == value then
-      client.server_capabilities.document_formatting = false
+      client.resolved_capabilities.document_formatting = false
     end
   end
 
@@ -44,7 +44,6 @@ local servers = {
   'emmet_ls',
   'html',
   'intelephense',
-  'pyright',
   'tsserver',
   'tailwindcss',
 }
@@ -58,6 +57,29 @@ for _, value in pairs(servers) do
 end
 
 -- Special languages
+
+nvim_lsp['pyright'].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags,
+  handlers = {
+    ['textDocument/publishDiagnostics'] = function(...)
+    end
+  },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+
+      }
+    }
+  }
+
+}
+
+
 nvim_lsp['sumneko_lua'].setup {
   on_attach = on_attach,
   settings = {

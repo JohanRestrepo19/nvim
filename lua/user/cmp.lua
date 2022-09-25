@@ -80,30 +80,30 @@ cmp.setup {
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "luasnip" },
-    { name = "buffer", keyword_length = 5 },
+    { name = "buffer" },
     { name = "path" },
   }),
 
   formatting = {
-    --[[ format = lspkind.cmp_format({ wirth_text = false, maxWidth = 50 }) ]]
-    fields = { "kind", "abbr", "menu" },
-    format = lspkind.cmp_format({
-      mode = 'symbol',
-      preset = 'default',
-      maxWidth = 20,
-
-      before = function(entry, vim_item)
-        -- Kind icons
-        vim_item.menu = ({
-          nvim_lsp = "[LSP]",
-          nvim_lua = "[NVIM_LUA]",
-          luasnip = "[Snippet]",
-          buffer = "[Buffer]",
-          path = "[Path]",
-        })[entry.source.name]
-        return vim_item
-      end
-    })
+    format = lspkind.cmp_format({ with_text = true, maxWidth = 50 })
+    --[[ fields = { "kind", "abbr", "menu" }, ]]
+    --[[ format = lspkind.cmp_format({ ]]
+    --[[   mode = 'symbol', ]]
+    --[[   preset = 'default', ]]
+    --[[   maxWidth = 20, ]]
+    --[[]]
+    --[[   before = function(entry, vim_item) ]]
+    --[[     -- Kind icons ]]
+    --[[     vim_item.menu = ({ ]]
+    --[[       nvim_lsp = "[LSP]", ]]
+    --[[       nvim_lua = "[NVIM_LUA]", ]]
+    --[[       luasnip = "[Snippet]", ]]
+    --[[       buffer = "[Buffer]", ]]
+    --[[       path = "[Path]", ]]
+    --[[     })[entry.source.name] ]]
+    --[[     return vim_item ]]
+    --[[   end ]]
+    --[[ }) ]]
   },
 
   confirm_opts = {
@@ -112,7 +112,7 @@ cmp.setup {
   },
 
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
     native_menu = false,
   },
 }
