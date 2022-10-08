@@ -21,8 +21,8 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
 
   view = {
-    width = 30,
-    adaptive_size = true,
+    width = 25,
+    adaptive_size = false,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -35,11 +35,12 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
+        { key = "s", cb = "" }
       },
     },
 
     float = {
-      enable = true,
+      enable = false,
       open_win_config = {
         relative = "editor",
         border = "rounded",

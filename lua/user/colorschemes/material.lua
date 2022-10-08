@@ -39,7 +39,7 @@ material.setup({
     eob_lines = false -- Hide the end-of-buffer lines
   },
 
-  lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
+  lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
 
   async_loading = true, -- Load parts of the theme asyncronously for faster startup (turned on by default)
 
@@ -49,7 +49,7 @@ material.setup({
     trouble = true,
     nvim_cmp = true,
     neogit = true,
-    gitsigns = true,
+    gitsigns = false,
     git_gutter = true,
     telescope = true,
     nvim_tree = true,
@@ -66,5 +66,5 @@ material.setup({
   }
 })
 
-vim.g.material_style = "darker"
+vim.g.material_style = "material"
 vim.cmd [[colorscheme material]]

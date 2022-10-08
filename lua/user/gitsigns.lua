@@ -41,4 +41,7 @@ gitsigns.setup {
   yadm                         = {
     enable = false
   },
+  on_attach                    = function(bufnr)
+    vim.keymap.set('n', '<leader>dt', ': Gitsigns diffthis<CR>')
+  end
 }

@@ -40,6 +40,7 @@ keymap('n', 'sh', '<C-w>h', opts)
 keymap('n', 'sj', '<C-w>j', opts)
 keymap('n', 'sk', '<C-w>k', opts)
 keymap('n', 'sl', '<C-w>l', opts)
+keymap('n', '<C-l>', '<C-w>l', opts)
 
 -- Quick save
 keymap("n", "<leader>w", ":w<cr>", opts)
@@ -54,7 +55,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader><Tab>", ":bdelete<CR>", opts)
+--[[ keymap("n", "<leader><Tab>", ":bdelete<CR>", opts) ]]
+keymap("n", "<leader><Tab>", ": bp<CR> :bd#<CR>")
 
 -- Insert --
 -- Press jk fast to enter

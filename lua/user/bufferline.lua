@@ -8,31 +8,15 @@ bufferline.setup {
     always_show_bufferline = false,
     show_buffer_close_icons = false,
     show_close_icon = false,
-    color_icons = true
+    --[[ color_icons = true, ]]
+    --[[ diagnostics = "nvim_lsp", ]]
+    --[[ diagnostics_indicator = function(count, level) ]]
+    --[[   local icon = level:match("error") and " " or "" ]]
+    --[[   return " " .. icon .. count ]]
+    --[[ end ]]
+    --[[]]
   },
   highlights = {
-
-    -- TODO: Implementar los colores correspondientes para el tema one-dakr warmer
-    -- Gruvbox Material
-    --[[ separator = { ]]
-    --[[   fg = '#242424', ]]
-    --[[   bg = '#3d3d3d' ]]
-    --[[ }, ]]
-    --[[ separator_selected = { ]]
-    --[[   fg = '#242424' ]]
-    --[[ }, ]]
-    --[[ background = { ]]
-    --[[   fg = '#fdf6e3', ]]
-    --[[   bg = '#3d3d3d' ]]
-    --[[ }, ]]
-    --[[ buffer_selected = { ]]
-    --[[   fg = '#fdf6e3', ]]
-    --[[   bold = true ]]
-    --[[ }, ]]
-    --[[ fill = { ]]
-    --[[   bg = '#242424' ]]
-    --[[ } ]]
-
     -- Neosolarized
     separator = {
       fg = '#073642',

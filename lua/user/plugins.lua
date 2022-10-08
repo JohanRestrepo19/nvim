@@ -29,7 +29,7 @@ return packer.startup(function(use)
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'andweeb/presence.nvim' }
   use { 'onsails/lspkind-nvim' }
-  use { 'RRethy/vim-illuminate' }
+  --[[ use { 'RRethy/vim-illuminate' } ]]
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
@@ -61,7 +61,7 @@ return packer.startup(function(use)
   use { 'neovim/nvim-lspconfig' } --enable LSP
   use { 'williamboman/nvim-lsp-installer' } --simple to use lenguage server installer
   use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
-  use { 'glepnir/lspsaga.nvim' }
+  use { 'glepnir/lspsaga.nvim', commit = '04e8167740c66193686ea3d14b511c7b160ea755' }
   use { 'folke/lsp-colors.nvim' }
 
   --Telescope

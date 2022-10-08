@@ -16,6 +16,6 @@ let g:gruvbox_material_visual = 'reverse'
 let g:gruvbox_material_ui_contrast = 'high'
 let g:gruvbox_material_current_word = 'underline'
 let g:gruvbox_material_diagnostic_virtual_text = 'colored'
-let g:gruvbox_material_transparent_background = 1
+let g:gruvbox_material_transparent_background = 0
 colorscheme gruvbox-material
 ]]
