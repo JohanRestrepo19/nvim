@@ -13,7 +13,6 @@ telescope.setup {
 
     prompt_prefix = " ",
     selection_caret = " ",
-    --[[ path_display = { "smart" }, ]]
 
     mappings = {
       n = {
@@ -48,6 +47,7 @@ telescope.setup {
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
     find_files = {
+      hidden = true
       --[[ theme = "", ]]
     }
   },
@@ -75,10 +75,9 @@ telescope.setup {
 }
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<c-p>", ":Telescope find_files<cr>", opts)
-vim.keymap.set("n", "<leader>ft", ":Telescope live_grep<cr>", opts)
-vim.keymap.set("n", "<leader>fb", ":Telescope buffers<cr>", opts)
---[[ vim.keymap.set("n", "<leader>e", ":Telescope file_browser<cr>", opts) ]]
+vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>ft', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
 
 --[[ vim.keymap.set("n", "<leader>e", function() ]]
 --[[   telescope.extensions.file_browser.file_browser({ ]]

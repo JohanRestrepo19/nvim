@@ -33,21 +33,21 @@ ts.setup {
   ignore_install = { "" }, -- List of parsers to ignore installing
 
   rainbow = {
-    --[[ colors = { ]]
-    --[[   "#fbfbfb", ]]
-    --[[   "#9F51B6", ]]
-    --[[   "#F7C244", ]]
-    --[[   "#F07850", ]]
-    --[[   "#9CDD29", ]]
-    --[[   "#c497d4", ]]
-    --[[ }, -- table of hex strings ]]
-    -- Neosolarized colors
     colors = {
-      "#dc322f",
-      "#cb4b16",
-      "#b58900",
-      "#859900",
-    },
+      "#fafcfb",
+      "#9F51B6",
+      "#F7C244",
+      "#F07850",
+      "#9CDD29",
+      "#c497d4",
+    }, -- table of hex strings
+    -- Neosolarized colors
+    --[[ colors = { ]]
+    --[[   "#dc322f", ]]
+    --[[   "#cb4b16", ]]
+    --[[   "#b58900", ]]
+    --[[   "#859900", ]]
+    --[[ }, ]]
     enable = true,
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
     extended_mode = false, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean

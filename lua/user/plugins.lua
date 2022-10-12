@@ -36,6 +36,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { 'sainnhe/gruvbox-material' }
+  use { 'ellisonleao/gruvbox.nvim' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
