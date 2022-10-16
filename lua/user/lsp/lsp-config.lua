@@ -64,14 +64,14 @@ local on_attach = function(client, bufnr)
   local languages = { 'tsserver', 'html', 'jsonls' }
   for _, value in pairs(languages) do
     if client.name == value then
-      client.resolved_capabilities.document_formatting = false
+      client.server_capabilities.document_formatting = false
     end
   end
 
 end
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lsp_flags = {
   debounce_text_changes = 150,

@@ -27,10 +27,10 @@ cmp.setup {
   },
 
 
-  --[[ window = { ]]
-  --[[   completion = cmp.config.window.bordered(), ]]
-  --[[   documentation = cmp.config.window.bordered() ]]
-  --[[ }, ]]
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
+  },
 
   mapping = cmp.mapping.preset.insert({
     ["<C-k>"] = cmp.mapping.select_prev_item(),
@@ -85,7 +85,7 @@ cmp.setup {
   }),
 
   formatting = {
-    format = lspkind.cmp_format({ with_text = true, maxWidth = 50 })
+    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
     --[[ fields = { "kind", "abbr", "menu" }, ]]
     --[[ format = lspkind.cmp_format({ ]]
     --[[   mode = 'symbol', ]]
@@ -112,7 +112,7 @@ cmp.setup {
   },
 
   experimental = {
-    ghost_text = false,
+    ghost_text = true,
     native_menu = false,
   },
 }

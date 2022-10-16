@@ -11,7 +11,7 @@ local status, packer = pcall(require, "packer")
 if not status then return end
 
 -- Install your plugins here
-return packer.startup(function(use)
+return packer.startup({ function(use)
   -- Utils
   use { 'wbthomason/packer.nvim' } -- Have packer manage itself
   use { 'nvim-lua/popup.nvim' } -- An implementation of the Popup API from vim in Neovim
@@ -36,13 +36,13 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use { 'sainnhe/gruvbox-material' }
-  use { 'ellisonleao/gruvbox.nvim' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
   use { 'navarasu/onedark.nvim' }
   use { 'marko-cerovac/material.nvim' }
+  use { 'folke/tokyonight.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
@@ -86,4 +86,12 @@ return packer.startup(function(use)
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-end)
+end,
+  config = {
+    display = {
+      open_fn = function()
+        return require('packer.util').float({ border = 'single' })
+      end
+    }
+  }
+})
