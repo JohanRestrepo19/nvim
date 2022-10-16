@@ -78,6 +78,7 @@ local lsp_flags = {
 }
 
 local servers = {
+  'bashls',
   'clangd',
   'cssls',
   'emmet_ls',
