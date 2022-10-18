@@ -6,6 +6,9 @@ if not config_status then return end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = false,
@@ -32,10 +35,10 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     mappings = {
       custom_only = false,
       list = {
-        { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
+        { key = { "<CR>", "o" }, cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
-        { key = "s", cb = "" }
+        { key = "sl", cb = "<C-w>l" }
       },
     },
 

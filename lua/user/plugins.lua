@@ -18,7 +18,7 @@ return packer.startup({ function(use)
   use { 'windwp/nvim-autopairs' }
   use { 'numToStr/Comment.nvim' }
   use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-  use { 'kyazdani42/nvim-tree.lua' }
+  use { 'nvim-tree/nvim-tree.lua' }
   use { 'akinsho/bufferline.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use {
@@ -29,19 +29,18 @@ return packer.startup({ function(use)
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'andweeb/presence.nvim' }
   use { 'onsails/lspkind-nvim' }
+  use { 'lukas-reineke/indent-blankline.nvim' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
   use { 'kyazdani42/nvim-web-devicons' }
 
   -- Colorschemes
-  use { 'sainnhe/gruvbox-material' }
   use {
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
   use { 'navarasu/onedark.nvim' }
-  use { 'marko-cerovac/material.nvim' }
   use { 'folke/tokyonight.nvim' }
 
   -- cmp plugins
