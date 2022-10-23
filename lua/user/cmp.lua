@@ -26,8 +26,8 @@ cmp.setup {
     end,
   },
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered()
+    --[[ completion = cmp.config.window.bordered(), ]]
+    --[[ documentation = cmp.config.window.bordered() ]]
   },
 
   mapping = cmp.mapping.preset.insert({
@@ -86,25 +86,25 @@ cmp.setup {
   }),
 
   formatting = {
-    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 })
-    --[[ fields = { "kind", "abbr", "menu" }, ]]
-    --[[ format = lspkind.cmp_format({ ]]
-    --[[   mode = 'symbol', ]]
-    --[[   preset = 'default', ]]
-    --[[   maxWidth = 20, ]]
-    --[[]]
-    --[[   before = function(entry, vim_item) ]]
-    --[[     -- Kind icons ]]
-    --[[     vim_item.menu = ({ ]]
-    --[[       nvim_lsp = "[LSP]", ]]
-    --[[       nvim_lua = "[NVIM_LUA]", ]]
-    --[[       luasnip = "[Snippet]", ]]
-    --[[       buffer = "[Buffer]", ]]
-    --[[       path = "[Path]", ]]
-    --[[     })[entry.source.name] ]]
-    --[[     return vim_item ]]
-    --[[   end ]]
-    --[[ }) ]]
+    --[[ format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }) ]]
+    fields = { "kind", "abbr", "menu" },
+    format = lspkind.cmp_format({
+      mode = 'symbol',
+      preset = 'default',
+      maxWidth = 50,
+
+      before = function(entry, vim_item)
+        -- Kind icons
+        vim_item.menu = ({
+          nvim_lsp = "[LSP]",
+          nvim_lua = "[NVIM_LUA]",
+          luasnip = "[Snippet]",
+          buffer = "[Buffer]",
+          path = "[Path]",
+        })[entry.source.name]
+        return vim_item
+      end
+    })
   },
 
   confirm_opts = {
