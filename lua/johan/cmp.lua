@@ -91,7 +91,7 @@ cmp.setup {
     format = lspkind.cmp_format({
       mode = 'symbol',
       preset = 'default',
-      maxWidth = 50,
+      maxwidth = 50,
 
       before = function(entry, vim_item)
         -- Kind icons

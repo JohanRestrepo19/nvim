@@ -26,10 +26,10 @@ onedarkpro.setup({
     types = "NONE", -- Style that is applied to types
     numbers = "NONE", -- Style that is applied to numbers
     strings = "NONE", -- Style that is applied to strings
-    comments = "NONE", -- Style that is applied to comments
+    comments = "italic", -- Style that is applied to comments
     keywords = "NONE", -- Style that is applied to keywords
-    constants = "NONE", -- Style that is applied to constants
-    functions = "NONE", -- Style that is applied to functions
+    constants = "bold", -- Style that is applied to constants
+    functions = "italic", -- Style that is applied to functions
     operators = "NONE", -- Style that is applied to operators
     variables = "NONE", -- Style that is applied to variables
     conditionals = "NONE", -- Style that is applied to conditionals
@@ -43,7 +43,7 @@ onedarkpro.setup({
 
     cursorline = false, -- Use cursorline highlighting?
     transparency = true, -- Use a transparent background?
-    terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
+    terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
     window_unfocused_color = false, -- When the window is out of focus, change the normal background?
   }
 })
