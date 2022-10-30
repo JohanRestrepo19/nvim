@@ -2,7 +2,7 @@ local status, onedarkpro = pcall(require, 'onedarkpro')
 if not status then return end
 
 onedarkpro.setup({
-  dark_theme = "onedark_vivid", -- The default dark theme
+  dark_theme = "onedark", -- The default dark theme
   light_theme = "onelight", -- The default light theme
   caching = false, -- Use caching for the theme?
   cache_path = vim.fn.expand(vim.fn.stdpath("cache") .. "/onedarkpro/"), -- The path to the cache directory
@@ -28,7 +28,7 @@ onedarkpro.setup({
     strings = "NONE", -- Style that is applied to strings
     comments = "italic", -- Style that is applied to comments
     keywords = "NONE", -- Style that is applied to keywords
-    constants = "bold", -- Style that is applied to constants
+    constants = "NONE", -- Style that is applied to constants
     functions = "italic", -- Style that is applied to functions
     operators = "NONE", -- Style that is applied to operators
     variables = "NONE", -- Style that is applied to variables
@@ -36,14 +36,14 @@ onedarkpro.setup({
     virtual_text = "NONE", -- Style that is applied to virtual text
   },
   options = {
-    bold = true, -- Use bold styles?
+    bold = false, -- Use bold styles?
     italic = true, -- Use italic styles?
     underline = true, -- Use underline styles?
     undercurl = true, -- Use undercurl styles?
 
     cursorline = false, -- Use cursorline highlighting?
     transparency = true, -- Use a transparent background?
-    terminal_colors = true, -- Use the theme's colors for Neovim's :terminal?
+    terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
     window_unfocused_color = false, -- When the window is out of focus, change the normal background?
   }
 })

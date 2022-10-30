@@ -33,6 +33,8 @@ ts.setup {
   ignore_install = { "" }, -- List of parsers to ignore installing
 
   rainbow = {
+    --[[ colors = { ]]
+    --[[ }, ]]
     colors = {
       "#fafcfb",
       "#9F51B6",
@@ -50,7 +52,7 @@ ts.setup {
     --[[ }, ]]
     enable = true,
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
-    extended_mode = true, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    extended_mode = false, -- also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
     max_file_lines = nil, -- Do not enable for files with more than n lines, int
     -- termcolors = {} -- table of colour name strings
   },
