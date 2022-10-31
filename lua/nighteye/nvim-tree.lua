@@ -24,10 +24,10 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
 
   view = {
-    width = 25,
-    adaptive_size = true,
+    width = 30,
+    adaptive_size = false,
     hide_root_folder = false,
-    side = "right",
+    side = "left",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
@@ -81,8 +81,8 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
           ignored = "◌",
         },
         folder = {
-          arrow_closed = "",
-          arrow_open = "",
+          arrow_closed = "",
+          arrow_open = "",
           default = "",
           open = "",
           empty = "",
