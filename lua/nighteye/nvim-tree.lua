@@ -27,7 +27,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     width = 25,
     adaptive_size = true,
     hide_root_folder = false,
-    side = "left",
+    side = "right",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
@@ -57,7 +57,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
 
   renderer = {
-    add_trailing = true,
+    add_trailing = false,
     indent_markers = {
       enable = false,
       icons = {
@@ -142,7 +142,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
       restrict_above_cwd = false,
     },
     open_file = {
-      quit_on_open = true,
+      quit_on_open = false,
       resize_window = false,
       window_picker = {
         enable = true,
