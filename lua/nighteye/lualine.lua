@@ -10,7 +10,20 @@ lualine.setup {
     theme = 'auto',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
-    disabled_filetypes = { 'packer' },
+    disabled_filetypes = {
+      'packer',
+      'NvimTree',
+      statusline = {},
+      winbar = {}
+    },
+  },
+  ignore_focus = {},
+  always_divide_middle = true,
+  globalstatus = false,
+  refresh = {
+    statusline = 1000,
+    tabline = 1000,
+    winbar = 1000,
   },
   sections = {
     lualine_a = { 'mode' },

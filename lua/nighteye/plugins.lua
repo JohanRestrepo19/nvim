@@ -33,7 +33,7 @@ return packer.startup({ function(use)
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
-  use { 'kyazdani42/nvim-web-devicons' }
+  use { 'nvim-tree/nvim-web-devicons' }
 
   -- Colorschemes
   use {

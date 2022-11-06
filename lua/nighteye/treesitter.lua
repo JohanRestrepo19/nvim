@@ -34,10 +34,10 @@ ts.setup {
 
   rainbow = {
     colors = {
-      'Gray',
       'Gold',
       'Orchid',
-      'LightSkyBlue'
+      'LightSkyBlue',
+      'LightRed'
     },
     termcolors = {}, -- table of colour name strings
     enable = true,
