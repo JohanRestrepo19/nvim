@@ -40,10 +40,7 @@ return packer.startup({ function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use { 'folke/tokyonight.nvim' }
   use { 'olimorris/onedarkpro.nvim' }
-  use { 'sainnhe/gruvbox-material' }
-  use { 'navarasu/onedark.nvim' }
   use { 'rebelot/kanagawa.nvim' }
 
   -- cmp plugins

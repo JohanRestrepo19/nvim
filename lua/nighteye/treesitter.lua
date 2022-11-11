@@ -40,7 +40,7 @@ ts.setup {
       'LightRed'
     },
     termcolors = {}, -- table of colour name strings
-    enable = true,
+    enable = false,
     extended_mode = false,
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
   },

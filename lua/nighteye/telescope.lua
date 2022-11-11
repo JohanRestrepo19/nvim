@@ -6,6 +6,10 @@ telescope.load_extension 'file_browser'
 
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
+local function telescope_buffer_dir()
+  return vim.fn.expand('%:p:h')
+end
+
 local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
@@ -26,13 +30,10 @@ telescope.setup {
       },
 
       i = {
-
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-c>"] = actions.close,
         ["<CR>"] = actions.select_default,
-        ["<Tab>"] = actions.move_selection_worse,
-        ["<S-Tab>"] = actions.move_selection_better,
         ["<C-l>"] = actions.complete_tag,
       },
 
@@ -49,7 +50,16 @@ telescope.setup {
     find_files = {
       hidden = true
       --[[ theme = "", ]]
-    }
+    },
+    file_browser = {
+      path = "%:p:h", -- start from within current buffer path
+      respect_gitignore = false,
+      hidden = true,
+      grouped = true,
+      previewer = false,
+      initial_mode = "normal",
+      layout_config = { height = 40 }
+    },
   },
   extensions = {
     -- Your extension configuration goes here:
@@ -58,7 +68,7 @@ telescope.setup {
     -- }
     -- please take a look at the readme of the extension you want to configure
     file_browser = {
-      --[[ theme        = "", ]]
+      theme        = "dropdown",
       hijack_netrw = true,
       mappings     = {
         ['i'] = {
@@ -68,7 +78,9 @@ telescope.setup {
           -- your custom normal mode mappings
           ['N'] = fb_actions.create,
           ['h'] = fb_actions.goto_parent_dir,
-        }
+        },
+
+
       }
     }
   },
@@ -79,14 +91,15 @@ vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>ft', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
 
---[[ vim.keymap.set("n", "<leader>e", function() ]]
---[[   telescope.extensions.file_browser.file_browser({ ]]
---[[     path = "%:p:h", -- start from within current buffer path ]]
---[[     respect_gitignore = false, ]]
---[[     hidden = true, ]]
---[[     grouped = true, ]]
---[[     previewer = false, ]]
---[[     initial_mode = "normal", ]]
---[[     layout_config = { height = 40 } ]]
---[[   }) ]]
---[[ end, opts) ]]
+vim.keymap.set("n", "<leader>e", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 }
+  })
+end, opts)

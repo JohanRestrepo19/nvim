@@ -176,4 +176,4 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 } -- END_DEFAULT_OPTS
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+--[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
