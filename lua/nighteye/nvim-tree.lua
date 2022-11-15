@@ -25,7 +25,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
   view = {
     width = 30,
-    adaptive_size = false,
+    adaptive_size = true,
     hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
@@ -59,7 +59,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   renderer = {
     add_trailing = false,
     indent_markers = {
-      enable = false,
+      enable = true,
       icons = {
         corner = "└ ",
         edge = "│ ",
@@ -176,4 +176,4 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 } -- END_DEFAULT_OPTS
 
 local opts = { noremap = true, silent = true }
---[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts)

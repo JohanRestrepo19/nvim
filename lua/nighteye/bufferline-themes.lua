@@ -58,6 +58,26 @@ local themes = {
     fill = {
       bg = '#242424'
     }
+  },
+  kanagawa = {
+    separator = {
+      fg = '#2a2a37',
+      bg = '#1f1f28'
+    },
+    separator_selected = {
+      fg = '#2a2a37',
+    },
+    background = {
+      fg = '#717C7C',
+      bg = '#1f1f28'
+    },
+    buffer_selected = {
+      fg = '#dcd7ba',
+      bold = true
+    },
+    fill = {
+      bg = '#2a2a37'
+    }
   }
 }
 

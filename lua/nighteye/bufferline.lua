@@ -11,7 +11,7 @@ bufferline.setup {
     show_buffer_close_icons = false,
     show_close_icon = false,
     color_icons = true,
-    show_duplicate_prefix = false, -- whether to show duplicate buffer prefix
+    show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
     --[[ diagnostics = "nvim_lsp", ]]
     --[[ diagnostics_indicator = function(count, level) ]]
     --[[   local icon = level:match("error") and " " or "" ]]
@@ -19,7 +19,7 @@ bufferline.setup {
     --[[ end ]]
 
   },
-  highlights = themes.onedark_pro,
+  highlights = themes.kanagawa,
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})

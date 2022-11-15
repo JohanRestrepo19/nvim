@@ -33,15 +33,22 @@ ts.setup {
   ignore_install = { "" }, -- List of parsers to ignore installing
 
   rainbow = {
+    -- Default
+    --[[ colors = { ]]
+    --[[   'Gold', ]]
+    --[[   'Orchid', ]]
+    --[[   'LightSkyBlue', ]]
+    --[[   'LightRed' ]]
+    --[[ }, ]]
     colors = {
-      'Gold',
-      'Orchid',
-      'LightSkyBlue',
-      'LightRed'
+      '#DCD7BA',
+      '#C34043',
+      '#6A9589',
+      '#FF9E3B'
     },
     termcolors = {}, -- table of colour name strings
-    enable = false,
-    extended_mode = false,
+    enable = true,
+    extended_mode = false
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
   },
 }

@@ -91,15 +91,15 @@ vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>ft', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
 
-vim.keymap.set("n", "<leader>e", function()
-  telescope.extensions.file_browser.file_browser({
-    path = "%:p:h",
-    cwd = telescope_buffer_dir(),
-    respect_gitignore = false,
-    hidden = true,
-    grouped = true,
-    previewer = false,
-    initial_mode = "normal",
-    layout_config = { height = 40 }
-  })
-end, opts)
+--[[ vim.keymap.set("n", "<leader>e", function() ]]
+--[[   telescope.extensions.file_browser.file_browser({ ]]
+--[[     path = "%:p:h", ]]
+--[[     cwd = telescope_buffer_dir(), ]]
+--[[     respect_gitignore = false, ]]
+--[[     hidden = true, ]]
+--[[     grouped = true, ]]
+--[[     previewer = false, ]]
+--[[     initial_mode = "normal", ]]
+--[[     layout_config = { height = 40 } ]]
+--[[   }) ]]
+--[[ end, opts) ]]
