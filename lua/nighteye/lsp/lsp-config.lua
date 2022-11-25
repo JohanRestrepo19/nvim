@@ -87,7 +87,6 @@ local servers = {
   'jedi_language_server',
   'tailwindcss',
   'tsserver',
-  'marksman',
 }
 
 for _, value in pairs(servers) do

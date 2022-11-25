@@ -41,10 +41,10 @@ ts.setup {
     --[[   'LightRed' ]]
     --[[ }, ]]
     colors = {
-      '#DCD7BA',
-      '#C34043',
       '#6A9589',
-      '#FF9E3B'
+      '#957FB8	',
+      '#FF9E3B',
+      '#C34043',
     },
     termcolors = {}, -- table of colour name strings
     enable = true,

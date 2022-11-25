@@ -6,6 +6,7 @@ telescope.load_extension 'file_browser'
 
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
+
 local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
@@ -48,8 +49,11 @@ telescope.setup {
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
     find_files = {
-      hidden = true
-      --[[ theme = "", ]]
+      hidden = true,
+      theme = "dropdown",
+    },
+    live_grep = {
+      theme = "dropdown"
     },
     file_browser = {
       path = "%:p:h", -- start from within current buffer path
