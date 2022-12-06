@@ -81,7 +81,6 @@ local servers = {
   'bashls',
   'clangd',
   'cssls',
-  'emmet_ls',
   'html',
   'intelephense',
   'jedi_language_server',
@@ -98,6 +97,18 @@ for _, value in pairs(servers) do
 end
 
 -- Special languages
+
+nvim_lsp['volar'].setup {
+  init_options = {
+    typescript = {
+      -- NOTE: This line probably break volar config if nvm change version of npm
+      tsdk = "/home/johan/.nvm/versions/node/v16.17.1/lib/node_modules/typescript/lib/",
+    },
+  },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags
+}
 
 nvim_lsp['pyright'].setup {
   on_attach = on_attach,
