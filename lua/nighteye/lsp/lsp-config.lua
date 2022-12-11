@@ -83,9 +83,9 @@ local servers = {
   'cssls',
   'html',
   'intelephense',
-  'jedi_language_server',
   'tailwindcss',
   'tsserver',
+  'pyright'
 }
 
 for _, value in pairs(servers) do
@@ -109,28 +109,6 @@ nvim_lsp['volar'].setup {
   capabilities = capabilities,
   flags = lsp_flags
 }
-
-nvim_lsp['pyright'].setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags,
-  handlers = {
-    ['textDocument/publishDiagnostics'] = function(...)
-    end
-  },
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true
-
-      }
-    }
-  }
-
-}
-
 
 nvim_lsp['sumneko_lua'].setup {
   on_attach = on_attach,
