@@ -9,7 +9,13 @@ null_ls.setup({
   sources = {
     -- Formatters
     formatting.autopep8,
-    formatting.prettierd,
+    formatting.prettierd.with({
+      filetypes = {
+        "javascript", "javascriptreact", "typescript", "typescriptreact",
+        "vue", "css", "scss", "less", "html",
+        "yaml", "markdown", "markdown.mdx", "graphql", "handlebars"
+      }
+    }),
 
     -- Diagnostics
     diagnostics.flake8,
