@@ -30,6 +30,7 @@ return packer.startup({ function(use)
   use { 'andweeb/presence.nvim' }
   use { 'onsails/lspkind-nvim' }
   use { 'lukas-reineke/indent-blankline.nvim' }
+  use { 'gpanders/editorconfig.nvim' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins

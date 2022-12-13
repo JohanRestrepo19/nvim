@@ -61,7 +61,7 @@ local on_attach = function(client, bufnr)
 
   -- Disable formatting capabilities for the specified languages
 
-  local languages = { 'tsserver', 'html', 'jsonls' }
+  local languages = { 'tsserver', 'intelephense', 'html', 'jsonls' }
   for _, value in pairs(languages) do
     if client.name == value then
       client.server_capabilities.document_formatting = false

@@ -7,10 +7,10 @@ custom_gruvbox.normal.a.bg = '#b8bb26'
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'solarized_dark',
     section_separators = { left = '', right = '' },
-    --[[ component_separators = { left = '', right = '' }, ]]
-    component_separators = '',
+    component_separators = { left = '', right = '' },
+    --[[ component_separators = '', ]]
     disabled_filetypes = {
       'packer',
       'NvimTree',
