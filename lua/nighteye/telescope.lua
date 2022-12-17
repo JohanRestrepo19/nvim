@@ -28,6 +28,7 @@ telescope.setup {
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
         ["?"] = actions.which_key,
+        ["<Tab>"] = actions.delete_buffer,
       },
 
       i = {
@@ -50,7 +51,7 @@ telescope.setup {
     -- builtin picker
     find_files = {
       hidden = true,
-      --[[ theme = "dropdown", ]]
+      theme = "dropdown",
     },
     live_grep = {
       theme = "dropdown"
@@ -94,6 +95,7 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>ft', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
+vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
 
 --[[ vim.keymap.set("n", "<leader>e", function() ]]
 --[[   telescope.extensions.file_browser.file_browser({ ]]

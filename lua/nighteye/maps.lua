@@ -16,6 +16,8 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 
+keymap('n', '<leader>w', ':w<cr>', opts)
+
 -- Increment/decrement
 keymap('n', '+', '<C-a>', opts)
 keymap('n', '-', '<C-x>', opts)

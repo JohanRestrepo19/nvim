@@ -90,9 +90,9 @@ return packer.startup({ function(use)
 end,
   config = {
     display = {
-      open_fn = function()
-        return require('packer.util').float({ border = 'rounded' })
-      end
+      --[[ open_fn = function() ]]
+      --[[   return require('packer.util').float({ border = 'rounded' }) ]]
+      --[[ end ]]
     }
   }
 })

@@ -2,8 +2,6 @@ local status, onedarkpro = pcall(require, 'onedarkpro')
 if not status then return end
 
 onedarkpro.setup({
-  dark_theme = "onedark", -- The default dark theme
-  light_theme = "onelight", -- The default light theme
   caching = false, -- Use caching for the theme?
   cache_path = vim.fn.expand(vim.fn.stdpath("cache") .. "/onedarkpro/"), -- The path to the cache directory
   colors = {}, -- Override default colors by specifying colors for 'onelight' or 'onedark' themes
@@ -48,4 +46,4 @@ onedarkpro.setup({
   }
 })
 
-vim.cmd('colorscheme onedarkpro')
+vim.cmd('colorscheme onedark')

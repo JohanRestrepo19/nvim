@@ -5,7 +5,7 @@ kanagawa.setup({
   undercurl = true, -- enable undercurls
   commentStyle = { italic = true },
   functionStyle = { bold = true },
-  keywordStyle = { bold = true },
+  keywordStyle = { italic = true },
   statementStyle = { bold = true },
   typeStyle = { bold = true },
   variablebuiltinStyle = { bold = true },

@@ -78,7 +78,6 @@ local lsp_flags = {
 }
 
 local servers = {
-  'bashls',
   'clangd',
   'cssls',
   'html',
