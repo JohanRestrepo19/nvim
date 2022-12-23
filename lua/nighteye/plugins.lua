@@ -44,6 +44,7 @@ return packer.startup({ function(use)
   use { 'olimorris/onedarkpro.nvim' }
   use { 'rebelot/kanagawa.nvim' }
   use { 'sainnhe/gruvbox-material' }
+  use { 'folke/tokyonight.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
@@ -90,9 +91,9 @@ return packer.startup({ function(use)
 end,
   config = {
     display = {
-      --[[ open_fn = function() ]]
-      --[[   return require('packer.util').float({ border = 'rounded' }) ]]
-      --[[ end ]]
+      open_fn = function()
+        return require('packer.util').float({ border = 'rounded' })
+      end
     }
   }
 })

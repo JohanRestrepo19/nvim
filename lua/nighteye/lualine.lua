@@ -7,7 +7,7 @@ custom_gruvbox.normal.a.bg = '#b8bb26'
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    theme = 'auto',
     section_separators = { left = '', right = '' },
     component_separators = { left = '', right = '' },
     --[[ component_separators = '', ]]
@@ -34,6 +34,7 @@ lualine.setup {
       file_status = true, --displays file status
       path = 0, -- 0 = just filename
     } },
+    --[[ lualine_x = { 'encoding', 'fileformat', 'filetype' }, ]]
     lualine_x = {
       {
         'diagnostics',

@@ -49,7 +49,7 @@ ts.setup {
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = false,
-    disable = { "php" }, -- list of languages you want to disable the plugin for
+    --[[ disable = { "php" }, -- list of languages you want to disable the plugin for ]]
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
   },
 }
