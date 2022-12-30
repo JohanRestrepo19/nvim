@@ -34,18 +34,18 @@ ts.setup {
 
   rainbow = {
     -- Default
-    --[[ colors = { ]]
-    --[[   'Gold', ]]
-    --[[   'Orchid', ]]
-    --[[   'LightSkyBlue', ]]
-    --[[   'LightRed' ]]
-    --[[ }, ]]
     colors = {
-      '#6A9589',
-      '#957FB8	',
-      '#FF9E3B',
-      '#C34043',
+      'Gold',
+      'Orchid',
+      'LightSkyBlue',
+      'LightGreen'
     },
+    --[[ colors = { ]]
+    --[[   '#6A9589', ]]
+    --[[   '#957FB8	', ]]
+    --[[   '#FF9E3B', ]]
+    --[[   '#C34043', ]]
+    --[[ }, ]]
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = false,

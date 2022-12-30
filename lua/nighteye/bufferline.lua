@@ -19,7 +19,7 @@ bufferline.setup {
     --[[ end ]]
 
   },
-  highlights = themes.onedark_pro,
+  highlights = themes.kanagawa,
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})

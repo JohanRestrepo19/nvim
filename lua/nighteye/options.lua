@@ -14,7 +14,7 @@ vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
 vim.opt.number = true -- set numbered lines
 vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
-vim.opt.pumheight = 5 -- pop up menu height
+vim.opt.pumheight = 7 -- pop up menu height
 vim.opt.relativenumber = false
 vim.opt.scrolloff = 10 -- is one of my fav
 --[[ vim.opt.shell = "zsh" ]]
@@ -36,8 +36,8 @@ vim.opt.wrap = false -- display lines as one long line
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.backspace = "indent,eol,start"
 
-vim.opt.list = true
-vim.opt.listchars:append "eol:⏎"
+--[[ vim.opt.list = true ]]
+--[[ vim.opt.listchars:append "eol:⏎" ]]
 
 vim.opt.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,[,],h,l"

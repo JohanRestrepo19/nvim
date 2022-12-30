@@ -45,6 +45,7 @@ return packer.startup({ function(use)
   use { 'rebelot/kanagawa.nvim' }
   use { 'sainnhe/gruvbox-material' }
   use { 'folke/tokyonight.nvim' }
+  use { 'marko-cerovac/material.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
