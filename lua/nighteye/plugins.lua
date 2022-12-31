@@ -46,6 +46,7 @@ return packer.startup({ function(use)
   use { 'sainnhe/gruvbox-material' }
   use { 'folke/tokyonight.nvim' }
   use { 'marko-cerovac/material.nvim' }
+  use { 'sainnhe/everforest' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
