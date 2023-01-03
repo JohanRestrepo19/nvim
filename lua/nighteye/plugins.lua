@@ -31,6 +31,7 @@ return packer.startup({ function(use)
   use { 'onsails/lspkind-nvim' }
   use { 'lukas-reineke/indent-blankline.nvim' }
   use { 'gpanders/editorconfig.nvim' }
+  use { 'folke/todo-comments.nvim' }
 
   -- Dependencies
   use { 'nvim-lua/plenary.nvim' } -- Useful lua functions used ny lots of plugins
@@ -41,10 +42,7 @@ return packer.startup({ function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
-  use { 'olimorris/onedarkpro.nvim' }
   use { 'rebelot/kanagawa.nvim' }
-  use { 'sainnhe/gruvbox-material' }
-  use { 'folke/tokyonight.nvim' }
   use { 'marko-cerovac/material.nvim' }
   use { 'sainnhe/everforest' }
 
