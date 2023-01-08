@@ -24,7 +24,22 @@ ts.setup {
     disable = { "yaml" }
   },
 
-  ensure_installed = "all",
+  ensure_installed = {
+    "lua",
+    "c",
+    "css",
+    "gitcommit",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "php",
+    "python",
+    "typescript",
+    "tsx",
+    "vim",
+    "vue",
+  },
 
   autotag = {
     enable = true
