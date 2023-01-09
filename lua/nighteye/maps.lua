@@ -44,6 +44,10 @@ keymap('n', 'sk', '<C-w>k', opts)
 keymap('n', 'sl', '<C-w>l', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
+-- Better Vertical navigation
+keymap('n', '}', '<C-d>')
+keymap('n', '{', '<C-u>')
+
 
 -- Resize with arrows
 
