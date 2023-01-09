@@ -23,8 +23,7 @@ return packer.startup({ function(use)
   use { 'nvim-lualine/lualine.nvim' }
   use {
     'iamcco/markdown-preview.nvim',
-    run = 'cd app && npm install',
-    ft = 'markdown'
+    run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
   }
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'andweeb/presence.nvim' }
@@ -42,8 +41,8 @@ return packer.startup({ function(use)
     'svrana/neosolarized.nvim',
     requires = { 'tjdevries/colorbuddy.nvim' }
   }
+  use { 'EdenEast/nightfox.nvim' }
   use { 'rebelot/kanagawa.nvim' }
-  use { 'marko-cerovac/material.nvim' }
   use { 'sainnhe/everforest' }
 
   -- cmp plugins

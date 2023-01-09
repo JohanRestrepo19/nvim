@@ -78,6 +78,27 @@ local themes = {
     fill = {
       bg = '#2a2a37'
     }
+  },
+  nightfox = {
+    separator = {
+      fg = '#29394f',
+      bg = '#192330'
+    },
+    separator_selected = {
+      fg = '#29394f',
+    },
+    background = {
+      fg = '#717C7C',
+      bg = '#192330'
+    },
+    buffer_selected = {
+      fg = '#dfdfe0',
+      bold = true,
+      italic = true
+    },
+    fill = {
+      bg = '#29394f'
+    }
   }
 }
 

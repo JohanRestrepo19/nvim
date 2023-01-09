@@ -18,8 +18,8 @@ cmp.setup {
     end,
   },
   window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered()
+    --[[ completion = cmp.config.window.bordered(), ]]
+    --[[ documentation = cmp.config.window.bordered() ]]
   },
 
   mapping = cmp.mapping.preset.insert({
@@ -57,17 +57,17 @@ cmp.setup {
 
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-      before = function(entry, vim_item)
-        -- Kind icons
-        vim_item.menu = ({
-          nvim_lsp = "[LSP]",
-          nvim_lua = "[NVIM_LUA]",
-          luasnip = "[Snippet]",
-          buffer = "[Buffer]",
-          path = "[Path]",
-        })[entry.source.name]
-        return vim_item
-      end
+      --[[ before = function(entry, vim_item) ]]
+      --[[   -- Kind icons ]]
+      --[[   vim_item.menu = ({ ]]
+      --[[     nvim_lsp = "[LSP]", ]]
+      --[[     nvim_lua = "[NVIM_LUA]", ]]
+      --[[     luasnip = "[Snippet]", ]]
+      --[[     buffer = "[Buffer]", ]]
+      --[[     path = "[Path]", ]]
+      --[[   })[entry.source.name] ]]
+      --[[   return vim_item ]]
+      --[[ end ]]
     })
   },
 

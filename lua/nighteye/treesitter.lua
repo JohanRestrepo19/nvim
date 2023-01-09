@@ -1,6 +1,21 @@
 local status, ts = pcall(require, "nvim-treesitter.configs")
 if not status then return end
 
+local colors = {
+  default = {
+    'Gold',
+    'Orchid',
+    'LightSkyBlue',
+    'LightGreen'
+  },
+  kanagawa = {
+    '#6A9589',
+    '#957FB8	',
+    '#FF9E3B',
+    '#C34043',
+  }
+}
+
 ts.setup {
 
   context_commentstring = {
@@ -49,18 +64,7 @@ ts.setup {
 
   rainbow = {
     -- Default
-    colors = {
-      'Gold',
-      'Orchid',
-      'LightSkyBlue',
-      'LightGreen'
-    },
-    --[[ colors = { ]]
-    --[[   '#6A9589', ]]
-    --[[   '#957FB8	', ]]
-    --[[   '#FF9E3B', ]]
-    --[[   '#C34043', ]]
-    --[[ }, ]]
+    colors = colors.kanagawa,
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = false,
