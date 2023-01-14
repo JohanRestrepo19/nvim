@@ -16,7 +16,7 @@ bufferline.setup {
 
   },
   -- NOTE: Uncomment if I want to use custom highlights.
-  highlights = themes.nightfox,
+  highlights = themes.kanagawa,
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})

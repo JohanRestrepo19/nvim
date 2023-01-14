@@ -22,7 +22,7 @@ gitsigns.setup {
   current_line_blame           = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts      = {
     virt_text = true,
-    virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
+    virt_text_pos = 'right_align', -- 'eol' | 'overlay' | 'right_align'
     delay = 1000,
     ignore_whitespace = false,
   },
@@ -43,6 +43,8 @@ gitsigns.setup {
     enable = false
   },
   on_attach                    = function(bufnr)
-    vim.keymap.set('n', '<leader>dt', ': Gitsigns diffthis<CR>')
+    local gs = package.loaded.gitsigns
+    vim.keymap.set('n', '<leader>dt', gs.diffthis)
+    vim.keymap.set('n', '<leader>bl', gs.toggle_current_line_blame)
   end
 }
