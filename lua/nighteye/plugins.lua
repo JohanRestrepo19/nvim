@@ -22,7 +22,6 @@ return packer.startup({ function(use)
   use { 'akinsho/bufferline.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
   use { 'norcalli/nvim-colorizer.lua' }
-  use { 'andweeb/presence.nvim' }
   use { 'onsails/lspkind-nvim' }
   use { 'lukas-reineke/indent-blankline.nvim' }
   use { 'gpanders/editorconfig.nvim' }
