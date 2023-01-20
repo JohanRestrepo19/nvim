@@ -11,15 +11,15 @@ nightfox.setup({
     dim_inactive = false, -- Non focused panes set to alternative background
     module_default = true, -- Default enable value for modules
     styles = { -- Style to be applied to different syntax groups
-      comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
+      comments = "italic", -- Value is any valid attr-list value `:help attr-list`
       conditionals = "NONE",
       constants = "NONE",
-      functions = "NONE",
+      functions = "bold",
       keywords = "NONE",
       numbers = "NONE",
       operators = "NONE",
-      strings = "NONE",
-      types = "NONE",
+      strings = "italic",
+      types = "bold",
       variables = "NONE",
     },
     inverse = { -- Inverse highlight for different types
@@ -36,4 +36,4 @@ nightfox.setup({
   groups = {},
 })
 
-vim.cmd('colorscheme nightfox')
+vim.cmd('colorscheme carbonfox')

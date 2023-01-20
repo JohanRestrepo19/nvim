@@ -18,6 +18,8 @@ telescope.setup {
 
     prompt_prefix = " ",
     selection_caret = " ",
+    layout_strategy = "vertical",
+    path_display = { "truncate" },
 
     mappings = {
       n = {

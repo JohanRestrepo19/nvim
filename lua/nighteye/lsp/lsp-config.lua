@@ -49,6 +49,7 @@ local on_attach = function(client, bufnr)
 
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
 
   -- Formatting
@@ -61,7 +62,7 @@ local on_attach = function(client, bufnr)
 
   -- Disable formatting capabilities for the specified languages
 
-  local languages = { 'tsserver', 'intelephense', 'html', 'jsonls' }
+  local languages = { 'tsserver', 'html', 'jsonls' }
   for _, value in pairs(languages) do
     if client.name == value then
       client.server_capabilities.document_formatting = false

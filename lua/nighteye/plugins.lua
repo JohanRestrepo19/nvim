@@ -21,10 +21,6 @@ return packer.startup({ function(use)
   use { 'nvim-tree/nvim-tree.lua' }
   use { 'akinsho/bufferline.nvim' }
   use { 'nvim-lualine/lualine.nvim' }
-  use {
-    'iamcco/markdown-preview.nvim',
-    run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" },
-  }
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'andweeb/presence.nvim' }
   use { 'onsails/lspkind-nvim' }
@@ -43,7 +39,7 @@ return packer.startup({ function(use)
   }
   use { 'EdenEast/nightfox.nvim' }
   use { 'rebelot/kanagawa.nvim' }
-  use { 'sainnhe/everforest' }
+  use { 'olimorris/onedarkpro.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
