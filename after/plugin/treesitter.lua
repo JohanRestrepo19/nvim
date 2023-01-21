@@ -44,6 +44,7 @@ ts.setup {
     "c",
     "css",
     "gitcommit",
+    "help",
     "html",
     "javascript",
     "json",

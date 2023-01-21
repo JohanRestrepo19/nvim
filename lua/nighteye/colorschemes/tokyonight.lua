@@ -37,4 +37,4 @@ tokyonight.setup({
   on_highlights = function(highlights, colors) end,
 })
 
-vim.cmd('colorscheme tokyonight')
+vim.cmd.colorscheme('tokyonight')
