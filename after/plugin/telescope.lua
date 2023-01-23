@@ -18,7 +18,6 @@ telescope.setup {
 
     prompt_prefix = " ",
     selection_caret = " ",
-    layout_strategy = "vertical",
     path_display = { "truncate" },
 
     mappings = {
@@ -53,7 +52,7 @@ telescope.setup {
     -- builtin picker
     find_files = {
       hidden = true,
-      theme = "dropdown",
+      --[[ theme = "dropdown", ]]
     },
     live_grep = {
       theme = "dropdown"
