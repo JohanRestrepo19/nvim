@@ -59,7 +59,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   renderer = {
     add_trailing = false,
     indent_markers = {
-      enable = true,
+      enable = false,
       icons = {
         corner = "└ ",
         edge = "│ ",

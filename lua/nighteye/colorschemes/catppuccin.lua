@@ -2,7 +2,7 @@ local status_ok, catppuccin = pcall(require, 'catppuccin')
 if not status_ok then return end
 
 catppuccin.setup({
-  flavour = "mocha", -- latte, frappe, macchiato, mocha
+  flavour = "frappe", -- latte, frappe, macchiato, mocha
   background = { -- :h background
     light = "latte",
     dark = "mocha",
@@ -22,12 +22,12 @@ catppuccin.setup({
     conditionals = { "italic" },
     loops = {},
     functions = {},
-    keywords = {},
-    strings = {},
+    keywords = { "bold" },
+    strings = { "italic" },
     variables = {},
     numbers = {},
     booleans = {},
-    properties = {},
+    properties = { "bold" },
     types = {},
     operators = {},
   },
