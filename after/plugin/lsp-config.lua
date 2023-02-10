@@ -102,7 +102,7 @@ nvim_lsp['volar'].setup {
   init_options = {
     typescript = {
       -- NOTE: This line probably break volar config if nvm change version of npm
-      tsdk = "/home/johan/.nvm/versions/node/v16.17.1/lib/node_modules/typescript/lib/",
+      tsdk = "/home/nighteye/.nvm/versions/node/v16.17.1/lib/node_modules/typescript/lib/",
     },
   },
   on_attach = on_attach,
