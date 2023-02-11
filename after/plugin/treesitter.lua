@@ -13,7 +13,8 @@ local colors = {
     '#957FB8	',
     '#FF9E3B',
     '#C34043',
-  }
+  },
+  empty = {}
 }
 
 ts.setup {
@@ -66,7 +67,7 @@ ts.setup {
 
   rainbow = {
     -- Default
-    colors = colors.kanagawa,
+    colors = colors.empty,
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = false,
