@@ -23,7 +23,6 @@ return packer.startup({ function(use)
   use { 'nvim-lualine/lualine.nvim' }
   use { 'norcalli/nvim-colorizer.lua' }
   use { 'onsails/lspkind-nvim' }
-  use { 'lukas-reineke/indent-blankline.nvim' }
   use { 'gpanders/editorconfig.nvim' }
   use { 'folke/todo-comments.nvim' }
 
