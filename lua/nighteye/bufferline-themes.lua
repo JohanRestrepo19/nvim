@@ -99,7 +99,8 @@ local themes = {
     fill = {
       bg = '#29394f'
     }
-  }
+  },
+  empty = {}
 }
 
 return themes
