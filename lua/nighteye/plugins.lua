@@ -39,6 +39,7 @@ return packer.startup({ function(use)
   use { 'rebelot/kanagawa.nvim' }
   use { 'folke/tokyonight.nvim' }
   use { 'catppuccin/nvim', as = 'catppuccin' }
+  use { 'Mofiqul/vscode.nvim' }
 
   -- cmp plugins
   use { 'hrsh7th/nvim-cmp' } -- The completion plugin
@@ -55,7 +56,8 @@ return packer.startup({ function(use)
 
   -- LSP
   use { 'neovim/nvim-lspconfig' } --enable LSP
-  use { 'williamboman/nvim-lsp-installer' } --simple to use lenguage server installer
+  use { 'williamboman/mason.nvim' } --simple to use lenguage server installer
+  use { 'williamboman/mason-lspconfig.nvim' }
   use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
   use { 'glepnir/lspsaga.nvim' }
   use { 'folke/lsp-colors.nvim' }
