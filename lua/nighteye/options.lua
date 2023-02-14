@@ -38,7 +38,6 @@ vim.opt.backspace = "indent,eol,start"
 
 --[[ vim.opt.list = true ]]
 --[[ vim.opt.listchars:append "eol:⏎" ]]
-
 vim.opt.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
