@@ -6,7 +6,7 @@ local opts = { noremap = true, silent = true }
 saga.setup({
   server_filetype_map = {},
   symbol_in_winbar = {
-    enable = false,
+    enable = true,
     separator = '  ',
     hide_keyword = true,
     show_file = true,

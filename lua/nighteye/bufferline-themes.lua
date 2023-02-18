@@ -1,4 +1,24 @@
 local themes = {
+  mocha = {
+    separator = {
+      fg = '#2c2d3d', -- Unselected buffer separator color (upper triangle side)
+      bg = '#181825' -- Unsleected buffer separator color (lower triangle side)
+    },
+    separator_selected = {
+      fg = '#2c2d3d', --Selected buffer separator color
+    },
+    background = {
+      fg = '#313244', -- Unselected buffer text color
+      bg = "#181825", -- Unselected buffer background (inner rectangle)
+    },
+    buffer_selected = {
+      fg = '#dfdfe0', -- Selected buffer text color
+      bold = true,
+    },
+    fill = {
+      bg = '#2c2d3d' -- Extra space for other tabs
+    }
+  },
   neosolarized = {
     separator = {
       fg = '#073642',
