@@ -1,106 +1,126 @@
 local themes = {
-  neosolarized = {
-    separator = {
-      fg = '#073642',
-      bg = '#002b36'
+    mocha = {
+        separator = {
+            fg = '#2c2d3d', -- Unselected buffer separator color (upper triangle side)
+            bg = '#181825' -- Unsleected buffer separator color (lower triangle side)
+        },
+        separator_selected = {
+            fg = '#2c2d3d', --Selected buffer separator color
+        },
+        background = {
+            fg = '#313244', -- Unselected buffer text color
+            bg = "#181825", -- Unselected buffer background (inner rectangle)
+        },
+        buffer_selected = {
+            fg = '#dfdfe0', -- Selected buffer text color
+            bold = true,
+        },
+        fill = {
+            bg = '#2c2d3d' -- Extra space for other tabs
+        }
     },
-    separator_selected = {
-      fg = '#073642'
+    neosolarized = {
+        separator = {
+            fg = '#073642',
+            bg = '#002b36'
+        },
+        separator_selected = {
+            fg = '#073642'
+        },
+        background = {
+            fg = '#657b83',
+            bg = '#002b36'
+        },
+        buffer_selected = {
+            fg = '#fdf6e3',
+            bold = true
+        },
+        fill = {
+            bg = '#073642'
+        }
     },
-    background = {
-      fg = '#657b83',
-      bg = '#002b36'
+    gruvbox = {
+        separator = {
+            fg = '#242424',
+            bg = '#3d3d3d'
+        },
+        separator_selected = {
+            fg = '#242424'
+        },
+        background = {
+            fg = '#fdf6e3',
+            bg = '#3d3d3d'
+        },
+        buffer_selected = {
+            fg = '#fdf6e3',
+            bold = true
+        },
+        fill = {
+            bg = '#242424'
+        }
     },
-    buffer_selected = {
-      fg = '#fdf6e3',
-      bold = true
+    onedark_pro = {
+        separator = {
+            fg = '#242424',
+            bg = '#282C34'
+        },
+        separator_selected = {
+            fg = '#242424'
+        },
+        background = {
+            fg = '#9BA0AB',
+            bg = '#282C34'
+        },
+        buffer_selected = {
+            fg = '#9BA0AB',
+            bold = true
+        },
+        fill = {
+            bg = '#242424'
+        }
     },
-    fill = {
-      bg = '#073642'
-    }
-  },
-  gruvbox = {
-    separator = {
-      fg = '#242424',
-      bg = '#3d3d3d'
+    kanagawa = {
+        separator = {
+            fg = '#2a2a37',
+            bg = '#1f1f28'
+        },
+        separator_selected = {
+            fg = '#2a2a37',
+        },
+        background = {
+            fg = '#717C7C',
+            bg = '#1f1f28'
+        },
+        buffer_selected = {
+            fg = '#dcd7ba',
+            bold = true
+        },
+        fill = {
+            bg = '#2a2a37'
+        }
     },
-    separator_selected = {
-      fg = '#242424'
+    nightfox = {
+        separator = {
+            fg = '#29394f',
+            bg = '#192330'
+        },
+        separator_selected = {
+            fg = '#29394f',
+        },
+        background = {
+            fg = '#717C7C',
+            bg = '#192330'
+        },
+        buffer_selected = {
+            fg = '#dfdfe0',
+            bold = true,
+            italic = true
+        },
+        fill = {
+            bg = '#29394f'
+        }
     },
-    background = {
-      fg = '#fdf6e3',
-      bg = '#3d3d3d'
-    },
-    buffer_selected = {
-      fg = '#fdf6e3',
-      bold = true
-    },
-    fill = {
-      bg = '#242424'
-    }
-  },
-  onedark_pro = {
-    separator = {
-      fg = '#242424',
-      bg = '#282C34'
-    },
-    separator_selected = {
-      fg = '#242424'
-    },
-    background = {
-      fg = '#9BA0AB',
-      bg = '#282C34'
-    },
-    buffer_selected = {
-      fg = '#9BA0AB',
-      bold = true
-    },
-    fill = {
-      bg = '#242424'
-    }
-  },
-  kanagawa = {
-    separator = {
-      fg = '#2a2a37',
-      bg = '#1f1f28'
-    },
-    separator_selected = {
-      fg = '#2a2a37',
-    },
-    background = {
-      fg = '#717C7C',
-      bg = '#1f1f28'
-    },
-    buffer_selected = {
-      fg = '#dcd7ba',
-      bold = true
-    },
-    fill = {
-      bg = '#2a2a37'
-    }
-  },
-  nightfox = {
-    separator = {
-      fg = '#29394f',
-      bg = '#192330'
-    },
-    separator_selected = {
-      fg = '#29394f',
-    },
-    background = {
-      fg = '#717C7C',
-      bg = '#192330'
-    },
-    buffer_selected = {
-      fg = '#dfdfe0',
-      bold = true,
-      italic = true
-    },
-    fill = {
-      bg = '#29394f'
-    }
-  },
-  empty = {}
+    empty = {}
 }
 
 return themes

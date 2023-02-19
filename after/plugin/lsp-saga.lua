@@ -4,16 +4,16 @@ if not status then return end
 local opts = { noremap = true, silent = true }
 
 saga.setup({
-  server_filetype_map = {},
-  symbol_in_winbar = {
-    enable = false,
-    separator = '  ',
-    hide_keyword = true,
-    show_file = true,
-    folder_level = 2,
-    respect_root = true,
-    color_mode = false,
-  },
+    server_filetype_map = {},
+    symbol_in_winbar = {
+        enable = true,
+        separator = '  ',
+        hide_keyword = true,
+        show_file = true,
+        folder_level = 2,
+        respect_root = true,
+        color_mode = false,
+    },
 })
 
 
