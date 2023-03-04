@@ -4,10 +4,10 @@ if not status_ok then return end
 -- Default options:
 kanagawa.setup({
   undercurl = true, -- enable undercurls
-  commentStyle = { italic = true },
+  commentStyle = { italic = false },
   functionStyle = {},
-  keywordStyle = { italic = true },
-  statementStyle = { bold = true },
+  keywordStyle = { bold = true },
+  statementStyle = { bold = false },
   typeStyle = {},
   variablebuiltinStyle = { italic = true },
   specialReturn = true, -- special highlight for the return keyword

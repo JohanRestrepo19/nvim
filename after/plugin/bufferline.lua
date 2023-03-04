@@ -15,7 +15,7 @@ bufferline.setup {
     show_duplicate_prefix = true, -- whether to show duplicate buffer prefix
   },
   -- NOTE: Uncomment if I want to use custom highlights.
-  highlights = themes.kanagawa,
+  highlights = themes.mocha,
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})
