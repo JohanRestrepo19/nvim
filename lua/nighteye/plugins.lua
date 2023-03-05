@@ -15,7 +15,7 @@ return packer.startup({
   function(use)
     -- Utils
     use { 'wbthomason/packer.nvim' } -- Have packer manage itself
-    use { 'nvim-lua/popup.nvim' } -- An implementation of the Popup API from vim in Neovim
+    use { 'nvim-lua/popup.nvim' }    -- An implementation of the Popup API from vim in Neovim
     use { 'windwp/nvim-autopairs' }
     use { 'numToStr/Comment.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
@@ -44,21 +44,21 @@ return packer.startup({
     use { 'shaunsingh/nord.nvim' }
 
     -- cmp plugins
-    use { 'hrsh7th/nvim-cmp' } -- The completion plugin
-    use { 'hrsh7th/cmp-buffer' } -- buffer completions
-    use { 'hrsh7th/cmp-path' } -- path completions
-    use { 'hrsh7th/cmp-cmdline' } --cmdline completions
+    use { 'hrsh7th/nvim-cmp' }         -- The completion plugin
+    use { 'hrsh7th/cmp-buffer' }       -- buffer completions
+    use { 'hrsh7th/cmp-path' }         -- path completions
+    use { 'hrsh7th/cmp-cmdline' }      --cmdline completions
     use { 'saadparwaiz1/cmp_luasnip' } -- snippet completions
     use { 'hrsh7th/cmp-nvim-lsp' }
     use { 'hrsh7th/cmp-nvim-lua' }
 
     -- snippets
-    use { 'L3MON4D3/LuaSnip' } --snippet engine
+    use { 'L3MON4D3/LuaSnip' }             --snippet engine
     use { 'rafamadriz/friendly-snippets' } -- a bunch of snippets to use
 
     -- LSP
-    use { 'neovim/nvim-lspconfig' } --enable LSP
-    use { 'williamboman/mason.nvim' } --simple to use lenguage server installer
+    use { 'neovim/nvim-lspconfig' }           --enable LSP
+    use { 'williamboman/mason.nvim' }         --simple to use lenguage server installer
     use { 'williamboman/mason-lspconfig.nvim' }
     use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
     use { 'glepnir/lspsaga.nvim' }
