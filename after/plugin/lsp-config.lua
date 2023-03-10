@@ -1,7 +1,18 @@
 require('mason').setup()
 require('mason-lspconfig').setup {
-    automatic_installation = true,
-    ensure_install = { 'lua_ls' }
+  automatic_installation = true,
+  ensure_install = {
+    'clangd',
+    'cssls',
+    'html',
+    'intelephense',
+    'jsonls',
+    'lua_ls',
+    'pyright',
+    'tailwindcss',
+    'tsserver',
+    'volar',
+  }
 }
 
 local status, nvim_lsp = pcall(require, 'lspconfig')
@@ -11,17 +22,17 @@ local colors_status, colors = pcall(require, 'lsp-colors')
 if not colors_status then return end
 
 local signs = {
-    { name = "DiagnosticSignError", text = " " },
-    { name = "DiagnosticSignWarn",  text = " " },
-    { name = "DiagnosticSignHint",  text = " " },
-    { name = "DiagnosticSignInfo",  text = " " },
+  { name = "DiagnosticSignError", text = " " },
+  { name = "DiagnosticSignWarn",  text = " " },
+  { name = "DiagnosticSignHint",  text = " " },
+  { name = "DiagnosticSignInfo",  text = " " },
 }
 
 colors.setup {
-    Error = "#db4b4b",
-    Warning = "#e0af68",
-    Information = "#0db9d7",
-    Hint = "#10B981"
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
 }
 
 for _, sign in ipairs(signs) do
@@ -29,22 +40,22 @@ for _, sign in ipairs(signs) do
 end
 
 local config = {
-    virtual_text = {
-        spacing = 2,
-        prefix = ' '
-    },
-    signs = {
-        active = signs,
-    },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-    float = {
-        focusable = true,
-        border = "rounded",
-        source = "always",
-        prefix = " ",
-    },
+  virtual_text = {
+    spacing = 2,
+    prefix = ' '
+  },
+  signs = {
+    active = signs,
+  },
+  update_in_insert = true,
+  underline = true,
+  severity_sort = true,
+  float = {
+    focusable = true,
+    border = "rounded",
+    source = "always",
+    prefix = " ",
+  },
 }
 
 vim.diagnostic.config(config)
@@ -79,55 +90,54 @@ end
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 local lsp_flags = {
-    debounce_text_changes = 150,
+  debounce_text_changes = 150,
 }
 
 local servers = {
-    'clangd',
-    'cssls',
-    'html',
-    'intelephense',
-    'tailwindcss',
-    'tsserver',
-    'pyright',
-    'jsonls',
+  'clangd',
+  'cssls',
+  'html',
+  'intelephense',
+  'tailwindcss',
+  'tsserver',
+  'pyright',
+  'jsonls',
 }
 
 for _, value in pairs(servers) do
   nvim_lsp[value].setup {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      flags = lsp_flags
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags
   }
 end
 
 -- Special languages
 
 nvim_lsp['volar'].setup {
-    init_options = {
-        typescript = {
-            -- NOTE: This line probably break volar config if nvm change version of npm
-            tsdk = "/home/johan/.nvm/versions/node/v16.17.1/lib/node_modules/typescript/lib/",
-        },
+  init_options = {
+    typescript = {
+      -- NOTE: This line probably break volar config if nvm change version of npm
+      tsdk = "/home/johan/.nvm/versions/node/v16.17.1/lib/node_modules/typescript/lib/",
     },
-    on_attach = on_attach,
-    capabilities = capabilities,
-    flags = lsp_flags
+  },
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = lsp_flags
 }
 
 nvim_lsp['lua_ls'].setup {
-    on_attach = on_attach,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the 'vim' global
-                globals = { 'vim' }
-            }
-        },
-
-        workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = vim.api.nvim_get_runtime_file('', true)
-        }
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      diagnostics = {
+        -- Get the language server to recognize the 'vim' global
+        globals = { 'vim' }
+      }
+    },
+    workspace = {
+      -- Make the server aware of Neovim runtime files
+      library = vim.api.nvim_get_runtime_file('', true)
     }
+  }
 }

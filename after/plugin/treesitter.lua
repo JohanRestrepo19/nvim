@@ -47,6 +47,7 @@ ts.setup {
     "gitcommit",
     "help",
     "html",
+    "http",
     "javascript",
     "json",
     "markdown",
