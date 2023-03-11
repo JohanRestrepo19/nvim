@@ -72,13 +72,13 @@ local on_attach = function(client, bufnr)
   if client.server_capabilities.documentFormattingProvider then
     vim.api.nvim_command [[augroup Format]]
     vim.api.nvim_command [[autocmd! * <buffer>]]
-    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+    vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 1000)]]
     vim.api.nvim_command [[augroup END]]
   end
 
   -- Disable formatting capabilities for the specified languages
 
-  local languages = { 'tsserver', 'html', 'jsonls' }
+  local languages = { 'tsserver', 'html', 'jsonls', 'volar' }
   for _, value in pairs(languages) do
     if client.name == value then
       client.server_capabilities.document_formatting = false
@@ -100,6 +100,7 @@ local servers = {
   'intelephense',
   'tailwindcss',
   'tsserver',
+  'volar',
   'pyright',
   'jsonls',
 }
@@ -113,18 +114,6 @@ for _, value in pairs(servers) do
 end
 
 -- Special languages
-
-nvim_lsp['volar'].setup {
-  init_options = {
-    typescript = {
-      -- NOTE: This line probably break volar config if nvm change version of npm
-      tsdk = "/home/johan/.nvm/versions/node/v16.17.1/lib/node_modules/typescript/lib/",
-    },
-  },
-  on_attach = on_attach,
-  capabilities = capabilities,
-  flags = lsp_flags
-}
 
 nvim_lsp['lua_ls'].setup {
   on_attach = on_attach,
