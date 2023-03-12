@@ -98,11 +98,12 @@ local servers = {
   'cssls',
   'html',
   'intelephense',
+  'jsonls',
+  'prismals',
+  'pyright',
   'tailwindcss',
   'tsserver',
   'volar',
-  'pyright',
-  'jsonls',
 }
 
 for _, value in pairs(servers) do

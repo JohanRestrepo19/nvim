@@ -32,7 +32,7 @@ ts.setup {
 
   highlight = {
     enable = true, -- false will disable the whole extension
-    disable = {}, -- list of language that will be disabled
+    disable = {},  -- list of language that will be disabled
   },
 
   indent = {
@@ -52,6 +52,7 @@ ts.setup {
     "json",
     "markdown",
     "php",
+    "prisma",
     "python",
     "typescript",
     "tsx",
