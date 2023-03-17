@@ -25,7 +25,7 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert({
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
-    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs( -1), { "i", "c" }),
+    ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     ["<C-e>"] = cmp.mapping {
@@ -38,7 +38,6 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true
     },
-
   }),
 
   sources = cmp.config.sources({
@@ -55,7 +54,7 @@ cmp.setup {
       local kind = lspkind.cmp_format({ mode = 'symbol_text', maxwidth = 50, ellipsis_char = '...', })(entry, vim_item)
       local strings = vim.split(kind.kind, "%s", { trimempty = true })
       kind.kind = (strings[1] or "") .. " "
-      kind.menu = "    (" .. (strings[2] or "") .. ")"
+      kind.menu = "    [" .. (strings[2] or "") .. "]"
       return kind
     end,
   },
