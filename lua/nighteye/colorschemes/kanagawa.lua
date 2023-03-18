@@ -3,22 +3,39 @@ if not status_ok then return end
 
 -- Default options:
 kanagawa.setup({
+  compile = true,   -- enable compiling the colorscheme
   undercurl = true, -- enable undercurls
-  commentStyle = { italic = false },
+  commentStyle = { italic = true },
   functionStyle = {},
-  keywordStyle = { bold = true },
-  statementStyle = { bold = false },
+  keywordStyle = { italic = true },
+  statementStyle = { bold = true },
   typeStyle = {},
-  variablebuiltinStyle = { italic = true },
-  specialReturn = true,    -- special highlight for the return keyword
-  specialException = true, -- special highlight for exception handling keywords
-  transparent = true,      -- do not set background color
-  dimInactive = false,     -- dim inactive window `:h hl-NormalNC`
-  globalStatus = false,    -- adjust window separators highlight for laststatus=3
-  terminalColors = true,   -- define vim.g.terminal_color_{0,17}
-  colors = {},
-  overrides = {},
-  theme = "default" -- Load "default" theme or the experimental "light" theme
+  transparent = true,    -- do not set background color
+  dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
+  terminalColors = true, -- define vim.g.terminal_color_{0,17}
+  colors = {
+    -- add/modify theme and palette colors
+    palette = {},
+    theme = {
+      wave = {},
+      lotus = {},
+      dragon = {},
+      all = {
+        ui = {
+          bg_gutter = 'none'
+        }
+      }
+    },
+  },
+  overrides = function(colors) -- add/modify highlights
+    return {}
+  end,
+  theme = "wave", -- Load "wave" theme when 'background' option is not set
+  background = {
+    -- map the value of 'background' option to a theme
+    dark = "wave", -- try "dragon" !
+    light = "lotus"
+  },
 })
 
 -- setup must be called before loading
