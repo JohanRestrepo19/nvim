@@ -4,6 +4,9 @@ if not status then return end
 local config_status, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status then return end
 
+local HEIGHT_RATIO = 0.8
+local WIDTH_RATIO = 0.5
+
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 vim.g.loaded_netrw = 1
@@ -24,7 +27,6 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
 
   view = {
-    width = 25,
     adaptive_size = true,
     hide_root_folder = false,
     side = "left",
@@ -36,23 +38,44 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
       custom_only = false,
       list = {
         { key = { "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "h", cb = tree_cb "close_node" },
-        { key = "v", cb = tree_cb "vsplit" },
-        { key = "sl", cb = "<C-w>l" }
+        { key = "h",             cb = tree_cb "close_node" },
+        { key = "v",             cb = tree_cb "vsplit" },
+        { key = "sl",            cb = "<C-w>l" }
       },
     },
-
     float = {
-      enable = false,
-      open_win_config = {
-        relative = "editor",
-        border = "rounded",
-        width = 30,
-        height = 30,
-        row = 1,
-        col = 1,
-      },
+      enable = true,
+      open_win_config = function()
+        local screen_w = vim.opt.columns:get()
+        local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
+        local window_w = screen_w * WIDTH_RATIO
+        local window_h = screen_h * HEIGHT_RATIO
+        local window_w_int = math.floor(window_w)
+        local window_h_int = math.floor(window_h)
+        local center_x = (screen_w - window_w) / 2
+        local center_y = ((vim.opt.lines:get() - window_h) / 2)
+            - vim.opt.cmdheight:get()
+        return {
+          border = 'rounded',
+          relative = 'editor',
+          row = center_y,
+          col = center_x,
+          width = window_w_int,
+          height = window_h_int,
+        }
+      end,
+      --[[ open_win_config = { ]]
+      --[[   relative = "editor", ]]
+      --[[   border = "rounded", ]]
+      --[[   width = 30, ]]
+      --[[   height = 30, ]]
+      --[[   row = 1, ]]
+      --[[   col = 1, ]]
+      --[[ }, ]]
     },
+    width = function()
+      return math.floor(vim.opt.columns:get() * WIDTH_RATIO)
+    end,
   },
 
 

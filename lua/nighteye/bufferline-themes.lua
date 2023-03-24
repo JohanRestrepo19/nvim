@@ -8,7 +8,7 @@ local themes = {
       fg = '#2c2d3d', --Selected buffer separator color
     },
     background = {
-      fg = '#313244', -- Unselected buffer text color
+      fg = '#9f9fa3', -- Unselected buffer text color
       bg = "#181825", -- Unselected buffer background (inner rectangle)
     },
     buffer_selected = {
@@ -81,22 +81,22 @@ local themes = {
   },
   kanagawa = {
     separator = {
-      fg = '#2a2a37',
-      bg = '#1f1f28'
+      fg = '#2a2a37', -- Unselected buffer separator color (upper triangle side)
+      bg = '#1f1f28' -- Unsleected buffer separator color (lower triangle side)
     },
     separator_selected = {
-      fg = '#2a2a37',
+      fg = '#2a2a37', --Selected buffer separator color
     },
     background = {
-      fg = '#717C7C',
-      bg = '#1f1f28'
+      fg = '#717C7C', -- Unselected buffer text color
+      bg = '#1f1f28' -- Unselected buffer background (inner rectangle)
     },
     buffer_selected = {
-      fg = '#dcd7ba',
+      fg = '#dcd7ba', -- Selected buffer text color
       bold = true
     },
     fill = {
-      bg = '#2a2a37'
+      bg = '#2A2A37' -- Extra space for other tabs
     }
   },
   nightfox = {

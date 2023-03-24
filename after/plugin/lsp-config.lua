@@ -115,7 +115,6 @@ for _, value in pairs(servers) do
 end
 
 -- Special languages
-
 nvim_lsp['lua_ls'].setup {
   on_attach = on_attach,
   settings = {
@@ -123,6 +122,12 @@ nvim_lsp['lua_ls'].setup {
       diagnostics = {
         -- Get the language server to recognize the 'vim' global
         globals = { 'vim' }
+      },
+      format = {
+        defaultConfig = {
+          indent_style = "space",
+          indent_size = "2"
+        }
       }
     },
     workspace = {

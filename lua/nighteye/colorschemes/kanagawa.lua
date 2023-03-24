@@ -1,6 +1,7 @@
-local status, kanagawa = pcall(require, 'kanagawa')
-if not status then return end
+local status_ok, kanagawa = pcall(require, 'kanagawa')
+if not status_ok then return end
 
+-- Default options:
 kanagawa.setup({
   compile = true,   -- enable compiling the colorscheme
   undercurl = true, -- enable undercurls
@@ -37,4 +38,5 @@ kanagawa.setup({
   },
 })
 
-vim.cmd.colorscheme('kanagawa')
+-- setup must be called before loading
+vim.cmd("colorscheme kanagawa")

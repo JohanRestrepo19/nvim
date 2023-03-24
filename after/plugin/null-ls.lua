@@ -1,9 +1,10 @@
 local status, null_ls = pcall(require, "null-ls")
-
 if not status then return end
 
 local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
+
+local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
 
 null_ls.setup({
   sources = {
@@ -19,11 +20,10 @@ null_ls.setup({
 
     -- Diagnostics
     diagnostics.flake8,
-    diagnostics.eslint.with({
+    diagnostics.eslint_d.with({
       diagnostics_format = '[eslint] #{m}\n(#{c})'
     }),
   },
-
   -- Format on save
   on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
