@@ -15,12 +15,10 @@ local fb_actions = require "telescope".extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "truncate" },
     file_ignore_patterns = { '.git/', 'dist/', 'public/js' },
-
     mappings = {
       n = {
         ["q"] = actions.close,
@@ -32,7 +30,6 @@ telescope.setup {
         ["?"] = actions.which_key,
         ["<Tab>"] = actions.delete_buffer,
       },
-
       i = {
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
@@ -40,7 +37,6 @@ telescope.setup {
         ["<CR>"] = actions.select_default,
         ["<C-l>"] = actions.complete_tag,
       },
-
     },
   },
   pickers = {
@@ -69,11 +65,6 @@ telescope.setup {
     },
   },
   extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
     file_browser = {
       theme        = "dropdown",
       hijack_netrw = true,
@@ -83,11 +74,8 @@ telescope.setup {
         },
         ['n'] = {
           -- your custom normal mode mappings
-          ['N'] = fb_actions.create,
           ['h'] = fb_actions.goto_parent_dir,
         },
-
-
       }
     }
   },
@@ -97,17 +85,17 @@ local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>ft', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
-vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts)
-
---[[ vim.keymap.set("n", "<leader>e", function() ]]
---[[   telescope.extensions.file_browser.file_browser({ ]]
---[[     path = "%:p:h", ]]
---[[     cwd = telescope_buffer_dir(), ]]
---[[     respect_gitignore = false, ]]
---[[     hidden = true, ]]
---[[     grouped = true, ]]
---[[     previewer = false, ]]
---[[     initial_mode = "normal", ]]
---[[     layout_config = { height = 40 } ]]
---[[   }) ]]
---[[ end, opts) ]]
+--[[ vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts) ]]
+vim.keymap.set("n", "<leader>e", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    select_buffer = true,
+    cwd = telescope_buffer_dir(),
+    respect_gitignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = false,
+    initial_mode = "normal",
+    layout_config = { height = 40 }
+  })
+end, opts)

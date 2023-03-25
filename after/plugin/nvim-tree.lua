@@ -44,7 +44,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
       },
     },
     float = {
-      enable = true,
+      enable = false,
       open_win_config = function()
         local screen_w = vim.opt.columns:get()
         local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
@@ -198,5 +198,5 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
 } -- END_DEFAULT_OPTS
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+--[[ local opts = { noremap = true, silent = true } ]]
+--[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
