@@ -65,6 +65,14 @@ local on_attach = function(client, bufnr)
     vim.api.nvim_command [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
     vim.api.nvim_command [[augroup END]]
   end
+
+  -- Disable formatting capabilities for the specified languages
+  local languages = { 'tsserver', 'html', 'jsonls' }
+  for _, value in pairs(languages) do
+    if client.name == value then
+      client.server_capabilities.document_formatting = false
+    end
+  end
 end
 
 -- Setup lspconfig.
