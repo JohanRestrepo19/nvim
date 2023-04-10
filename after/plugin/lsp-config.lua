@@ -10,12 +10,12 @@ if not status then return end
 local colors_status, colors = pcall(require, 'lsp-colors')
 if not colors_status then return end
 
-local signs = {
-  { name = "DiagnosticSignError", text = " " },
-  { name = "DiagnosticSignWarn",  text = " " },
-  { name = "DiagnosticSignHint",  text = " " },
-  { name = "DiagnosticSignInfo",  text = " " },
-}
+-- Diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
 
 colors.setup {
   Error = "#db4b4b",
@@ -24,17 +24,10 @@ colors.setup {
   Hint = "#10B981"
 }
 
-for _, sign in ipairs(signs) do
-  vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-end
-
 local config = {
   virtual_text = {
     spacing = 2,
-    prefix = ' '
-  },
-  signs = {
-    active = signs,
+    prefix = "● ",
   },
   update_in_insert = true,
   underline = true,
@@ -43,7 +36,7 @@ local config = {
     focusable = true,
     border = "rounded",
     source = "always",
-    prefix = " ",
+    prefix = "● ",
   },
 }
 
