@@ -3,7 +3,8 @@ if not status_ok then return end
 
 catppuccin.setup({
   flavour = "mocha", -- latte, frappe, macchiato, mocha
-  background = { -- :h background
+  background = {
+    -- :h background
     light = "latte",
     dark = "mocha",
   },
@@ -16,7 +17,7 @@ catppuccin.setup({
     percentage = 0.15,
   },
   no_italic = false, -- Force no italic
-  no_bold = false, -- Force no bold
+  no_bold = false,   -- Force no bold
   styles = {
     comments = {},
     conditionals = {},

@@ -40,7 +40,7 @@ return packer.startup({
     use { 'rebelot/kanagawa.nvim' }
     use { 'folke/tokyonight.nvim' }
     use { 'catppuccin/nvim', as = 'catppuccin' }
-    use { 'sainnhe/gruvbox-material' }
+    use { 'ellisonleao/gruvbox.nvim' }
 
     -- cmp plugins
     use { 'hrsh7th/nvim-cmp' }         -- The completion plugin
@@ -50,6 +50,7 @@ return packer.startup({
     use { 'saadparwaiz1/cmp_luasnip' } -- snippet completions
     use { 'hrsh7th/cmp-nvim-lsp' }
     use { 'hrsh7th/cmp-nvim-lua' }
+    use { 'hrsh7th/cmp-emoji' }
 
     -- snippets
     use { 'L3MON4D3/LuaSnip' }             --snippet engine

@@ -18,10 +18,6 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
   hijack_cursor = false,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = false,
-  open_on_setup_file = false,
-  open_on_tab = false,
   sort_by = "name",
   update_cwd = false,
 
@@ -44,7 +40,7 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
       },
     },
     float = {
-      enable = true,
+      enable = false,
       open_win_config = function()
         local screen_w = vim.opt.columns:get()
         local screen_h = vim.opt.lines:get() - vim.opt.cmdheight:get()
@@ -128,12 +124,6 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
     ignore_list = {},
   },
 
-  ignore_ft_on_setup = {},
-  system_open = {
-    cmd = "",
-    args = {},
-  },
-
   diagnostics = {
     enable = false,
     show_on_dirs = false,
@@ -198,5 +188,5 @@ nvim_tree.setup { -- BEGIN_DEFAULT_OPTS
 
 } -- END_DEFAULT_OPTS
 
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+--[[ local opts = { noremap = true, silent = true } ]]
+--[[ vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>", opts) ]]
