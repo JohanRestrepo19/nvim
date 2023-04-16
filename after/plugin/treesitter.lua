@@ -14,6 +14,12 @@ local colors = {
     '#FF9E3B',
     '#C34043',
   },
+  gruvbox = {
+    '#b57614	',
+    '#8F3F71',
+    '#427b58',
+    '#076678',
+  },
   empty = {}
 }
 
@@ -71,7 +77,7 @@ ts.setup {
     colors = colors.kanagawa,
     termcolors = {}, -- table of colour name strings
     enable = true,
-    extended_mode = false,
+    extended_mode = true,
     --[[ disable = { "php" }, -- list of languages you want to disable the plugin for ]]
     -- disable = { "jsx", "cpp" }, -- list of languages you want to disable the plugin for
   },
