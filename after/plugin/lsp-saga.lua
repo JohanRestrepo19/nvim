@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 local status, saga = pcall(require, 'lspsaga')
 if not status then return end
+
 local opts = { noremap = true, silent = true }
 
 saga.setup({
@@ -12,7 +13,7 @@ saga.setup({
     show_file = true,
     folder_level = 2,
     respect_root = true,
-    color_mode = false,
+    color_mode = true,
   },
 })
 
