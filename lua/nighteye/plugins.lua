@@ -19,7 +19,6 @@ return packer.startup({
     use { 'windwp/nvim-autopairs' }
     use { 'numToStr/Comment.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-    use { 'nvim-tree/nvim-tree.lua' }
     use { 'akinsho/bufferline.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'norcalli/nvim-colorizer.lua' }
