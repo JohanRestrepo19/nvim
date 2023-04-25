@@ -19,7 +19,6 @@ return packer.startup({
     use { 'windwp/nvim-autopairs' }
     use { 'numToStr/Comment.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-    use { 'nvim-tree/nvim-tree.lua' }
     use { 'akinsho/bufferline.nvim' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'norcalli/nvim-colorizer.lua' }
@@ -41,6 +40,7 @@ return packer.startup({
     use { 'folke/tokyonight.nvim' }
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'ellisonleao/gruvbox.nvim' }
+    use { 'folke/tokyonight.nvim' }
 
     -- cmp plugins
     use { 'hrsh7th/nvim-cmp' }         -- The completion plugin
@@ -61,7 +61,7 @@ return packer.startup({
     use { 'williamboman/mason.nvim' }         --simple to use lenguage server installer
     use { 'williamboman/mason-lspconfig.nvim' }
     use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
-    use { 'glepnir/lspsaga.nvim' }
+    use { 'nvimdev/lspsaga.nvim' }
     use { 'folke/lsp-colors.nvim' }
 
     --Telescope
@@ -84,6 +84,8 @@ return packer.startup({
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
+
+    ---@diagnostic disable-next-line: undefined-global
     if PACKER_BOOTSTRAP then
       require("packer").sync()
     end

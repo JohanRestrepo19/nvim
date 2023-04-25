@@ -2,7 +2,7 @@ local themes = {
   mocha = {
     separator = {
       fg = '#2c2d3d', -- Unselected buffer separator color (upper triangle side)
-      bg = '#181825' -- Unsleected buffer separator color (lower triangle side)
+      bg = '#181825'  -- Unsleected buffer separator color (lower triangle side)
     },
     separator_selected = {
       fg = '#2c2d3d', --Selected buffer separator color
@@ -41,11 +41,11 @@ local themes = {
   },
   gruvbox = {
     separator = {
-      fg = '#242424',
+      fg = '#1d2021',
       bg = '#3d3d3d'
     },
     separator_selected = {
-      fg = '#242424'
+      fg = '#1d2021'
     },
     background = {
       fg = '#fdf6e3',
@@ -56,7 +56,7 @@ local themes = {
       bold = true
     },
     fill = {
-      bg = '#242424'
+      bg = '#1d2021'
     }
   },
   onedark_pro = {
@@ -82,14 +82,14 @@ local themes = {
   kanagawa = {
     separator = {
       fg = '#2a2a37', -- Unselected buffer separator color (upper triangle side)
-      bg = '#1f1f28' -- Unsleected buffer separator color (lower triangle side)
+      bg = '#1f1f28'  -- Unsleected buffer separator color (lower triangle side)
     },
     separator_selected = {
       fg = '#2a2a37', --Selected buffer separator color
     },
     background = {
       fg = '#717C7C', -- Unselected buffer text color
-      bg = '#1f1f28' -- Unselected buffer background (inner rectangle)
+      bg = '#1f1f28'  -- Unselected buffer background (inner rectangle)
     },
     buffer_selected = {
       fg = '#dcd7ba', -- Selected buffer text color

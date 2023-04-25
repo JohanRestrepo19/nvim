@@ -3,7 +3,7 @@ require 'nighteye.base'
 require 'nighteye.maps'
 require 'nighteye.autocommands'
 require 'nighteye.plugins'
-require 'nighteye.colorschemes.gruvbox'
+require 'nighteye.colorschemes.tokyonight'
 
 local has = vim.fn.has
 local is_wsl = has "wsl"
