@@ -37,7 +37,6 @@ return packer.startup({
       requires = { 'tjdevries/colorbuddy.nvim' }
     }
     use { 'rebelot/kanagawa.nvim' }
-    use { 'folke/tokyonight.nvim' }
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'ellisonleao/gruvbox.nvim' }
     use { 'folke/tokyonight.nvim' }
