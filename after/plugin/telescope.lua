@@ -16,7 +16,7 @@ telescope.setup {
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "truncate" },
-    file_ignore_patterns = { '.git/', 'dist/*', '.nuxt/', 'public/*' },
+    file_ignore_patterns = { '.git/', '^dist/', '.nuxt/', '^public/' },
     mappings = {
       n = {
         ["q"] = actions.close,
