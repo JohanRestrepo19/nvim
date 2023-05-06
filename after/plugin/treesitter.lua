@@ -74,7 +74,7 @@ ts.setup {
 
   rainbow = {
     -- Default
-    colors = colors.default,
+    colors = colors.empty,
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = true,

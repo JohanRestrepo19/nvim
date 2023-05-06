@@ -10,9 +10,9 @@ catppuccin.setup({
   },
   transparent_background = true,
   show_end_of_buffer = false, -- show the '~' characters after the end of buffers
-  term_colors = true,
+  term_colors = false,
   dim_inactive = {
-    enabled = false,
+    enabled = true,
     shade = "dark",
     percentage = 0.15,
   },
