@@ -65,6 +65,7 @@ keymap("n", "<leader><Tab>", ": bp<CR> :bd#<CR>")
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap('i', '<C-BS>', '<C-w>', opts)
 
 -- Visual --
 -- Stay in indent mode
