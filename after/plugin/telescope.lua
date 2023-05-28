@@ -20,7 +20,7 @@ telescope.setup {
     mappings = {
       n = {
         ["q"] = actions.close,
-        ["vv"] = actions.select_vertical,
+        ["sv"] = actions.select_vertical,
         ["ss"] = actions.select_horizontal
       },
       i = {
