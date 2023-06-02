@@ -27,11 +27,6 @@ ts.setup {
 
   context_commentstring = {
     enable = true,
-    config = {
-      jsx_element = '{/* %s */}',
-      jsx_fragment = '{/* %s */}',
-      jsx_attribute = '// %s',
-    },
     enable_autocmd = false,
   },
 
