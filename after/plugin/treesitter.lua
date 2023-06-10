@@ -14,6 +14,12 @@ local colors = {
     '#FF9E3B',
     '#C34043',
   },
+  kanagawa_dragon = {
+    '#98BB6C',
+    '#7E9CD8',
+    '#FF9E3B',
+    '#E82424',
+  },
   gruvbox = {
     '#b57614	',
     '#8F3F71',
@@ -69,7 +75,7 @@ ts.setup {
 
   rainbow = {
     -- Default
-    colors = colors.kanagawa,
+    colors = colors.kanagawa_dragon,
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = false,

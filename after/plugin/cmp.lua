@@ -17,9 +17,10 @@ cmp.setup {
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+
   window = {
-    --[[ completion = cmp.config.window.bordered(), ]]
-    --[[ documentation = cmp.config.window.bordered() ]]
+    -- completion = cmp.config.window.bordered(),
+    -- documentation = cmp.config.window.bordered()
   },
 
   mapping = cmp.mapping.preset.insert({
@@ -66,6 +67,6 @@ cmp.setup {
   },
 
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
   },
 }

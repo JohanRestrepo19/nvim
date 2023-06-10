@@ -29,7 +29,7 @@ vim.opt.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.undofile = true
 vim.opt.updatetime = 300
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.writebackup = false
 vim.opt.backspace = "indent,eol,start"
 
