@@ -15,7 +15,6 @@ return packer.startup({
   function(use)
     -- Utils
     use { 'wbthomason/packer.nvim' } -- Have packer manage itself
-    use { 'nvim-lua/popup.nvim' }    -- An implementation of the Popup API from vim in Neovim
     use { 'windwp/nvim-autopairs' }
     use { 'numToStr/Comment.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
@@ -43,9 +42,7 @@ return packer.startup({
     }
     use { 'rebelot/kanagawa.nvim' }
     use { 'catppuccin/nvim', as = 'catppuccin' }
-    use { 'ellisonleao/gruvbox.nvim' }
     use { 'folke/tokyonight.nvim' }
-    use { 'navarasu/onedark.nvim' }
 
     -- cmp plugins
     use { 'hrsh7th/nvim-cmp' }         -- The completion plugin
