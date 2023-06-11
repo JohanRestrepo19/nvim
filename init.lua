@@ -6,7 +6,6 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 -- TODO:
--- Try Neovim Heirline
 
 require 'nighteye.options'
 require 'nighteye.base'

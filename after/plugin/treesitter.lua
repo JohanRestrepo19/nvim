@@ -9,16 +9,16 @@ local colors = {
     'LightGreen'
   },
   kanagawa = {
-    '#6A9589',
-    '#957FB8	',
-    '#FF9E3B',
-    '#C34043',
-  },
-  kanagawa_dragon = {
     '#98BB6C',
     '#7E9CD8',
     '#FF9E3B',
     '#E82424',
+  },
+  kanagawa_dragon = {
+    '#6A9589',
+    '#957FB8	',
+    '#FF9E3B',
+    '#C34043',
   },
   gruvbox = {
     '#b57614	',
