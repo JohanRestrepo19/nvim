@@ -1,3 +1,16 @@
+local status_ok, nord = pcall(require, 'nord')
+
+if not status_ok then
+  print('Error with bufferline themes')
+  return
+end
+
+local nord_highlights = nord.bufferline.highlights({
+  italic = true,
+  bold = true,
+  fill = '#181C24'
+})
+
 local themes = {
   mocha = {
     separator = {
@@ -117,6 +130,7 @@ local themes = {
       bg = '#2d2d33' -- Extra space for other tabs
     }
   },
+  nord = nord_highlights,
   empty = {}
 }
 
