@@ -4,7 +4,6 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.cmdheight = 1
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.conceallevel = 0
-vim.opt.cursorline = true
 vim.opt.expandtab = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.hlsearch = true

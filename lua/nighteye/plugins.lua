@@ -90,7 +90,7 @@ return packer.startup({
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
 
-    ---@diagnostic disable-next-line: undefined-global
+    --@diagnostic disable-next-line: undefined-global
     if PACKER_BOOTSTRAP then
       require("packer").sync()
     end
