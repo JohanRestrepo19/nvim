@@ -3,8 +3,8 @@ if not status then return end
 
 local lspkind = require('lspkind')
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
+local snip_status, luasnip = pcall(require, "luasnip")
+if not snip_status then
   return
 end
 

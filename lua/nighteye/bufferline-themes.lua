@@ -1,6 +1,6 @@
-local status_ok, nord = pcall(require, 'nord')
+local status, nord = pcall(require, 'nord')
 
-if not status_ok then
+if not status then
   print('Error with bufferline themes')
   return
 end

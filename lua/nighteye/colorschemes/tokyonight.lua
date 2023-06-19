@@ -1,5 +1,5 @@
-local status_ok, tokyonight = pcall(require, 'tokyonight')
-if not status_ok then return end
+local status, tokyonight = pcall(require, 'tokyonight')
+if not status then return end
 
 tokyonight.setup({
   -- your configuration comes here

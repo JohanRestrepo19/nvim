@@ -1,5 +1,5 @@
-local status_ok, catppuccin = pcall(require, 'catppuccin')
-if not status_ok then return end
+local status, catppuccin = pcall(require, 'catppuccin')
+if not status then return end
 
 catppuccin.setup({
   flavour = "mocha", -- latte, frappe, macchiato, mocha
