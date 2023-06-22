@@ -14,7 +14,7 @@ null_ls.setup({
       filetypes = {
         "javascript", "javascriptreact", "typescript", "typescriptreact",
         "vue", "css", "scss", "less", "html",
-        "yaml", "markdown", "markdown.mdx", "graphql", "handlebars"
+        "yaml", "markdown.mdx", "graphql", "handlebars"
       }
     }),
 
