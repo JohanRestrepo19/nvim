@@ -67,7 +67,6 @@ return packer.startup({
     use { 'williamboman/mason-lspconfig.nvim' }
     use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
     use { 'nvimdev/lspsaga.nvim' }
-    use { 'folke/lsp-colors.nvim' }
 
     --Telescope
     use { 'nvim-telescope/telescope.nvim' }

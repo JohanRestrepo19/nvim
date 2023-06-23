@@ -17,7 +17,7 @@ bufferline.setup {
       return " " .. icon .. count
     end
   },
-  highlights = themes.kanagawa_dragon,
+  highlights = themes.neosolarized,
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})

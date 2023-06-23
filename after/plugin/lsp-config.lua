@@ -7,37 +7,24 @@ require('mason-lspconfig').setup {
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if not status then return end
 
-local colors_status, colors = pcall(require, 'lsp-colors')
-if not colors_status then return end
-
 -- Diagnostic symbols in the sign column (gutter)
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 
 for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+  local hl = 'DiagnosticSign' .. type
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
-
-colors.setup {
-  Error = "#db4b4b",
-  Warning = "#e0af68",
-  Information = "#0db9d7",
-  Hint = "#10B981"
-}
 
 local config = {
   virtual_text = {
-    spacing = 2,
-    prefix = "● ",
+    prefix = '●',
   },
   update_in_insert = true,
-  underline = true,
-  severity_sort = true,
   float = {
     focusable = true,
-    border = "rounded",
-    source = "always",
-    prefix = "● ",
+    border = 'rounded',
+    source = 'always',
+    prefix = '● ',
   },
 }
 
@@ -108,8 +95,8 @@ nvim_lsp['lua_ls'].setup {
       },
       format = {
         defaultConfig = {
-          indent_style = "space",
-          indent_size = "2"
+          indent_style = 'space',
+          indent_size = '2'
         }
       }
     },
