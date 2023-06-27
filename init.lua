@@ -6,7 +6,7 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 -- TODO:
--- [ ] Find a way to emulate transparent background in colorschemes like neosolarized.
+-- [x] Find a way to emulate transparent background in colorschemes like neosolarized.
 
 require 'nighteye.options'
 require 'nighteye.base'

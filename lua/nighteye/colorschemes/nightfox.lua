@@ -1,11 +1,14 @@
 local status, nightfox = pcall(require, 'nightfox')
 if not status then return end
 
+local Shade = require('nightfox.lib.color')
+local hola
+
 nightfox.setup({
   options = {
     -- Compiled file's destination location
-    compile_path = vim.fn.stdpath("cache") .. "/nightfox",
-    compile_file_suffix = "_compiled", -- Compiled file suffix
+    compile_path = vim.fn.stdpath('cache') .. '/nightfox',
+    compile_file_suffix = '_compiled', -- Compiled file suffix
     transparent = true,                -- Disable setting background
     terminal_colors = true,            -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
     dim_inactive = false,              -- Non focused panes set to alternative background
@@ -20,20 +23,20 @@ nightfox.setup({
       },
     },
     styles = {           -- Style to be applied to different syntax groups
-      comments = "NONE", -- Value is any valid attr-list value `:help attr-list`
-      conditionals = "NONE",
-      constants = "NONE",
-      functions = "NONE",
-      keywords = "NONE",
-      numbers = "NONE",
-      operators = "NONE",
-      strings = "NONE",
-      types = "NONE",
-      variables = "NONE",
+      comments = 'NONE', -- Value is any valid attr-list value `:help attr-list`
+      conditionals = 'NONE',
+      constants = 'NONE',
+      functions = 'NONE',
+      keywords = 'NONE',
+      numbers = 'NONE',
+      operators = 'NONE',
+      strings = 'NONE',
+      types = 'NONE',
+      variables = 'NONE',
     },
     inverse = { -- Inverse highlight for different types
       match_paren = false,
-      visual = false,
+      visual = true,
       search = false,
     },
     modules = { -- List of various plugins and additional options
@@ -41,8 +44,23 @@ nightfox.setup({
     },
   },
   palettes = {},
-  specs = {},
-  groups = {},
+  specs = {
+    all = {
+      diag = {
+        error = Shade.new('#E30858', 0.15, -0.15),
+        warn = Shade.new('#BDBA08', 0.15, -0.15),
+      }
+    }
+  },
+  groups = {
+    all = {
+      NormalFloat                = { bg = 'palette.sel0' },
+      DiagnosticVirtualTextError = { bg = 'NONE' },
+      DiagnosticVirtualTextWarn  = { bg = 'NONE' },
+      DiagnosticVirtualTextInfo  = { bg = 'NONE' },
+      DiagnosticVirtualTextHint  = { bg = 'NONE' }
+    }
+  },
 })
 
 vim.cmd('colorscheme carbonfox')
