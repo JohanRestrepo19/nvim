@@ -46,6 +46,8 @@ return packer.startup({
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'folke/tokyonight.nvim' }
     use { 'shaunsingh/nord.nvim' }
+    use { 'ellisonleao/gruvbox.nvim' }
+    use { 'EdenEast/nightfox.nvim' }
 
     -- cmp plugins
     use { 'hrsh7th/nvim-cmp' }         -- The completion plugin

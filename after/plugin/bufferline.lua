@@ -12,7 +12,7 @@ bufferline.setup {
     show_close_icon = false,
     color_icons = true,
   },
-  highlights = themes.neosolarized,
+  highlights = themes.kanagawa_dragon,
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})
