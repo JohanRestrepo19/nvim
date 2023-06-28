@@ -131,6 +131,26 @@ local themes = {
     }
   },
   nord = nord_highlights,
+  nightfox = {
+    separator = {
+      fg = { attribute = 'bg', highlight = 'TabLineFill' },
+      bg = { attribute = 'bg', highlight = 'TabLine' }
+    },
+    separator_selected = {
+      fg = { attribute = 'bg', highlight = 'TabLineFill' }
+    },
+    background = {
+      fg = { attribute = 'fg', highlight = 'Title' },
+      bg = { attribute = 'bg', highlight = 'TabLine' }
+    },
+    buffer_selected = {
+      fg = { attribute = 'fg', highlight = 'Normal' },
+      bold = true
+    },
+    fill = {
+      bg = { attribute = 'bg', highlight = 'TabLineFill' }
+    }
+  },
   empty = {}
 }
 

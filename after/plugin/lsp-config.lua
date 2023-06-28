@@ -4,6 +4,7 @@ require('mason-lspconfig').setup {
   ensure_install = { 'lua_ls' }
 }
 
+
 local status, nvim_lsp = pcall(require, 'lspconfig')
 if not status then return end
 
@@ -15,20 +16,20 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
-local config = {
+-- Diagnostic config.
+vim.diagnostic.config({
   virtual_text = {
     prefix = '●',
   },
   update_in_insert = true,
   float = {
     focusable = true,
-    border = 'rounded',
+    border = 'solid',
     source = 'always',
     prefix = '● ',
   },
-}
+})
 
-vim.diagnostic.config(config)
 local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
 

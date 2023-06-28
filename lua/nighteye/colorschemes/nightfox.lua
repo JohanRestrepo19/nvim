@@ -2,7 +2,6 @@ local status, nightfox = pcall(require, 'nightfox')
 if not status then return end
 
 local Shade = require('nightfox.lib.color')
-local hola
 
 nightfox.setup({
   options = {
@@ -22,11 +21,11 @@ nightfox.setup({
         tritan = 0,                    -- Severity [0,1] for tritan (blue)
       },
     },
-    styles = {           -- Style to be applied to different syntax groups
-      comments = 'NONE', -- Value is any valid attr-list value `:help attr-list`
+    styles = {             -- Style to be applied to different syntax groups
+      comments = 'italic', -- Value is any valid attr-list value `:help attr-list`
       conditionals = 'NONE',
       constants = 'NONE',
-      functions = 'NONE',
+      functions = 'bold',
       keywords = 'NONE',
       numbers = 'NONE',
       operators = 'NONE',
@@ -63,4 +62,4 @@ nightfox.setup({
   },
 })
 
-vim.cmd('colorscheme carbonfox')
+vim.cmd('colorscheme nightfox')
