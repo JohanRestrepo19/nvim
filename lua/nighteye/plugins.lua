@@ -31,6 +31,7 @@ return packer.startup({
       ft = { 'markdown' },
     })
     use { 'andweeb/presence.nvim' }
+    use { 'nvim-tree/nvim-tree.lua' }
 
 
     -- Dependencies
@@ -79,9 +80,7 @@ return packer.startup({
       'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
     }
-
     use { 'p00f/nvim-ts-rainbow' }
-
     use { 'windwp/nvim-ts-autotag' }
 
     -- Git
