@@ -12,7 +12,7 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.pumheight = 5
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 2
 vim.opt.showmode = true
@@ -27,7 +27,7 @@ vim.opt.termguicolors = true
 vim.opt.timeoutlen = 1000
 vim.opt.undofile = true
 vim.opt.updatetime = 300
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.writebackup = false
 vim.opt.backspace = "indent,eol,start"
 

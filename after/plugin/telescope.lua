@@ -1,4 +1,4 @@
-local status, telescope = pcall(require, "telescope")
+local status, telescope = pcall(require, 'telescope')
 if not status then return end
 
 local actions = require('telescope.actions')
@@ -8,50 +8,50 @@ local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
 
-local fb_actions = require "telescope".extensions.file_browser.actions
+local fb_actions = require 'telescope'.extensions.file_browser.actions
 
 telescope.setup {
 
   defaults = {
-    prompt_prefix = " ",
-    selection_caret = " ",
-    path_display = { "truncate" },
+    prompt_prefix = ' ',
+    selection_caret = ' ',
+    path_display = { 'truncate' },
     file_ignore_patterns = { '.git/', '^dist/', '.nuxt/', '^public/' },
     mappings = {
       n = {
-        ["q"] = actions.close,
-        ["sv"] = actions.select_vertical,
-        ["ss"] = actions.select_horizontal
+        ['q'] = actions.close,
+        ['sv'] = actions.select_vertical,
+        ['ss'] = actions.select_horizontal
       },
       i = {
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-        ["<C-c>"] = actions.close,
-        ["<CR>"] = actions.select_default,
-        ["<C-l>"] = actions.complete_tag,
+        ['<C-j>'] = actions.move_selection_next,
+        ['<C-k>'] = actions.move_selection_previous,
+        ['<C-c>'] = actions.close,
+        ['<CR>'] = actions.select_default,
+        ['<C-l>'] = actions.complete_tag,
       },
     },
   },
   extensions = {
     file_browser = {
-      theme             = "dropdown",
+      theme             = 'dropdown',
       hijack_netrw      = true,
-      path              = "%:p:h",
+      path              = '%:p:h',
       select_buffer     = true,
       cwd               = telescope_buffer_dir(),
       respect_gitignore = false,
       hidden            = true,
       grouped           = true,
       previewer         = false,
-      initial_mode      = "normal",
+      initial_mode      = 'normal',
       layout_config     = { height = 40 },
       mappings          = {
-        ["i"] = {
+        ['i'] = {
           -- your custom insert mode mappings
         },
-        ["n"] = {
+        ['n'] = {
           -- your custom normal mode mappings
-          ["h"] = fb_actions.goto_parent_dir
+          ['h'] = fb_actions.goto_parent_dir
         },
       }
     }
@@ -67,17 +67,17 @@ telescope.setup {
     -- builtin picker
     buffers = {
       mappings = {
-        ["n"] = {
-          ["<Tab>"] = actions.delete_buffer
+        ['n'] = {
+          ['<Tab>'] = actions.delete_buffer
         },
       }
     },
     find_files = {
       hidden = true,
-      --[[ theme = "dropdown", ]]
+      --[[ theme = 'dropdown', ]]
     },
     live_grep = {
-      theme = "dropdown"
+      theme = 'dropdown'
     },
   },
 
@@ -90,4 +90,4 @@ vim.keymap.set('n', '<c-p>', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>ft', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
 --[[ vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, opts) ]]
-vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, opts)
+vim.keymap.set('n', "<leader>e", telescope.extensions.file_browser.file_browser, opts)
