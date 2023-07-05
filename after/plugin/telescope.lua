@@ -34,17 +34,17 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
-      theme             = 'dropdown',
-      hijack_netrw      = true,
-      path              = '%:p:h',
-      select_buffer     = true,
       cwd               = telescope_buffer_dir(),
-      respect_gitignore = false,
-      hidden            = true,
       grouped           = true,
-      previewer         = false,
+      hidden            = true,
+      hijack_netrw      = true,
       initial_mode      = 'normal',
-      layout_config     = { height = 40 },
+      path              = '%:p:h',
+      previewer         = true,
+      respect_gitignore = false,
+      select_buffer     = true,
+      theme             = 'dropdown',
+      layout_config     = { height = 30 },
       mappings          = {
         ['i'] = {
           -- your custom insert mode mappings
