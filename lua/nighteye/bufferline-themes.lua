@@ -131,7 +131,7 @@ local themes = {
     }
   },
   nord = nord_highlights,
-  nightfox = {
+  highlights_based = {
     separator = {
       fg = { attribute = 'bg', highlight = 'TabLineFill' },
       bg = { attribute = 'bg', highlight = 'TabLine' }

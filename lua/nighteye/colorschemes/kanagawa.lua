@@ -22,12 +22,13 @@ kanagawa.setup({
       dragon = {},
       all = {
         ui = {
-          bg_gutter = 'none'
+          bg_gutter = 'none',
         }
       }
     },
   },
   overrides = function(colors) -- add/modify highlights
+    local palette = colors.palette
     local theme = colors.theme
     return {
       Pmenu = {
@@ -40,12 +41,13 @@ kanagawa.setup({
       PmenuThumb = { bg = theme.ui.bg_p2 },
 
       -- FLoating Windows
-      NormalFloat = { bg = "none" },
-      FloatBorder = { bg = "none" },
+      NormalFloat = { bg = palette.sumiInk3 },
+      FloatBorder = { bg = 'none' },
       FloatTitle = { bg = "none" },
+      NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 }
     }
   end,
-  theme = "dragon", -- Load "wave" theme when 'background' option is not set
+  theme = "wave", -- Load "wave" theme when 'background' option is not set
   background = {
     -- map the value of 'background' option to a theme
     dark = "dragon", -- try "dragon" !

@@ -30,7 +30,6 @@ return packer.startup({
       setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
       ft = { 'markdown' },
     })
-    use { 'andweeb/presence.nvim' }
     use { 'nvim-tree/nvim-tree.lua' }
 
 
