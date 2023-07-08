@@ -75,7 +75,7 @@ ts.setup {
 
   rainbow = {
     -- Default
-    colors = colors.default,
+    colors = colors.kanagawa_dragon,
     termcolors = {}, -- table of colour name strings
     enable = true,
     extended_mode = false,

@@ -4,14 +4,12 @@ if not status then return end
 local lspkind = require('lspkind')
 
 local snip_status, luasnip = pcall(require, "luasnip")
-if not snip_status then
-  return
-end
+if not snip_status then return end
 
 -- Load default snippets
 require("luasnip/loaders/from_vscode").lazy_load()
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -19,8 +17,8 @@ cmp.setup {
   },
 
   window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered()
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered()
   },
 
   mapping = cmp.mapping.preset.insert({
@@ -69,4 +67,4 @@ cmp.setup {
   experimental = {
     ghost_text = false,
   },
-}
+})
