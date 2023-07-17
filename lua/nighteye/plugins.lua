@@ -7,7 +7,9 @@ vim.cmd [[
 ]]
 
 -- Use a protected call so we don't error out on first use
-local status, packer = pcall(require, "packer")
+-- local status, packer = pcall(require, "packer")
+-- if not status then return end
+local status, packer = pcall(require, 'packer')
 if not status then return end
 
 -- Install your plugins here

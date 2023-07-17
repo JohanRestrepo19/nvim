@@ -36,4 +36,4 @@ nvim_tree.setup({
 
 -- Outside tree mappings
 local opts = { noremap = true, silent = true, nowait = true }
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
+-- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<cr>', opts)
