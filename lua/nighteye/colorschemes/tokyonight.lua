@@ -34,7 +34,7 @@ tokyonight.setup({
   ---@param highlights Highlights
   ---@param colors ColorScheme
   on_highlights = function(hl, colors)
-    hl.NormalFloat                = { bg = colors.terminal_black }
+    hl.NormalFloat                = { bg = colors.bg_dark }
     hl.DiagnosticVirtualTextError = { bg = colors.none, fg = colors.error }
     hl.DiagnosticVirtualTextWarn  = { bg = colors.none, fg = colors.warning }
     hl.DiagnosticVirtualTextInfo  = { bg = colors.none, fg = colors.info }
