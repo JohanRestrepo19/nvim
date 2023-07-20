@@ -23,6 +23,7 @@ return packer.startup({
       ft = { 'markdown' },
     })
     use { 'nvim-tree/nvim-tree.lua' }
+    use { 'lukas-reineke/indent-blankline.nvim' }
 
 
     -- Dependencies
