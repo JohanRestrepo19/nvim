@@ -6,9 +6,7 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 -- TODO:
--- [x] Find a way to emulate transparent background in colorschemes like neosolarized.
--- [x] Modify kanagawa bufferline theme to denpend on colorscheme highlights.
--- [x] Modify tokyonight colorscheme and add NormalFloat highlights.
+-- Update neovim config on 21/11/2023
 
 require 'nighteye.options'
 require 'nighteye.base'
@@ -16,4 +14,4 @@ require 'nighteye.highlights'
 require 'nighteye.maps'
 require 'nighteye.autocommands'
 require 'nighteye.plugins'
-require 'nighteye.colorschemes.tokyonight'
+require 'nighteye.colorschemes.neosolarized'

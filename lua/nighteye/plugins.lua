@@ -38,8 +38,6 @@ return packer.startup({
     use { 'rebelot/kanagawa.nvim' }
     use { 'catppuccin/nvim', as = 'catppuccin' }
     use { 'folke/tokyonight.nvim' }
-    use { 'shaunsingh/nord.nvim' }
-    use { 'ellisonleao/gruvbox.nvim' }
     use { 'EdenEast/nightfox.nvim' }
 
     -- cmp plugins

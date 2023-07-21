@@ -1,4 +1,4 @@
-local status, bufferline = pcall(require, "bufferline")
+local status, bufferline = pcall(require, 'bufferline')
 if not status then return end
 
 local themes = require('nighteye.bufferline-themes')
@@ -12,7 +12,7 @@ bufferline.setup {
     show_close_icon = false,
     color_icons = true,
   },
-  highlights = themes.highlights_based
+  highlights = themes.neosolarized
 }
 
 vim.api.nvim_set_keymap('n', '<Tab>', '<cmd>BufferLineCycleNext<cr>', {})
