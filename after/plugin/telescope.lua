@@ -17,6 +17,9 @@ telescope.setup {
     selection_caret = ' ',
     path_display = { 'truncate' },
     file_ignore_patterns = { '.git/', '^dist/', '.nuxt/', '^public/' },
+    layout_config = {
+      prompt_position = 'top',
+    },
     mappings = {
       n = {
         ['q'] = actions.close,
@@ -31,30 +34,6 @@ telescope.setup {
         ['<C-l>'] = actions.complete_tag,
       },
     },
-  },
-  extensions = {
-    file_browser = {
-      cwd               = telescope_buffer_dir(),
-      grouped           = true,
-      hidden            = true,
-      hijack_netrw      = true,
-      initial_mode      = 'normal',
-      path              = '%:p:h',
-      previewer         = true,
-      respect_gitignore = false,
-      select_buffer     = true,
-      theme             = 'dropdown',
-      layout_config     = { height = 30 },
-      mappings          = {
-        ['i'] = {
-          -- your custom insert mode mappings
-        },
-        ['n'] = {
-          -- your custom normal mode mappings
-          ['h'] = fb_actions.goto_parent_dir
-        },
-      }
-    }
   },
 
   pickers = {
@@ -74,13 +53,34 @@ telescope.setup {
     },
     find_files = {
       hidden = true,
-      --[[ theme = 'dropdown', ]]
     },
-    live_grep = {
-      theme = 'dropdown'
-    },
+    live_grep = {},
   },
 
+  extensions = {
+    file_browser = {
+      cwd               = telescope_buffer_dir(),
+      grouped           = true,
+      hidden            = true,
+      hijack_netrw      = true,
+      initial_mode      = 'normal',
+      path              = '%:p:h',
+      previewer         = false,
+      respect_gitignore = false,
+      select_buffer     = true,
+      theme             = 'dropdown',
+      layout_config     = { height = 30 },
+      mappings          = {
+        ['i'] = {
+          -- your custom insert mode mappings
+        },
+        ['n'] = {
+          -- your custom normal mode mappings
+          ['h'] = fb_actions.goto_parent_dir
+        },
+      }
+    }
+  },
 }
 
 telescope.load_extension 'file_browser'
