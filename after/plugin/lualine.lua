@@ -5,6 +5,7 @@ lualine.setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
+    globalstatus = true,
     component_separators = '|',
     section_separators = { left = '', right = '' },
     disabled_filetypes = {

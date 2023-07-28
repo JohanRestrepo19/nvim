@@ -21,6 +21,16 @@ null_ls.setup({
     -- Diagnostics
     diagnostics.flake8,
     diagnostics.eslint_d.with({
+      condition = function(utils)
+        return utils.root_has_file({
+          '.eslintrc.js',
+          '.eslintrc.cjs',
+          'eslintrc.yaml',
+          'eslintrc.yml',
+          'eslintrc.json',
+          'package.json',
+        })
+      end,
       diagnostics_format = '[eslint] #{m}\n(#{c})'
     }),
   },
