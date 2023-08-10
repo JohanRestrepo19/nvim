@@ -12,7 +12,7 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.numberwidth = 2
 vim.opt.pumheight = 5
-vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 vim.opt.scrolloff = 10
 vim.opt.shiftwidth = 2
 vim.opt.showmode = true
@@ -31,8 +31,8 @@ vim.opt.wrap = false
 vim.opt.writebackup = false
 vim.opt.backspace = "indent,eol,start"
 
-vim.opt.list = true
-vim.opt.listchars:append "eol:↲"
+-- vim.opt.list = true
+-- vim.opt.listchars:append "eol:↲"
 
 vim.opt.shortmess:append "c"
 vim.cmd "set whichwrap+=<,>,[,],h,l"

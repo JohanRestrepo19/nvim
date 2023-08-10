@@ -6,9 +6,9 @@ kanagawa.setup({
   compile = true,   -- enable compiling the colorscheme
   undercurl = true, -- enable undercurls
   commentStyle = { italic = false },
-  functionStyle = { bold = true, italic = false },
-  keywordStyle = { bold = true, italic = false },
-  statementStyle = { bold = true, italic = false },
+  functionStyle = { bold = false, italic = false },
+  keywordStyle = { bold = false, italic = false },
+  statementStyle = { bold = false, italic = false },
   typeStyle = {},
   transparent = true,    -- do not set background color
   dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
