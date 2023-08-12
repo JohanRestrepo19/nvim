@@ -1,10 +1,4 @@
-local status, catppuccin = pcall(require, 'catppuccin.groups.integrations.bufferline')
-if not status then return end
-
-local catppuccin_highlights = catppuccin.get()
-
 local themes = {
-  catppuccin = catppuccin_highlights,
   neosolarized = {
     separator = {
       fg = '#073642',
@@ -25,7 +19,6 @@ local themes = {
       bg = '#073642'
     }
   },
-  nord = nord_highlights,
   highlights_based = {
     separator = {
       fg = { attribute = 'bg', highlight = 'TabLineFill' },
