@@ -38,6 +38,7 @@ return packer.startup({
     use { 'rebelot/kanagawa.nvim' }
     use { 'folke/tokyonight.nvim' }
     use { 'EdenEast/nightfox.nvim' }
+    use { 'navarasu/onedark.nvim' }
 
     -- cmp plugins
     use { 'hrsh7th/nvim-cmp' }         -- The completion plugin
