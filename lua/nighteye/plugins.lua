@@ -59,7 +59,7 @@ return packer.startup({
     use { 'williamboman/mason.nvim' }         --simple to use lenguage server installer
     use { 'williamboman/mason-lspconfig.nvim' }
     use { 'jose-elias-alvarez/null-ls.nvim' } --Formatting
-    use { 'nvimdev/lspsaga.nvim' }
+    use { 'nvimdev/lspsaga.nvim', after = 'nvim-lspconfig' }
 
     --Telescope
     use { 'nvim-telescope/telescope.nvim' }

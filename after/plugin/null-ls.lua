@@ -20,7 +20,7 @@ null_ls.setup({
 
     -- Diagnostics
     diagnostics.flake8,
-    diagnostics.eslint_d.with({
+    diagnostics.eslint.with({
       condition = function(utils)
         return utils.root_has_file({
           '.eslintrc.js',
@@ -28,6 +28,7 @@ null_ls.setup({
           'eslintrc.yaml',
           'eslintrc.yml',
           'eslintrc.json',
+          '.eslintrc.json',
           'package.json',
         })
       end,
