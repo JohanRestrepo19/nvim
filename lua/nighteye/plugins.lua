@@ -22,7 +22,6 @@ return packer.startup({
       setup = function() vim.g.mkdp_filetypes = { 'markdown' } end,
       ft = { 'markdown' },
     })
-    use { 'nvim-tree/nvim-tree.lua' }
     use { 'lukas-reineke/indent-blankline.nvim' }
 
 
