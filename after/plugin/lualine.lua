@@ -4,10 +4,10 @@ if not status then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'solarized_dark',
+    theme = 'auto',
     globalstatus = false,
-    component_separators = '|',
-    section_separators = { left = '', right = '' },
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
     disabled_filetypes = {
       'packer',
       'NvimTree',
@@ -24,9 +24,7 @@ lualine.setup {
     winbar = 1000,
   },
   sections = {
-    lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 }
-    },
+    lualine_a = { 'mode' },
     lualine_b = { 'branch' },
     lualine_c = { {
       'filename',
@@ -48,9 +46,7 @@ lualine.setup {
       'filetype'
     },
     lualine_y = { 'progress' },
-    lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 }
-    }
+    lualine_z = { 'location' }
   },
   inactive_sections = {
     lualine_a = {},
