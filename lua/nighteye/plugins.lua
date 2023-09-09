@@ -39,6 +39,7 @@ return packer.startup({
     use { 'EdenEast/nightfox.nvim' }
     use { 'navarasu/onedark.nvim' }
     use { 'sainnhe/gruvbox-material' }
+    use { 'bluz71/vim-nightfly-colors' }
 
     -- cmp plugins
     use { 'hrsh7th/nvim-cmp' }         -- The completion plugin
