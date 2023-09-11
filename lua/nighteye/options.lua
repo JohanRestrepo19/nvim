@@ -30,6 +30,7 @@ vim.opt.updatetime = 300
 vim.opt.wrap = false
 vim.opt.writebackup = false
 vim.opt.backspace = "indent,eol,start"
+vim.opt.signcolumn = "yes"
 
 -- vim.opt.list = true
 -- vim.opt.listchars:append "eol:↲"
