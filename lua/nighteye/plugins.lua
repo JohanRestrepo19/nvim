@@ -23,6 +23,7 @@ return packer.startup({
       ft = { 'markdown' },
     })
     use { 'lukas-reineke/indent-blankline.nvim' }
+    use { 'hiphish/rainbow-delimiters.nvim' }
 
 
     -- Dependencies

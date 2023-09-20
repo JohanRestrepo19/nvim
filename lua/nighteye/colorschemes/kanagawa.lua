@@ -5,11 +5,11 @@ if not status then return end
 kanagawa.setup({
   compile = true,   -- enable compiling the colorscheme
   undercurl = true, -- enable undercurls
-  commentStyle = { italic = false },
-  functionStyle = { bold = false, italic = false },
+  commentStyle = { italic = true },
+  functionStyle = { bold = true, italic = false },
   keywordStyle = { bold = false, italic = false },
   statementStyle = { bold = false, italic = false },
-  typeStyle = {},
+  typeStyle = { bold = true },
   transparent = true,    -- do not set background color
   dimInactive = false,   -- dim inactive window `:h hl-NormalNC`
   terminalColors = true, -- define vim.g.terminal_color_{0,17}
