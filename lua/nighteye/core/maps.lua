@@ -1,20 +1,10 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
---Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
-
--- Normal --
 
 keymap('n', '<leader>w', ':w<cr>', opts)
 
@@ -24,7 +14,6 @@ keymap('n', '-', '<C-x>', opts)
 
 -- Select all
 keymap('n', '<leader>a', 'gg<S-v>G', opts)
-
 
 -- Tabs
 keymap('n', 'te', ':tabedit<Return> ', opts)
