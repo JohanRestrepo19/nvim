@@ -18,12 +18,12 @@
 -- [x] indentline (lazyload)
 -- [x] todo-comments
 -- [x] nvim-colorizer
--- [ ] lualine (or equivalent) 
+-- [x] cmp
+-- [x] bufferline (or equivalent)
+-- [x] lualine (or equivalent) 
 
 -- [ ] lsp (and all its parts)
 -- [ ] null-ls (or equivalent)
--- [ ] cmp
--- [ ] bufferline (or equivalent)
 
 
 require('nighteye')
