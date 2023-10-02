@@ -7,7 +7,6 @@
 
 -- TODO:
 -- [ ] Customize bufferline to like vim airline.
--- [ ] Change lsp format capabilites to its own shorcut and not when saving a file.
 
 -- Plugins
 -- [x] treesitter
@@ -21,8 +20,8 @@
 -- [x] cmp
 -- [x] bufferline (or equivalent)
 -- [x] lualine (or equivalent) 
+-- [x] lsp (and all its parts)
 
--- [ ] lsp (and all its parts)
 -- [ ] null-ls (or equivalent)
 
 
