@@ -20,7 +20,7 @@ return {
       update_in_insert = true,
       float = {
         focusable = true,
-        border = 'solid',
+        border = 'single',
         source = 'always',
         prefix = '● ',
       },
@@ -29,10 +29,9 @@ return {
     local on_attach = function(_, bufnr)
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-      vim.keymap.set('n', 'gl', vim.diagnostic.open_float, bufopts)
       vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
       vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, bufopts)
-      vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+      -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
       vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, bufopts)
       vim.keymap.set('n', '<leader>ff', function()
         vim.lsp.buf.format({ async = true })
