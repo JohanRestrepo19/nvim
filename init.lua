@@ -6,6 +6,5 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 -- TODO:
--- [ ] Customize bufferline to like vim airline.
 
 require('nighteye')
