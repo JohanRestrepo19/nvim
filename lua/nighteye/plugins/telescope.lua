@@ -1,4 +1,4 @@
-return { 
+return {
   'nvim-telescope/telescope.nvim',
   branch = '0.1.x',
   dependencies = { 'nvim-telescope/telescope-file-browser.nvim' },
