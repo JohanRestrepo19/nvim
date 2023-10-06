@@ -1,6 +1,7 @@
 return {
   'folke/tokyonight.nvim',
-  priority = 1000,
+  lazy = true,
+  -- priority = 1000,
   config = function()
     local tokyonight = require('tokyonight')
 
