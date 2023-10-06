@@ -26,8 +26,8 @@ return {
 
     mason_tool_installer.setup({
       ensure_installed = {
-        -- 'autopep8',
-        -- 'flake8',
+        'autopep8',
+        'flake8',
         'prettierd',
         'eslint_d'
       }

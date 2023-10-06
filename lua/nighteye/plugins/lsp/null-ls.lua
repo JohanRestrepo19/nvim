@@ -9,7 +9,7 @@ return {
     null_ls.setup({
       sources = {
         -- Formatters
-        -- formatting.autopep8,
+        formatting.autopep8,
         formatting.prettierd.with({
           filetypes = {
             "javascript", "javascriptreact", "typescript", "typescriptreact",
@@ -19,7 +19,7 @@ return {
         }),
 
         -- Diagnostics
-        -- diagnostics.flake8,
+        diagnostics.flake8,
         diagnostics.eslint_d.with({
           condition = function(utils)
             return utils.root_has_file({
