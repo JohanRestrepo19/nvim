@@ -15,12 +15,12 @@ return {
 
       highlight = {
         enable = true, -- false will disable the whole extension
-        disable = { },  -- list of language that will be disabled
+        disable = {},  -- list of language that will be disabled
       },
 
       indent = {
         enable = true,
-        disable = { }
+        disable = {}
       },
 
       ensure_installed = {
@@ -48,6 +48,6 @@ return {
       },
 
       ignore_install = { '' }, -- List of parsers to ignore installing
-    }) 
+    })
   end,
 }

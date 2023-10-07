@@ -2,7 +2,7 @@ return {
   'windwp/nvim-autopairs',
   event = 'InsertEnter',
   config = function()
-    autopairs = require('nvim-autopairs')
+    local autopairs = require('nvim-autopairs')
     autopairs.setup {
       check_ts = true,
       ts_config = {
@@ -25,10 +25,9 @@ return {
     }
 
 
-    -- TODO: This plugin depends on cmp.
-    --local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
-    --local cmp_status, cmp = pcall(require, 'cmp')
-    --if not cmp_status then return end
-    --cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done { map_char = { tex = '' } })
+    local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
+    local cmp_status, cmp = pcall(require, 'cmp')
+    if not cmp_status then return end
+    cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done { map_char = { tex = '' } })
   end,
 }
