@@ -49,6 +49,7 @@ return {
       'prismals',
       'pyright',
       'tailwindcss',
+      'taplo',
       'tsserver',
     }
 
