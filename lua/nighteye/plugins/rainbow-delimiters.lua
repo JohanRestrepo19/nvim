@@ -11,15 +11,16 @@ return {
       query = {
         [''] = 'rainbow-delimiters',
         lua = 'rainbow-blocks',
+        tsx = 'rainbow-parens'
       },
       highlight = {
-        'RainbowDelimiterRed',
         'RainbowDelimiterYellow',
         'RainbowDelimiterBlue',
-        'RainbowDelimiterOrange',
         'RainbowDelimiterGreen',
         'RainbowDelimiterViolet',
         'RainbowDelimiterCyan',
+        'RainbowDelimiterOrange',
+        'RainbowDelimiterRed',
       },
     }
   end
