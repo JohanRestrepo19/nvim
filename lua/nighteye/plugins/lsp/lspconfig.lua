@@ -7,7 +7,7 @@ return {
     local lspconfig = require('lspconfig')
 
     -- Diagnostic symbols in the sign column (gutter)
-    local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+    local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 
     for type, icon in pairs(signs) do
       local hl_name = 'DiagnosticSign' .. type
