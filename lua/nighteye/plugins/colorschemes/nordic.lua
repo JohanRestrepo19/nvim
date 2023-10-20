@@ -1,12 +1,14 @@
 return {
-  'AlexvZyl/nordic.nvim',
+  "AlexvZyl/nordic.nvim",
   lazy = true,
   -- priority = 1000,
   config = function()
-    local nordic = require('nordic')
+    local nordic = require("nordic")
     nordic.setup({
       -- This callback can be used to override the colors used in the palette.
-      on_palette = function(palette) return palette end,
+      on_palette = function(palette)
+        return palette
+      end,
       -- Enable bold keywords.
       bold_keywords = false,
       -- Enable italic comments.
@@ -28,17 +30,17 @@ return {
         -- Bold cursorline number.
         bold_number = true,
         -- Avialable styles: 'dark', 'light'.
-        theme = 'dark',
+        theme = "dark",
         -- Blending the cursorline bg with the buffer bg.
         blend = 0.7,
       },
       noice = {
         -- Available styles: `classic`, `flat`.
-        style = 'flat',
+        style = "flat",
       },
       telescope = {
         -- Available styles: `classic`, `flat`.
-        style = 'flat',
+        style = "flat",
       },
       leap = {
         -- Dims the backdrop when using leap.
@@ -47,8 +49,8 @@ return {
       ts_context = {
         -- Enables dark background for treesitter-context window
         dark_background = true,
-      }
+      },
     })
     nordic.load()
-  end
+  end,
 }

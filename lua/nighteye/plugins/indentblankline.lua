@@ -1,18 +1,18 @@
 return {
-  'lukas-reineke/indent-blankline.nvim',
-  main = 'ibl',
+  "lukas-reineke/indent-blankline.nvim",
+  main = "ibl",
   keys = {
-    { '<leader>ti', ':IBLToggle<cr>', desc = 'IndentBlankline' }
+    { "<leader>ti", ":IBLToggle<cr>", desc = "IndentBlankline" },
   },
   config = function()
-    local ibl = require('ibl')
+    local ibl = require("ibl")
     ibl.setup({
       enabled = true,
       indent = { char = "▏" },
       scope = {
         show_start = false,
-        show_end = false
-      }
+        show_end = false,
+      },
     })
-  end
+  end,
 }

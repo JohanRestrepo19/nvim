@@ -7,4 +7,4 @@
 
 -- TODO:
 
-require('nighteye')
+require("nighteye")

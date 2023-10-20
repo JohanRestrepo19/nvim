@@ -11,13 +11,12 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require('lazy').setup({
-  { import = 'nighteye.plugins' },
-  { import = 'nighteye.plugins.lsp' },
-  { import = 'nighteye.plugins.colorschemes' },
+require("lazy").setup({
+  { import = "nighteye.plugins" },
+  { import = "nighteye.plugins.lsp" },
+  { import = "nighteye.plugins.colorschemes" },
 }, {
-    change_detection = {
-      notify = false
-    }
-  })
-
+  change_detection = {
+    notify = false,
+  },
+})

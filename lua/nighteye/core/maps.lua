@@ -5,36 +5,36 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap('n', '<leader>w', ':w<cr>', opts)
+keymap("n", "<leader>w", ":w<cr>", opts)
 
 -- Increment/decrement
-keymap('n', '+', '<C-a>', opts)
-keymap('n', '-', '<C-x>', opts)
+keymap("n", "+", "<C-a>", opts)
+keymap("n", "-", "<C-x>", opts)
 
 -- Select all
-keymap('n', '<leader>a', 'gg<S-v>G', opts)
+keymap("n", "<leader>a", "gg<S-v>G", opts)
 
 -- Tabs
-keymap('n', 'te', ':tabedit<Return> ', opts)
+keymap("n", "te", ":tabedit<Return> ", opts)
 
 -- Split Window
-keymap('n', 'ss', ':split<Return><C-w>w', opts)
-keymap('n', 'sv', ':vsplit<Return><C-w>w', opts)
+keymap("n", "ss", ":split<Return><C-w>w", opts)
+keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
 
 -- Move Window
-keymap('n', '<S-Tab>', ':tabprev<Return>', opts)
-keymap('n', '<tab>', ':tabnext<Return>', opts)
+keymap("n", "<S-Tab>", ":tabprev<Return>", opts)
+keymap("n", "<tab>", ":tabnext<Return>", opts)
 
 -- Better window navigation
-keymap('n', 'sh', '<C-w>h', opts)
-keymap('n', 'sj', '<C-w>j', opts)
-keymap('n', 'sk', '<C-w>k', opts)
-keymap('n', 'sl', '<C-w>l', opts)
-keymap('n', '<C-l>', '<C-w>l', opts)
+keymap("n", "sh", "<C-w>h", opts)
+keymap("n", "sj", "<C-w>j", opts)
+keymap("n", "sk", "<C-w>k", opts)
+keymap("n", "sl", "<C-w>l", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Better Vertical navigation
-keymap('n', '}', '<C-d>')
-keymap('n', '{', '<C-u>')
+keymap("n", "}", "<C-d>")
+keymap("n", "{", "<C-u>")
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
@@ -49,7 +49,7 @@ keymap("n", "<leader><Tab>", ": bp<CR> :bd#<CR>")
 
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
-keymap('i', '<C-BS>', '<C-w>', opts)
+keymap("i", "<C-BS>", "<C-w>", opts)
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)

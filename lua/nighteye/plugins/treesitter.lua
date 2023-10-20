@@ -1,11 +1,11 @@
 return {
-  'nvim-treesitter/nvim-treesitter',
+  "nvim-treesitter/nvim-treesitter",
   dependencies = {
-    'JoosepAlviste/nvim-ts-context-commentstring'
+    "JoosepAlviste/nvim-ts-context-commentstring",
   },
-  build = ':TSUpdate',
+  build = ":TSUpdate",
   config = function()
-    local ts = require('nvim-treesitter.configs')
+    local ts = require("nvim-treesitter.configs")
 
     ts.setup({
       context_commentstring = {
@@ -15,39 +15,39 @@ return {
 
       highlight = {
         enable = true, -- false will disable the whole extension
-        disable = {},  -- list of language that will be disabled
+        disable = {}, -- list of language that will be disabled
       },
 
       indent = {
         enable = true,
-        disable = {}
+        disable = {},
       },
 
       ensure_installed = {
-        'lua',
-        'c',
-        'css',
-        'gitcommit',
-        'html',
-        'javascript',
-        'json',
-        'markdown',
-        'markdown_inline',
-        'php',
-        'prisma',
-        'python',
-        'typescript',
-        'tsx',
-        'vim',
-        'vimdoc',
-        'yaml',
+        "lua",
+        "c",
+        "css",
+        "gitcommit",
+        "html",
+        "javascript",
+        "json",
+        "markdown",
+        "markdown_inline",
+        "php",
+        "prisma",
+        "python",
+        "typescript",
+        "tsx",
+        "vim",
+        "vimdoc",
+        "yaml",
       },
 
       autotag = {
-        enable = true
+        enable = true,
       },
 
-      ignore_install = { '' }, -- List of parsers to ignore installing
+      ignore_install = { "" }, -- List of parsers to ignore installing
     })
   end,
 }

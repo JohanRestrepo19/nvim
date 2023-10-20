@@ -31,13 +31,13 @@ vim.opt.writebackup = false
 vim.opt.backspace = "indent,eol,start"
 vim.opt.signcolumn = "yes"
 
-vim.opt.shortmess:append "c"
-vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
+vim.opt.shortmess:append("c")
+vim.cmd("set whichwrap+=<,>,[,],h,l")
+vim.cmd([[set iskeyword+=-]])
 
 vim.opt.title = true
 vim.opt.autoindent = true
 vim.opt.showcmd = true
 vim.opt.laststatus = 2
-vim.opt.backspace = 'start,eol,indent'
-vim.opt.path:append { '**' }
+vim.opt.backspace = "start,eol,indent"
+vim.opt.path:append({ "**" })

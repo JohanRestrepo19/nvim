@@ -1,5 +1,5 @@
 return {
-  'nvimtools/none-ls.nvim',
+  "nvimtools/none-ls.nvim",
   config = function()
     local null_ls = require("null-ls")
 
@@ -12,10 +12,20 @@ return {
         formatting.autopep8,
         formatting.prettierd.with({
           filetypes = {
-            "javascript", "javascriptreact", "typescript", "typescriptreact",
-            "vue", "css", "scss", "less", "html",
-            "yaml", "markdown.mdx", "graphql", "handlebars"
-          }
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "vue",
+            "css",
+            "scss",
+            "less",
+            "html",
+            "yaml",
+            "markdown.mdx",
+            "graphql",
+            "handlebars",
+          },
         }),
 
         -- Diagnostics
@@ -23,18 +33,18 @@ return {
         diagnostics.eslint_d.with({
           condition = function(utils)
             return utils.root_has_file({
-              '.eslintrc.js',
-              '.eslintrc.cjs',
-              'eslintrc.yaml',
-              'eslintrc.yml',
-              'eslintrc.json',
-              '.eslintrc.json',
-              'package.json',
+              ".eslintrc.js",
+              ".eslintrc.cjs",
+              "eslintrc.yaml",
+              "eslintrc.yml",
+              "eslintrc.json",
+              ".eslintrc.json",
+              "package.json",
             })
           end,
-          diagnostics_format = '[eslint] #{m}\n(#{c})'
+          diagnostics_format = "[eslint] #{m}\n(#{c})",
         }),
       },
     })
-  end
+  end,
 }
