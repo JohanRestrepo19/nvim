@@ -32,6 +32,7 @@ return {
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
       vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, bufopts)
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, bufopts)
+      vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
       vim.keymap.set("n", "<leader>ff", function()
         vim.lsp.buf.format({ async = true })
       end, bufopts)
