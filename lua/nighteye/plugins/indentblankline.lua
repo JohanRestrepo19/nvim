@@ -4,6 +4,7 @@ return {
   keys = {
     { "<leader>ti", ":IBLToggle<cr>", desc = "IndentBlankline" },
   },
+  ft = { "python" },
   config = function()
     local ibl = require("ibl")
     ibl.setup({
