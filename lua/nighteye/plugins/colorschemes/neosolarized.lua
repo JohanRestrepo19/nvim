@@ -1,7 +1,7 @@
 return {
   "svrana/neosolarized.nvim",
   dependencies = { "tjdevries/colorbuddy.vim" },
-  lazy = false,
+  lazy = true,
   priority = 1000,
   config = function()
     local neosolarized = require("neosolarized")
