@@ -1,8 +1,8 @@
 return {
   "catppuccin/nvim",
   name = "catppuccin",
-  lazy = true,
-  -- priority = 1000,
+  lazy = false,
+  priority = 1000,
   config = function()
     local catppuccin = require("catppuccin")
 
