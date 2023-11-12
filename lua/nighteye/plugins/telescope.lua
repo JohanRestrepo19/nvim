@@ -14,12 +14,14 @@ return {
     local fb_actions = require("telescope").extensions.file_browser.actions
 
     telescope.setup({
+      -- layout_strategies.center()
 
       defaults = {
         prompt_prefix = " ",
         selection_caret = " ",
         path_display = { "truncate" },
         file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
+        layout_strategy = "vertical",
         layout_config = {
           prompt_position = "top",
         },
@@ -50,6 +52,9 @@ return {
         },
         find_files = {
           hidden = true,
+          layout_config = {
+            prompt_position = "bottom",
+          },
         },
         live_grep = {},
       },
