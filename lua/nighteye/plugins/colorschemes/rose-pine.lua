@@ -14,7 +14,7 @@ return {
       dim_nc_background = false,
       disable_background = true,
       disable_float_background = false,
-      disable_italics = false,
+      disable_italics = true,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
@@ -56,7 +56,15 @@ return {
         -- By default each group adds to the existing config.
         -- If you only want to set what is written in this config exactly,
         -- you can set the inherit option:
-        Search = { bg = 'gold', inherit = false },
+        Search = { bg = 'highlight_med', inherit = true },
+
+        -- Transparent Telescope
+        TelescopeBorder = { fg = "highlight_high", bg = "none" },
+        TelescopeNormal = { bg = "none" },
+        TelescopePromptNormal = { bg = "base" },
+        TelescopeResultsNormal = { fg = "subtle", bg = "none" },
+        TelescopeSelection = { fg = "text", bg = "base" },
+        TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
       }
     })
 
