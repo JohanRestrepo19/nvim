@@ -1,5 +1,6 @@
 return {
   "nvimdev/lspsaga.nvim",
+  lazy = true,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
