@@ -18,7 +18,7 @@ return {
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
-        background = 'base',
+        background = 'none',
         background_nc = '_experimental_nc',
         panel = 'surface',
         panel_nc = 'base',
