@@ -35,7 +35,7 @@
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "6c30f3c8915d7b31c3decdfe6c7672432da1809d" },
   "nvim-web-devicons": { "branch": "master", "commit": "11eb26fc166742db8d1e8a6f5a7de9df37b09aae" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" },
-  "rainbow-delimiters.nvim": { "branch": "master", "commit": "9515abd92ae0e42044d47716537f3997991a037b" },
+  "rainbow-delimiters.nvim": { "branch": "master", "commit": "efcbf8bb3e8c1c166678a7f7932854f0dfe21720" },
   "rose-pine": { "branch": "main", "commit": "92762f4fa2144c05db760ea254f4c399a56a7ef5" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "da2a20ccaf39ce04b92178711a2db175ec0a87d5" },
   "telescope.nvim": { "branch": "0.1.x", "commit": "7011eaae0ac1afe036e30c95cf80200b8dc3f21a" },

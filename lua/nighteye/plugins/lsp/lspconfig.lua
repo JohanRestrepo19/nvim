@@ -36,6 +36,10 @@ return {
       vim.keymap.set("n", "<leader>ff", function()
         vim.lsp.buf.format({ async = true })
       end, bufopts)
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, bufopts)
+      vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, bufopts)
+      vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, bufopts)
+      vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
     end
 
     local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())

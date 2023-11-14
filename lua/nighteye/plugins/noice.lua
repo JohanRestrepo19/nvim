@@ -7,6 +7,11 @@ return {
   },
   config = function()
     local noice = require("noice")
+    local notify = require("notify")
+
+    notify.setup({
+      background_colour = "#000000",
+    })
 
     noice.setup({
       lsp = {
@@ -27,11 +32,13 @@ return {
       },
 
       routes = {
-        filter = {
-          event = "notify",
-          find = "No information available",
+        {
+          filter = {
+            event = "notify",
+            find = "No information available",
+          },
+          opts = { skip = true }
         },
-        opts = { skip = true }
       },
     })
   end,
