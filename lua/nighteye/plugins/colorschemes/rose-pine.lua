@@ -13,12 +13,12 @@ return {
       bold_vert_split = false,
       dim_nc_background = false,
       disable_background = true,
-      disable_float_background = false,
-      disable_italics = false,
+      disable_float_background = true,
+      disable_italics = true,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
-        background = 'none',
+        background = 'base',
         background_nc = '_experimental_nc',
         panel = 'surface',
         panel_nc = 'base',

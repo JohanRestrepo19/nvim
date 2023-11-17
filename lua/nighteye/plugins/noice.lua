@@ -11,10 +11,14 @@ return {
 
     notify.setup({
       background_colour = "#000000",
-      top_down = false
+      top_down = false,
+      timeout = 3000
     })
 
     noice.setup({
+      cmdline = {
+        view = "cmdline_popup",
+      },
       lsp = {
         -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
         override = {
@@ -40,6 +44,14 @@ return {
           },
           opts = { skip = true }
         },
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            -- find = "written",
+          },
+          opts = { skip = true }
+        }
       },
     })
   end,
