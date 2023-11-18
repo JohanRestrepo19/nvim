@@ -1,7 +1,7 @@
 return {
   "rose-pine/neovim",
   name = "rose-pine",
-  lazy = false,
+  lazy = true,
   priority = 1000,
   config = function()
     local rose_pine = require("rose-pine")
@@ -14,7 +14,7 @@ return {
       dim_nc_background = false,
       disable_background = true,
       disable_float_background = true,
-      disable_italics = true,
+      disable_italics = false,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
