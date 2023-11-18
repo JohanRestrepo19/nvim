@@ -51,6 +51,7 @@ return {
 
         -- Blend colours against the "base" background
         CursorLine = { bg = 'foam', blend = 10 },
+        CursorLineNr = { fg = 'gold' },
         StatusLine = { fg = 'love', bg = 'love', blend = 10 },
 
         -- By default each group adds to the existing config.
