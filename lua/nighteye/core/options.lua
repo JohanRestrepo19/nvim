@@ -41,3 +41,7 @@ vim.opt.showcmd = true
 vim.opt.laststatus = 2
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
+
+
+vim.opt.list = true
+vim.opt.listchars:append "eol:↲"
