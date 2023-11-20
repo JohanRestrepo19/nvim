@@ -22,6 +22,7 @@ return {
             "less",
             "html",
             "yaml",
+            "markdown",
             "markdown.mdx",
             "graphql",
             "handlebars",
