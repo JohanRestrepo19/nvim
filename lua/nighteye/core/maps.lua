@@ -5,8 +5,6 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- keymap("n", "<leader>w", ":w<cr>", opts)
-
 -- Increment/decrement
 keymap("n", "+", "<C-a>", opts)
 keymap("n", "-", "<C-x>", opts)
@@ -60,3 +58,12 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+-- Alternate word wrapping
+keymap("n", "<leader>tw", function()
+  if vim.api.nvim_get_option_value("wrap", {}) then
+    vim.cmd("set nowrap")
+  else
+    vim.cmd("set wrap")
+  end
+end, opts)
