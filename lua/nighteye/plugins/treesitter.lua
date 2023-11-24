@@ -22,11 +22,6 @@ return {
     vim.g.skip_ts_context_commentstring_module = true
 
     treesitter.setup({
-      -- context_commentstring = {
-      --   enable = true,
-      --   enable_autocmd = false,
-      -- },
-
       highlight = {
         enable = true, -- false will disable the whole extension
         disable = {},  -- list of language that will be disabled
