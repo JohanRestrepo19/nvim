@@ -19,7 +19,10 @@ return {
   opts = {
     close_if_last_window = true,
     window = {
-      mappings = {},
+      mappings = {
+        ["sv"] = "open_vsplit",
+        ["ss"] = "open_split"
+      },
     },
     filesystem = {
       filtered_items = {

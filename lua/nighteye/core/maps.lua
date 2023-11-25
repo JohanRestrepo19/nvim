@@ -31,8 +31,8 @@ keymap("n", "sl", "<C-w>l", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Better Vertical navigation
-keymap("n", "}", "<C-d>")
-keymap("n", "{", "<C-u>")
+keymap("n", "}", "<C-d>zz")
+keymap("n", "{", "<C-u>zz")
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
