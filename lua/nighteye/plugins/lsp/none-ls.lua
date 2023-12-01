@@ -40,7 +40,6 @@ return {
               "eslintrc.yml",
               "eslintrc.json",
               ".eslintrc.json",
-              "package.json",
             })
           end,
           diagnostics_format = "[eslint] #{m}\n(#{c})",

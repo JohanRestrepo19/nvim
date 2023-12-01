@@ -6,5 +6,6 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 -- TODO:
+-- Configure my own statusline with feline.nvim
 
 require("nighteye")
