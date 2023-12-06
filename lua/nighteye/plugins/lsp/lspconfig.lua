@@ -14,15 +14,34 @@ return {
       vim.fn.sign_define(hl_name, { text = icon, texthl = hl_name, numhl = "" })
     end
 
+    -- Borders for hover menus
+    local border = {
+      { "╭", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╮", "FloatBorder" },
+      { "│", "FloatBorder" },
+      { "╯", "FloatBorder" },
+      { "─", "FloatBorder" },
+      { "╰", "FloatBorder" },
+      { "│", "FloatBorder" },
+    }
+
+    -- Override globally
+    local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+    function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+      opts = opts or {}
+      opts.border = opts.border or border
+      return orig_util_open_floating_preview(contents, syntax, opts, ...)
+    end
+
     -- Diagnostic config.
     vim.diagnostic.config({
-      virtual_text = { prefix = "● " },
+      virtual_text = { prefix = "󰆧 " },
       update_in_insert = true,
       float = {
         focusable = true,
         border = "single",
         source = "always",
-        prefix = "● ",
       },
     })
 
@@ -63,6 +82,7 @@ return {
         on_attach = on_attach,
         capabilities = capabilities,
         flags = lsp_flags,
+        -- handlers = handlers,
       })
     end
 
