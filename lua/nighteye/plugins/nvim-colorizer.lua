@@ -4,5 +4,4 @@ return {
   keys = {
     { "<leader>cl", ":ColorizerToggle<cr>", desc = "Colorizer" },
   },
-  opts,
 }
