@@ -9,8 +9,8 @@ return {
         icons_enabled = true,
         theme = "auto",
         globalstatus = false,
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = {
           "neo-tree",
           statusline = {},

@@ -1,6 +1,6 @@
 return {
   "craftzdog/solarized-osaka.nvim",
-  lazy = true,
+  lazy = false,
   priority = 1000,
   config = function()
     local solarized_osaka = require("solarized-osaka")

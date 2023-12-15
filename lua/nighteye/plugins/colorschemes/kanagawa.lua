@@ -47,11 +47,11 @@ return {
           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
 
           -- Diagnostics
-          DiagnosticOk = { bg = palette.dragonGreen },
-          DiagnosticError = { bg = palette.dragonRed },
-          DiagnosticWarn = { bg = palette.dragonYellow },
-          DiagnosticInfo = { bg = palette.dragonBlue },
-          DiagnosticHint = { bg = palette.dragonAqua },
+          DiagnosticOk = {    fg = palette.dragonGreen },
+          DiagnosticError = { fg = palette.dragonRed },
+          DiagnosticWarn = {  fg = palette.dragonYellow },
+          DiagnosticInfo = {  fg = palette.dragonBlue },
+          DiagnosticHint = {  fg = palette.dragonAqua },
         }
       end,
       theme = "wave", -- Load "wave" theme when 'background' option is not set
@@ -63,6 +63,6 @@ return {
     })
 
     -- setup must be called before loading
-    vim.cmd.colorscheme("kanagawa-dragon")
+    vim.cmd.colorscheme("kanagawa")
   end,
 }

@@ -7,14 +7,14 @@ return {
     local rose_pine = require("rose-pine")
     rose_pine.setup({
       --- @usage 'auto'|'main'|'moon'|'dawn'
-      variant = 'auto',
+      variant = 'main',
       --- @usage 'main'|'moon'|'dawn'
       dark_variant = 'main',
       bold_vert_split = false,
       dim_nc_background = false,
       disable_background = true,
       disable_float_background = true,
-      disable_italics = false,
+      disable_italics = true,
 
       --- @usage string hex value or named color from rosepinetheme.com/palette
       groups = {
@@ -50,14 +50,14 @@ return {
         ColorColumn = { bg = 'rose' },
 
         -- Blend colours against the "base" background
-        CursorLine = { bg = 'foam', blend = 10 },
+        -- CursorLine = { bg = 'foam', blend = 10 },
         -- CursorLineNr = { fg = 'gold' },
         StatusLine = { fg = 'love', bg = 'love', blend = 10 },
 
         -- By default each group adds to the existing config.
         -- If you only want to set what is written in this config exactly,
         -- you can set the inherit option:
-        Search = { bg = 'highlight_med', inherit = true },
+        -- Search = { bg = 'highlight_med', inherit = true },
 
         -- Transparent Telescope
         TelescopeBorder = { fg = "highlight_high", bg = "none" },
