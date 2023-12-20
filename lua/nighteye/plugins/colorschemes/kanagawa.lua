@@ -1,6 +1,6 @@
 return {
   "rebelot/kanagawa.nvim",
-  lazy = true,
+  lazy = false,
   priority = 1000,
   config = function()
     local kanagawa = require("kanagawa")
@@ -47,17 +47,17 @@ return {
           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
 
           -- Diagnostics
-          DiagnosticOk = {    fg = palette.dragonGreen },
+          DiagnosticOk = { fg = palette.dragonGreen },
           DiagnosticError = { fg = palette.dragonRed },
-          DiagnosticWarn = {  fg = palette.dragonYellow },
-          DiagnosticInfo = {  fg = palette.dragonBlue },
-          DiagnosticHint = {  fg = palette.dragonAqua },
+          DiagnosticWarn = { fg = palette.dragonYellow },
+          DiagnosticInfo = { fg = palette.dragonBlue },
+          DiagnosticHint = { fg = palette.dragonAqua },
         }
       end,
-      theme = "wave", -- Load "wave" theme when 'background' option is not set
+      theme = "dragon", -- Load "wave" theme when 'background' option is not set
       background = {
         -- map the value of 'background' option to a theme
-        dark = "wave", -- try "dragon" !
+        dark = "dragon", -- try "dragon" !
         light = "lotus",
       },
     })
