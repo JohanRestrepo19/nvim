@@ -38,11 +38,11 @@ return {
     vim.diagnostic.config({
       virtual_text = { prefix = "󰆧 " },
       update_in_insert = true,
-      float = {
-        focusable = true,
-        border = "single",
-        source = "always",
-      },
+      -- float = {
+      --   focusable = true,
+      --   border = "single",
+      --   source = "always",
+      -- },
     })
 
     local on_attach = function(_, bufnr)
