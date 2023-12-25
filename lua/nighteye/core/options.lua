@@ -6,7 +6,7 @@ vim.opt.cmdheight = 1
 vim.opt.conceallevel = 0
 vim.opt.expandtab = true
 vim.opt.fileencoding = "utf-8"
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.mouse = "a"
 vim.opt.number = true
@@ -42,7 +42,7 @@ vim.opt.laststatus = 2
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
 
-vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 -- vim.opt.list = true
 -- vim.opt.listchars:append "eol:↲"

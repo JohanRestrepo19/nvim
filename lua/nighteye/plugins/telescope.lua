@@ -1,7 +1,11 @@
 return {
   "nvim-telescope/telescope.nvim",
   branch = "0.1.x",
-  dependencies = { "nvim-telescope/telescope-file-browser.nvim" },
+  dependencies = {
+    "nvim-telescope/telescope-file-browser.nvim",
+    "nvim-telescope/telescope-ui-select.nvim"
+
+  },
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
@@ -107,10 +111,14 @@ return {
             },
           },
         },
+        ["ui-select"] = {
+          initial_mode = "normal",
+        },
       },
     })
 
     telescope.load_extension("file_browser")
+    telescope.load_extension("ui-select")
 
     local opts = { noremap = true, silent = true }
     vim.keymap.set("n", "<c-p>", builtin.find_files, opts)
