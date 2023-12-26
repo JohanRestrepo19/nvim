@@ -37,12 +37,7 @@ return {
     -- Diagnostic config.
     vim.diagnostic.config({
       virtual_text = { prefix = "󰆧 " },
-      update_in_insert = true,
-      -- float = {
-      --   focusable = true,
-      --   border = "single",
-      --   source = "always",
-      -- },
+      update_in_insert = false,
     })
 
     local on_attach = function(_, bufnr)
