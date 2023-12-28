@@ -1,130 +1,129 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
-  dependencies = {
-    "nvim-telescope/telescope-file-browser.nvim",
-    "nvim-telescope/telescope-ui-select.nvim"
+    "nvim-telescope/telescope.nvim",
+    branch = "0.1.x",
+    dependencies = {
+        "nvim-telescope/telescope-file-browser.nvim",
+        "nvim-telescope/telescope-ui-select.nvim",
+    },
+    config = function()
+        local telescope = require("telescope")
+        local actions = require("telescope.actions")
+        local builtin = require("telescope.builtin")
 
-  },
-  config = function()
-    local telescope = require("telescope")
-    local actions = require("telescope.actions")
-    local builtin = require("telescope.builtin")
+        local function telescope_buffer_dir()
+            return vim.fn.expand("%:p:h")
+        end
 
-    local function telescope_buffer_dir()
-      return vim.fn.expand("%:p:h")
-    end
+        local fb_actions = require("telescope").extensions.file_browser.actions
 
-    local fb_actions = require("telescope").extensions.file_browser.actions
+        telescope.setup({
+            -- layout_strategies.center()
 
-    telescope.setup({
-      -- layout_strategies.center()
+            defaults = {
+                -- prompt_prefix = " ",
+                -- selection_caret = " ",
+                path_display = { "truncate" },
+                file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
+                layout_strategy = "horizontal",
+                layout_config = {
+                    width = 0.95,
+                    height = 0.85,
+                    -- preview_cutoff = 120,
+                    prompt_position = "top",
 
-      defaults = {
-        -- prompt_prefix = " ",
-        -- selection_caret = " ",
-        path_display = { "truncate" },
-        file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
-        layout_strategy = "horizontal",
-        layout_config = {
-          width = 0.95,
-          height = 0.85,
-          -- preview_cutoff = 120,
-          prompt_position = "top",
+                    horizontal = {
+                        preview_width = function(_, cols, _)
+                            if cols > 200 then
+                                return math.floor(cols * 0.4)
+                            else
+                                return math.floor(cols * 0.6)
+                            end
+                        end,
+                    },
 
-          horizontal = {
-            preview_width = function(_, cols, _)
-              if cols > 200 then
-                return math.floor(cols * 0.4)
-              else
-                return math.floor(cols * 0.6)
-              end
-            end,
-          },
+                    vertical = {
+                        width = 0.9,
+                        height = 0.95,
+                        preview_height = 0.5,
+                    },
 
-          vertical = {
-            width = 0.9,
-            height = 0.95,
-            preview_height = 0.5,
-          },
-
-          flex = {
-            horizontal = {
-              preview_width = 0.9,
+                    flex = {
+                        horizontal = {
+                            preview_width = 0.9,
+                        },
+                    },
+                },
+                mappings = {
+                    n = {
+                        ["q"] = actions.close,
+                        ["sv"] = actions.select_vertical,
+                        ["ss"] = actions.select_horizontal,
+                    },
+                    i = {
+                        ["<C-j>"] = actions.move_selection_next,
+                        ["<C-k>"] = actions.move_selection_previous,
+                        ["<C-c>"] = actions.close,
+                        ["<CR>"] = actions.select_default,
+                        ["<C-l>"] = actions.complete_tag,
+                    },
+                },
             },
-          },
-        },
-        mappings = {
-          n = {
-            ["q"] = actions.close,
-            ["sv"] = actions.select_vertical,
-            ["ss"] = actions.select_horizontal,
-          },
-          i = {
-            ["<C-j>"] = actions.move_selection_next,
-            ["<C-k>"] = actions.move_selection_previous,
-            ["<C-c>"] = actions.close,
-            ["<CR>"] = actions.select_default,
-            ["<C-l>"] = actions.complete_tag,
-          },
-        },
-      },
 
-      pickers = {
-        -- Default configuration for builtin pickers goes here:
-        buffers = {
-          mappings = {
-            ["n"] = {
-              ["<Tab>"] = actions.delete_buffer,
+            pickers = {
+                -- Default configuration for builtin pickers goes here:
+                buffers = {
+                    mappings = {
+                        ["n"] = {
+                            ["<Tab>"] = actions.delete_buffer,
+                        },
+                    },
+                },
+                find_files = {
+                    hidden = true,
+                    layout_config = {
+                        prompt_position = "bottom",
+                    },
+                },
+                live_grep = {},
             },
-          },
-        },
-        find_files = {
-          hidden = true,
-          layout_config = {
-            prompt_position = "bottom",
-          },
-        },
-        live_grep = {},
-      },
 
-      extensions = {
-        file_browser = {
-          cwd = telescope_buffer_dir(),
-          grouped = true,
-          hidden = true,
-          hijack_netrw = true,
-          initial_mode = "normal",
-          path = "%:p:h",
-          previewer = false,
-          respect_gitignore = false,
-          select_buffer = true,
-          theme = "dropdown",
-          layout_config = { height = 30 },
-          mappings = {
-            ["i"] = {
-              -- your custom insert mode mappings
+            extensions = {
+                file_browser = {
+                    cwd = telescope_buffer_dir(),
+                    grouped = true,
+                    hidden = true,
+                    hijack_netrw = true,
+                    initial_mode = "normal",
+                    path = "%:p:h",
+                    previewer = false,
+                    respect_gitignore = false,
+                    select_buffer = true,
+                    theme = "dropdown",
+                    layout_config = { height = 30 },
+                    mappings = {
+                        ["i"] = {
+                            -- your custom insert mode mappings
+                        },
+                        ["n"] = {
+                            -- your custom normal mode mappings
+                            ["h"] = fb_actions.goto_parent_dir,
+                        },
+                    },
+                },
+                ["ui-select"] = {
+                    initial_mode = "normal",
+                },
             },
-            ["n"] = {
-              -- your custom normal mode mappings
-              ["h"] = fb_actions.goto_parent_dir,
-            },
-          },
-        },
-        ["ui-select"] = {
-          initial_mode = "normal",
-        },
-      },
-    })
+        })
 
-    telescope.load_extension("file_browser")
-    telescope.load_extension("ui-select")
+        telescope.load_extension("file_browser")
+        telescope.load_extension("ui-select")
 
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set("n", "<c-p>", builtin.find_files, opts)
-    vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
-    vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
-    vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
-    vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, opts)
-  end,
+        local opts = { noremap = true, silent = true }
+        vim.keymap.set("n", "<c-p>", builtin.find_files, opts)
+        vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
+        vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
+        vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
+        vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, opts)
+    end,
 }

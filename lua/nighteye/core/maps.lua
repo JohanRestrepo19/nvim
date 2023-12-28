@@ -18,8 +18,8 @@ keymap("n", "<leader>a", "gg<S-v>G", opts)
 keymap("n", "te", ":tabedit<Return> ", opts)
 
 -- Split Window
-keymap("n", "ss", ":split<Return><C-w>w", opts)
-keymap("n", "sv", ":vsplit<Return><C-w>w", opts)
+keymap("n", "ss", ":split<cr>", opts)
+keymap("n", "sv", ":vsplit<cr>", opts)
 
 -- Move Window
 keymap("n", "<S-Tab>", ":tabprev<Return>", opts)
@@ -63,9 +63,9 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
 -- Alternate word wrapping
 keymap("n", "<leader>tw", function()
-  if vim.api.nvim_get_option_value("wrap", {}) then
-    vim.cmd("set nowrap")
-  else
-    vim.cmd("set wrap")
-  end
+    if vim.api.nvim_get_option_value("wrap", {}) then
+        vim.cmd("set nowrap")
+    else
+        vim.cmd("set wrap")
+    end
 end, opts)
