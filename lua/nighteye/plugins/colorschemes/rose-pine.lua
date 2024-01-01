@@ -1,7 +1,7 @@
 return {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function()
         local rose_pine = require("rose-pine")
@@ -50,9 +50,7 @@ return {
                 ColorColumn = { bg = "rose" },
 
                 -- Blend colours against the "base" background
-                -- CursorLine = { bg = 'foam', blend = 10 },
-                -- CursorLineNr = { fg = 'gold' },
-                StatusLine = { fg = "love", bg = "love", blend = 10 },
+                StatusLine = { fg = "pine", bg = "muted", blend = 10 },
 
                 -- By default each group adds to the existing config.
                 -- If you only want to set what is written in this config exactly,

@@ -1,11 +1,11 @@
 return {
     "rebelot/kanagawa.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
         -- Default options:
         require("kanagawa").setup({
-            compile = false,  -- enable compiling the colorscheme
+            compile = true,  -- enable compiling the colorscheme
             undercurl = true, -- enable undercurls
             commentStyle = { italic = true },
             functionStyle = { bold = true, italic = true },
@@ -64,6 +64,6 @@ return {
         })
 
         -- setup must be called before loading
-        vim.cmd.colorscheme("kanagawa-dragon")
+        vim.cmd.colorscheme("kanagawa")
     end,
 }

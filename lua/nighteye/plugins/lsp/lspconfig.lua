@@ -1,7 +1,7 @@
 return {
     "neovim/nvim-lspconfig",
     event = { "BufReadPre", "BufNewFile" },
-    dependencies = "hrsh7th/cmp-nvim-lsp",
+    dependencies = { "hrsh7th/cmp-nvim-lsp" },
 
     config = function()
         local lspconfig = require("lspconfig")
@@ -11,7 +11,11 @@ return {
 
         for type, icon in pairs(signs) do
             local hl_name = "DiagnosticSign" .. type
-            vim.fn.sign_define(hl_name, { text = icon, texthl = hl_name, numhl = "" })
+            vim.fn.sign_define(hl_name, {
+                text = icon,
+                texthl = hl_name,
+                numhl = hl_name
+            })
         end
 
         -- Borders for hover menus
@@ -56,7 +60,8 @@ return {
             vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
         end
 
-        local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
+        local capabilities = require("cmp_nvim_lsp")
+            .default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
         local lsp_flags = { debounce_text_changes = 150 }
 
@@ -95,7 +100,7 @@ return {
                     format = {
                         defaultConfig = {
                             indent_style = "space",
-                            indent_size = "2",
+                            indent_size = "4",
                         },
                     },
                 },

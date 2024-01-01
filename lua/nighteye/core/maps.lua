@@ -69,3 +69,5 @@ keymap("n", "<leader>tw", function()
         vim.cmd("set wrap")
     end
 end, opts)
+
+keymap("i", "<C-H>", "<C-w>", opts)
