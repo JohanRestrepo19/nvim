@@ -40,8 +40,6 @@ return {
                     h5 = "pine",
                     h6 = "foam",
                 },
-                -- or set all headings at once
-                -- headings = 'subtle'
             },
 
             -- Change specific vim highlight groups
@@ -52,18 +50,12 @@ return {
                 -- Blend colours against the "base" background
                 StatusLine = { fg = "pine", bg = "muted", blend = 10 },
 
-                -- By default each group adds to the existing config.
-                -- If you only want to set what is written in this config exactly,
-                -- you can set the inherit option:
-                -- Search = { bg = 'highlight_med', inherit = true },
-
                 -- Transparent Telescope
                 TelescopeBorder = { fg = "highlight_high", bg = "none" },
                 TelescopeNormal = { bg = "none" },
                 TelescopePromptNormal = { bg = "base" },
                 TelescopeResultsNormal = { fg = "subtle", bg = "none" },
                 TelescopeSelection = { fg = "text", bg = "base" },
-                TelescopeSelectionCaret = { fg = "rose", bg = "rose" },
             },
         })
 
