@@ -27,9 +27,8 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 ### colorscheme
 
 + [folke/tokyonight.nvim](https://dotfyle.com/plugins/folke/tokyonight.nvim)
-+ [catppuccin/nvim](https://dotfyle.com/plugins/catppuccin/nvim)
 + [rebelot/kanagawa.nvim](https://dotfyle.com/plugins/rebelot/kanagawa.nvim)
-+ [AlexvZyl/nordic.nvim](https://dotfyle.com/plugins/AlexvZyl/nordic.nvim)
++ [rose-pine/neovim](https://dotfyle.com/plugins/rose-pine/neovim)
 ### comment
 
 + [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
@@ -42,6 +41,9 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 
 + [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
 + [windwp/nvim-ts-autotag](https://dotfyle.com/plugins/windwp/nvim-ts-autotag)
+### file-explorer
+
++ [nvim-neo-tree/neo-tree.nvim](https://dotfyle.com/plugins/nvim-neo-tree/neo-tree.nvim)
 ### fuzzy-finder
 
 + [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
@@ -56,7 +58,6 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 + [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
 + [nvimtools/none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
 + [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
-+ [nvimdev/lspsaga.nvim](https://dotfyle.com/plugins/nvimdev/lspsaga.nvim)
 ### lsp-installer
 
 + [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
@@ -65,6 +66,7 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 + [iamcco/markdown-preview.nvim](https://dotfyle.com/plugins/iamcco/markdown-preview.nvim)
 ### nvim-dev
 
++ [MunifTanjim/nui.nvim](https://dotfyle.com/plugins/MunifTanjim/nui.nvim)
 + [nvim-lua/plenary.nvim](https://dotfyle.com/plugins/nvim-lua/plenary.nvim)
 ### plugin-manager
 
@@ -72,9 +74,10 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 ### snippet
 
 + [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
++ [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
 ### statusline
 
-+ [nvim-lualine/lualine.nvim](https://dotfyle.com/plugins/nvim-lualine/lualine.nvim)
++ [tjdevries/express_line.nvim](https://dotfyle.com/plugins/tjdevries/express_line.nvim)
 ### syntax
 
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
