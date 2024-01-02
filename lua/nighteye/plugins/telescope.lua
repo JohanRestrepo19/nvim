@@ -20,15 +20,14 @@ return {
             -- layout_strategies.center()
 
             defaults = {
-                -- prompt_prefix = " ",
-                -- selection_caret = " ",
+                prompt_prefix = " ",
+                selection_caret = " ",
                 path_display = { "truncate" },
                 file_ignore_patterns = { ".git/", "^dist/", ".nuxt/", "^public/" },
                 layout_strategy = "horizontal",
                 layout_config = {
                     width = 0.95,
                     height = 0.85,
-                    -- preview_cutoff = 120,
                     prompt_position = "top",
 
                     horizontal = {
@@ -84,7 +83,13 @@ return {
                         prompt_position = "bottom",
                     },
                 },
-                live_grep = {},
+                lsp_references = {
+                    theme = "ivy",
+                    initial_mode = "normal",
+                    layout_config = {
+                        height = 0.5
+                    },
+                }
             },
 
             extensions = {
@@ -125,5 +130,6 @@ return {
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
         vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
         vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, opts)
+        vim.keymap.set("n", "<leader>gr", builtin.lsp_references, opts)
     end,
 }
