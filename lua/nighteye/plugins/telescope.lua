@@ -104,7 +104,7 @@ return {
                     respect_gitignore = false,
                     select_buffer = true,
                     theme = "dropdown",
-                    layout_config = { height = 30 },
+                    layout_config = { height = 40, prompt_position = "bottom" },
                     mappings = {
                         ["i"] = {
                             -- your custom insert mode mappings
