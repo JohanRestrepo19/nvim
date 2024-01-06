@@ -78,12 +78,7 @@ return {
                     },
                     initial_mode = "normal",
                 },
-                find_files = {
-                    hidden = true,
-                    layout_config = {
-                        prompt_position = "bottom",
-                    },
-                },
+                find_files = { hidden = true },
                 lsp_references = {
                     theme = "ivy",
                     initial_mode = "normal",
@@ -116,9 +111,7 @@ return {
                         },
                     },
                 },
-                ["ui-select"] = {
-                    initial_mode = "normal",
-                },
+                ["ui-select"] = { initial_mode = "normal" },
             },
         })
 

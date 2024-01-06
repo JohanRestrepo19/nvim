@@ -25,12 +25,6 @@ return {
                     luasnip.lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
-
-            window = {
-                -- completion = cmp.config.window.bordered(),
-                -- documentation = cmp.config.window.bordered()
-            },
-
             mapping = cmp.mapping.preset.insert({
                 ["<C-k>"] = cmp.mapping.select_prev_item(),
                 ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -48,7 +42,6 @@ return {
                     select = true,
                 }),
             }),
-
             sources = cmp.config.sources({
                 { name = "nvim_lsp", max_item_count = 200 },
                 { name = "nvim_lua" },
@@ -56,7 +49,6 @@ return {
                 { name = "buffer" },
                 { name = "path" },
             }),
-
             formatting = {
                 fields = { "abbr", "kind", "menu" },
                 format = function(entry, vim_item)
@@ -70,12 +62,10 @@ return {
                     return kind
                 end,
             },
-
             confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,
                 select = false,
             },
-
             experimental = {
                 ghost_text = false,
             },
