@@ -48,7 +48,7 @@ return {
                     ColorColumn = { bg = "rose" },
 
                     -- Blend colours against the "base" background
-                    StatusLine = { fg = "pine", bg = "muted", blend = 10 },
+                    StatusLine = { fg = "text", bg = "base", blend = 10 },
 
                     -- Transparent Telescope
                     TelescopeBorder = { fg = "highlight_high", bg = "none" },
@@ -59,6 +59,7 @@ return {
                 },
             })
 
+            vim.opt.termguicolors = false
             vim.cmd.colorscheme("rose-pine")
         end,
     },

@@ -76,6 +76,7 @@ return {
                             ["<Tab>"] = actions.delete_buffer,
                         },
                     },
+                    initial_mode = "normal",
                 },
                 find_files = {
                     hidden = true,

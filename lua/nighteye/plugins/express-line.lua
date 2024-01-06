@@ -1,4 +1,5 @@
--- Configuration directly taken from @tjdevries in their dotfiles repository: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/statusline.lua
+-- Configuration directly taken from @tjdevries in their dotfiles
+-- repository: https://github.com/tjdevries/config_manager/blob/master/xdg_config/nvim/after/plugin/statusline.lua
 
 return {
     "tjdevries/express_line.nvim",
@@ -9,10 +10,7 @@ return {
         local sections = require "el.sections"
         local subscribe = require "el.subscribe"
         local lsp_statusline = require "el.plugins.lsp_status"
-        local helper = require "el.helper"
         local diagnostic = require "el.diagnostic"
-
-        local has_lsp_extensions, ws_diagnostics = pcall(require, "lsp_extensions.workspace.diagnostic")
 
         -- TODO: Spinning planet extension. Integrated w/ telescope.
         -- ◐ ◓ ◑ ◒
@@ -39,27 +37,6 @@ return {
             return extensions.git_changes(window, buffer)
         end)
 
-        local ws_diagnostic_counts = function(_, buffer)
-            if not has_lsp_extensions then
-                return ""
-            end
-
-            local messages = {}
-
-            local error_count = ws_diagnostics.get_count(buffer.bufnr, "Error")
-
-            local x = "⬤"
-            if error_count == 0 then
-                -- pass
-            elseif error_count < 5 then
-                table.insert(messages, string.format("%s#%s#%s%%*", "%", "StatuslineError" .. error_count, x))
-            else
-                table.insert(messages, string.format("%s#%s#%s%%*", "%", "StatuslineError5", x))
-            end
-
-            return table.concat(messages, "")
-        end
-
         local show_current_func = function(window, buffer)
             if buffer.filetype == "lua" then
                 return ""
@@ -68,35 +45,11 @@ return {
             return lsp_statusline.current_function(window, buffer)
         end
 
-        local minimal_status_line = function(_, buffer)
-            if string.find(buffer.name, "sourcegraph/sourcegraph") then
-                return true
-            end
-        end
-
-        local is_sourcegraph = function(_, buffer)
-            if string.find(buffer.name, "sg://") then
-                return true
-            end
-        end
-
         local diagnostic_display = diagnostic.make_buffer()
 
         require("el").setup {
-            generator = function(window, buffer)
-                local is_minimal = minimal_status_line(window, buffer)
-                local is_sourcegraph = is_sourcegraph(window, buffer)
-
+            generator = function(_, _) -- window, buffer
                 local mode = extensions.gen_mode { format_string = " %s " }
-                if is_sourcegraph then
-                    return {
-                        { mode },
-                        { sections.split,  required = true },
-                        { builtin.file },
-                        { sections.split,  required = true },
-                        { builtin.filetype },
-                    }
-                end
 
                 local items = {
                     { mode,                                                            required = true },
@@ -109,8 +62,6 @@ return {
                     { sections.split,                                                  required = true },
                     { diagnostic_display },
                     { show_current_func },
-                    -- { lsp_statusline.server_progress },
-                    -- { ws_diagnostic_counts },
                     { git_changes },
                     { "[" },
                     { builtin.line_with_width(3) },
@@ -129,10 +80,6 @@ return {
                 }
 
                 local add_item = function(result, item)
-                    if is_minimal and not item.required then
-                        return
-                    end
-
                     table.insert(result, item)
                 end
 
