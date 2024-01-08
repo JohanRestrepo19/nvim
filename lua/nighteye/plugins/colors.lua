@@ -6,31 +6,37 @@ return {
         priority = 1000,
         config = function()
             require("rose-pine").setup({
-                --- @usage 'auto'|'main'|'moon'|'dawn'
-                variant = "main",
-                --- @usage 'main'|'moon'|'dawn'
-                dark_variant = "main",
-                bold_vert_split = false,
-                dim_nc_background = false,
-                disable_background = true,
-                disable_float_background = false,
-                disable_italics = true,
+                variant = "auto", -- auto, main, moon, or dawn
+                dark_variant = "main", -- main, moon, or dawn
+                dim_inactive_windows = false,
+                extend_background_behind_borders = false,
 
-                --- @usage string hex value or named color from rosepinetheme.com/palette
+                styles = {
+                    bold = true,
+                    italic = true,
+                    transparency = true,
+                },
+
                 groups = {
-                    background = "none",
-                    background_nc = "_experimental_nc",
-                    panel = "surface",
-                    panel_nc = "base",
-                    border = "highlight_med",
-                    comment = "muted",
+                    border = "muted",
                     link = "iris",
-                    punctuation = "subtle",
+                    panel = "surface",
 
                     error = "love",
                     hint = "iris",
                     info = "foam",
                     warn = "gold",
+
+                    git_add = "foam",
+                    git_change = "rose",
+                    git_delete = "love",
+                    git_dirty = "rose",
+                    git_ignore = "muted",
+                    git_merge = "iris",
+                    git_rename = "pine",
+                    git_stage = "iris",
+                    git_text = "rose",
+                    git_untracked = "subtle",
 
                     headings = {
                         h1 = "iris",
@@ -41,25 +47,8 @@ return {
                         h6 = "foam",
                     },
                 },
-
-                -- Change specific vim highlight groups
-                -- https://github.com/rose-pine/neovim/wiki/Recipes
-                highlight_groups = {
-                    ColorColumn = { bg = "rose" },
-
-                    -- Blend colours against the "base" background
-                    StatusLine = { fg = "text", bg = "base", blend = 10 },
-
-                    -- Transparent Telescope
-                    TelescopeBorder = { fg = "highlight_high", bg = "none" },
-                    TelescopeNormal = { bg = "none" },
-                    TelescopePromptNormal = { bg = "base" },
-                    TelescopeResultsNormal = { fg = "subtle", bg = "none" },
-                    TelescopeSelection = { fg = "text", bg = "base" },
-                },
             })
 
-            vim.opt.termguicolors = false
             vim.cmd.colorscheme("rose-pine")
         end,
     },
@@ -68,7 +57,6 @@ return {
         lazy = true,
         priority = 1000,
         config = function()
-            -- Default options:
             require("kanagawa").setup({
                 compile = true, -- enable compiling the colorscheme
                 undercurl = true, -- enable undercurls
@@ -137,9 +125,7 @@ return {
         lazy = true,
         priority = 1000,
         config = function()
-            local tn = require("tokyonight")
-
-            tn.setup({
+            require("tokyonight").setup({
                 -- your configuration comes here
                 -- or leave it empty to use the default settings
                 style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
