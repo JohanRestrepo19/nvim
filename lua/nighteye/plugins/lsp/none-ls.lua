@@ -1,22 +1,10 @@
 return {
     "nvimtools/none-ls.nvim",
-    dependencies = {
-        "WhoIsSethDaniel/mason-tool-installer.nvim",
-    },
     config = function()
         local null_ls = require("null-ls")
 
         local formatting = null_ls.builtins.formatting
         local diagnostics = null_ls.builtins.diagnostics
-
-        require("mason-tool-installer").setup({
-            ensure_installed = {
-                "autopep8",
-                "flake8",
-                "prettierd",
-                "eslint_d",
-            },
-        })
 
         null_ls.setup({
             sources = {

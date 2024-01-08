@@ -6,6 +6,7 @@ return {
         { "j-hui/fidget.nvim", tag = "v1.1.0" },
         "williamboman/mason.nvim",
         "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
         -- NOTE: lspconfig related configs
@@ -53,7 +54,7 @@ return {
         local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
         -- NOTE: Mason related configs
-        require("mason").setup()
+        require("mason").setup({})
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "cssls",
@@ -89,6 +90,15 @@ return {
                         },
                     })
                 end,
+            },
+        })
+
+        require("mason-tool-installer").setup({
+            ensure_installed = {
+                "autopep8",
+                "flake8",
+                "prettierd",
+                "eslint_d",
             },
         })
     end,
