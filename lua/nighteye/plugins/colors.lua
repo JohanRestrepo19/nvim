@@ -1,3 +1,5 @@
+---@diagnostic disable: undefined-doc-name, undefined-field, inject-field, undefined-doc-param
+
 return {
     {
         "rose-pine/neovim",
@@ -13,7 +15,7 @@ return {
 
                 styles = {
                     bold = true,
-                    italic = true,
+                    italic = false,
                     transparency = true,
                 },
 
@@ -85,7 +87,6 @@ return {
                 overrides = function(colors) -- add/modify highlights
                     local palette = colors.palette
                     local theme = colors.theme
-
                     local borders_color = palette.katanaGray
 
                     return {
@@ -106,6 +107,9 @@ return {
 
                         -- CursorLine
                         CursorLineNr = { fg = palette.dragonBlue },
+
+                        -- StatusLine
+                        StatusLine = { bg = palette.sumiInk2, fg = palette.lightBlue  }
                     }
                 end,
                 theme = "wave", -- Load "wave" theme when 'background' option is not set
@@ -117,7 +121,7 @@ return {
             })
 
             -- setup must be called before loading
-            vim.cmd.colorscheme("kanagawa")
+            vim.cmd.colorscheme("kanagawa-dragon")
         end,
     },
     {

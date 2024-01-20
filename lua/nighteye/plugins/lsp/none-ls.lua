@@ -10,7 +10,8 @@ return {
             sources = {
                 -- Formatters
                 formatting.autopep8,
-                formatting.prettierd,
+                -- TODO: Configure prettierd
+                formatting.prettier,
                 formatting.stylua,
 
                 -- Diagnostics

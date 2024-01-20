@@ -7,5 +7,6 @@
 
 -- TODO:
 -- Configure my own statusline with feline.nvim
+-- Configure prettierd on none-ls
 
 require("nighteye")

@@ -47,8 +47,9 @@ return {
 
         -- Diagnostic config.
         vim.diagnostic.config({
-            virtual_text = { prefix = "󰆧 " },
+            virtual_text = { prefix = "󰮄 " },
             update_in_insert = false,
+            float = { source = true, prefix = "󱞩 " },
         })
 
         local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
