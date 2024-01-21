@@ -17,20 +17,24 @@ keymap("n", "<leader>a", "gg<S-v>G", opts)
 -- Tabs
 keymap("n", "te", ":tabedit<Return> ", opts)
 
--- Split Window
+-- Window management
 keymap("n", "ss", ":split<cr>", opts)
 keymap("n", "sv", ":vsplit<cr>", opts)
-
--- Move Window
-keymap("n", "<S-Tab>", ":tabprev<Return>", opts)
-keymap("n", "<tab>", ":tabnext<Return>", opts)
-
--- Better window navigation
 keymap("n", "sh", "<C-w>h", opts)
 keymap("n", "sj", "<C-w>j", opts)
 keymap("n", "sk", "<C-w>k", opts)
 keymap("n", "sl", "<C-w>l", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+
+keymap("n", "sr", "<C-w>R", opts)
+keymap("n", "sH", "<C-w>H", opts)
+keymap("n", "sJ", "<C-w>J", opts)
+keymap("n", "sK", "<C-w>K", opts)
+keymap("n", "sL", "<C-w>L", opts)
+
+
+-- Move Tab
+keymap("n", "<S-Tab>", ":tabprev<cr>", opts)
+keymap("n", "<tab>", ":tabnext<cr>", opts)
 
 -- Better Vertical navigation
 keymap("n", "}", "<C-d>zz")
