@@ -31,9 +31,9 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 + [rose-pine/neovim](https://dotfyle.com/plugins/rose-pine/neovim)
 ### comment
 
-+ [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 + [JoosepAlviste/nvim-ts-context-commentstring](https://dotfyle.com/plugins/JoosepAlviste/nvim-ts-context-commentstring)
 + [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
++ [numToStr/Comment.nvim](https://dotfyle.com/plugins/numToStr/Comment.nvim)
 ### completion
 
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
@@ -50,14 +50,12 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 ### git
 
 + [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
-### indent
-
-+ [lukas-reineke/indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
 ### lsp
 
++ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
++ [j-hui/fidget.nvim](https://dotfyle.com/plugins/j-hui/fidget.nvim)
 + [onsails/lspkind.nvim](https://dotfyle.com/plugins/onsails/lspkind.nvim)
 + [nvimtools/none-ls.nvim](https://dotfyle.com/plugins/nvimtools/none-ls.nvim)
-+ [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
 ### lsp-installer
 
 + [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
@@ -73,11 +71,11 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 + [folke/lazy.nvim](https://dotfyle.com/plugins/folke/lazy.nvim)
 ### snippet
 
-+ [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 + [rafamadriz/friendly-snippets](https://dotfyle.com/plugins/rafamadriz/friendly-snippets)
++ [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 ### statusline
 
-+ [tjdevries/express_line.nvim](https://dotfyle.com/plugins/tjdevries/express_line.nvim)
++ [rebelot/heirline.nvim](https://dotfyle.com/plugins/rebelot/heirline.nvim)
 ### syntax
 
 + [nvim-treesitter/nvim-treesitter](https://dotfyle.com/plugins/nvim-treesitter/nvim-treesitter)
@@ -87,14 +85,12 @@ NVIM_APPNAME=JohanRestrepo19/nvim/ nvim
 ## Language Servers
 
 + cssls
-+ graphql
 + html
 + intelephense
 + lua_ls
 + prismals
 + pyright
 + tailwindcss
-+ taplo
 + tsserver
 
 
