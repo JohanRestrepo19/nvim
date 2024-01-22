@@ -29,7 +29,7 @@ return {
                     info = "foam",
                     warn = "gold",
 
-                    git_add = "foam",
+                    git_add = "pine",
                     git_change = "rose",
                     git_delete = "love",
                     git_dirty = "rose",
@@ -48,6 +48,11 @@ return {
                         h5 = "pine",
                         h6 = "foam",
                     },
+                },
+                highlight_groups = {
+                    DiffAdd = { fg = "foam" },
+                    DiffChange = { fg = "rose" },
+                    DiffDelete = { fg = "love" },
                 },
             })
 
@@ -109,7 +114,7 @@ return {
                         CursorLineNr = { fg = palette.dragonBlue },
 
                         -- StatusLine
-                        StatusLine = { bg = palette.sumiInk2, fg = palette.lightBlue  }
+                        StatusLine = { bg = palette.sumiInk2, fg = palette.lightBlue },
                     }
                 end,
                 theme = "wave", -- Load "wave" theme when 'background' option is not set

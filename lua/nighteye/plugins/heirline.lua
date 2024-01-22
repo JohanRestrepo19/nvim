@@ -1,29 +1,28 @@
-local mode_colors = {
-    n = "red",
-    i = "green",
-    v = "cyan",
-    V = "cyan",
-    ["\22"] = "cyan",
-    c = "orange",
-    s = "purple",
-    S = "purple",
-    ["\19"] = "purple",
-    R = "orange",
-    r = "orange",
-    ["!"] = "red",
-    t = "red",
-}
-
 return {
     "rebelot/heirline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    lazy = false,
     config = function()
         local conditions = require("heirline.conditions")
         local utils = require("heirline.utils")
 
         local ViMode = {
-            static = { mode_colors = mode_colors },
+            static = {
+                mode_colors = {
+                    n = "red",
+                    i = "green",
+                    v = "cyan",
+                    V = "cyan",
+                    ["\22"] = "cyan",
+                    c = "orange",
+                    s = "purple",
+                    S = "purple",
+                    ["\19"] = "purple",
+                    R = "orange",
+                    r = "orange",
+                    ["!"] = "red",
+                    t = "red",
+                },
+            },
             update = {
                 "ModeChanged",
                 pattern = "*:*",
@@ -39,7 +38,7 @@ return {
                 return { fg = self.mode_colors[mode], bold = true }
             end,
             provider = function(self)
-                return " %2(" .. self.mode .. "%2)"
+                return " %1(" .. self.mode .. "%)"
             end,
         }
 
@@ -93,14 +92,13 @@ return {
                 condition = function()
                     return vim.bo.modified
                 end,
-                provider = "[+]",
-                hl = { fg = "green" },
+                provider = "[+] ",
             },
             {
                 condition = function()
                     return not vim.bo.modifiable or vim.bo.readonly
                 end,
-                provider = "",
+                provider = " ",
                 hl = { fg = "orange" },
             },
         }
@@ -108,9 +106,9 @@ return {
         -- stylua: ignore
         FilenameBlock = utils.insert(
             FilenameBlock,
+            FileFlags,
             FileIcon,
             utils.insert(FilenameModifier, Filename),
-            FileFlags,
             { provider = "%<"}
         )
 
@@ -123,12 +121,11 @@ return {
 
         local FileEncoding = {
             provider = function()
-                local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc -- :h 'enc'
+                local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
                 return enc ~= "utf-8" and enc:upper()
             end,
         }
 
-        -- We're getting minimalists here!
         local Ruler = {
             -- %l = current line number
             -- %L = number of lines in the buffer
@@ -146,15 +143,12 @@ return {
         }
 
         local Diagnostics = {
-            -- TODO: vim.fn.sign_getdefined() does not work correctly.
-
             static = {
                 error_icon = " ",
                 warn_icon = " ",
                 info_icon = " ",
                 hint_icon = " ",
             },
-            -- condition = conditions.has_diagnostics,
             update = { "DiagnosticChanged", "BufEnter" },
             init = function(self)
                 self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
@@ -209,21 +203,21 @@ return {
                 provider = "(",
             },
             {
-                hl = { fg = "green" },
+                hl = { fg = "git_add" },
                 provider = function(self)
                     local count = self.status_dict.added or 0
-                    return count > 0 and ("+" .. count)
+                    return count > 0 and ("+" .. count .. " ")
                 end,
             },
             {
-                hl = { fg = "red" },
+                hl = { fg = "git_del" },
                 provider = function(self)
                     local count = self.status_dict.removed or 0
-                    return count > 0 and ("-" .. count)
+                    return count > 0 and ("-" .. count .. " ")
                 end,
             },
             {
-                hl = { fg = "blue" },
+                hl = { fg = "git_change" },
                 provider = function(self)
                     local count = self.status_dict.changed or 0
                     return count > 0 and ("~" .. count)
@@ -249,12 +243,13 @@ return {
 
         -- stylua: ignore
         local StatusLine = {
-            LeftBlock, Align,
-            CenterBlock, Align,
+            LeftBlock,
+            Align,
+            CenterBlock,
+            Align,
             RightBlock
         }
 
-        -- TODO: Make a better color palette
         local function setup_colors()
             return {
                 bright_bg = utils.get_highlight("Folded").bg,
@@ -271,7 +266,7 @@ return {
                 diag_error = utils.get_highlight("DiagnosticError").fg,
                 diag_hint = utils.get_highlight("DiagnosticHint").fg,
                 diag_info = utils.get_highlight("DiagnosticInfo").fg,
-                git_del = utils.get_highlight("diffDeleted").fg,
+                git_del = utils.get_highlight("diffRemoved").fg,
                 git_add = utils.get_highlight("diffAdded").fg,
                 git_change = utils.get_highlight("diffChanged").fg,
             }
@@ -290,6 +285,5 @@ return {
             end,
             group = "Heirline",
         })
-        -- vim.opt.statusline = 'neo%=this is in the middle%=vim'
     end,
 }
