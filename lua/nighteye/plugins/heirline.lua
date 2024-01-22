@@ -46,7 +46,6 @@ return {
         local FilenameBlock = {
             init = function(self)
                 self.filename = vim.api.nvim_buf_get_name(0)
-                vim.print(self.filename)
             end,
         }
 
@@ -106,6 +105,15 @@ return {
             },
         }
 
+        -- stylua: ignore
+        FilenameBlock = utils.insert(
+            FilenameBlock,
+            FileIcon,
+            utils.insert(FilenameModifier, Filename),
+            FileFlags,
+            { provider = "%<"}
+        )
+
         local FileType = {
             provider = function()
                 return string.upper(vim.bo.filetype)
@@ -120,104 +128,168 @@ return {
             end,
         }
 
-        local FileFormat = {
-            provider = function()
-                local fmt = vim.bo.fileformat
-                return fmt ~= "unix" and fmt:upper()
-            end,
-        }
-
-        local FileSize = {
-            provider = function()
-                -- stackoverflow, compute human readable file size
-                local suffix = { "b", "k", "M", "G", "T", "P", "E" }
-                local fsize = vim.fn.getfsize(vim.api.nvim_buf_get_name(0))
-                fsize = (fsize < 0 and 0) or fsize
-                if fsize < 1024 then
-                    return fsize .. suffix[1]
-                end
-                local i = math.floor((math.log(fsize) / math.log(1024)))
-                return string.format("%.2g%s", fsize / 1024 ^ i, suffix[i + 1])
-            end,
-        }
-
-        local FileLastModified = {
-            provider = function()
-                local ftime = vim.fn.getftime(vim.api.nvim_buf_get_name(0))
-                return (ftime > 0) and os.date("%c", ftime)
-            end,
-        }
-
         -- We're getting minimalists here!
         local Ruler = {
             -- %l = current line number
             -- %L = number of lines in the buffer
             -- %c = column number
             -- %P = percentage through file of displayed window
-            provider = "%7(%l/%3L%):%2c %P",
-        }
-        -- I take no credits for this! :lion:
-        local ScrollBar = {
-            static = {
-                -- Another variant, because the more choice the better.
-                sbar = { '🭶', '🭷', '🭸', '🭹', '🭺', '🭻' }
-            },
-            provider = function(self)
-                local curr_line = vim.api.nvim_win_get_cursor(0)[1]
-                local lines = vim.api.nvim_buf_line_count(0)
-                local i = math.floor((curr_line - 1) / lines * #self.sbar) + 1
-                return string.rep(self.sbar[i], 2)
-            end,
-            hl = { fg = "blue", bg = "bright_bg" },
+            -- provider = "%7(%l/%3L%):%2c %P",
+            provider = "Ln %l, Col %c",
         }
 
+        local LspActive = {
+            condition = conditions.lsp_attached,
+            update = { "LspAttach", "LspDetach" },
+            hl = { fg = "green", bold = true },
+            provider = " [LSP]",
+        }
+
+        local Diagnostics = {
+            -- TODO: vim.fn.sign_getdefined() does not work correctly.
+
+            static = {
+                error_icon = " ",
+                warn_icon = " ",
+                info_icon = " ",
+                hint_icon = " ",
+            },
+            -- condition = conditions.has_diagnostics,
+            update = { "DiagnosticChanged", "BufEnter" },
+            init = function(self)
+                self.errors = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.ERROR })
+                self.warnings = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.WARN })
+                self.info = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.INFO })
+                self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
+            end,
+            {
+                hl = { fg = "diag_error" },
+                provider = function(self)
+                    return (self.error_icon .. self.errors .. " ")
+                end,
+            },
+            {
+                hl = { fg = "diag_warn" },
+                provider = function(self)
+                    return (self.warn_icon .. self.warnings .. " ")
+                end,
+            },
+            {
+                hl = { fg = "diag_info" },
+                provider = function(self)
+                    return (self.info_icon .. self.info .. " ")
+                end,
+            },
+            {
+                hl = { fg = "diag_hint" },
+                provider = function(self)
+                    return (self.hint_icon .. self.hints)
+                end,
+            },
+        }
+
+        local Git = {
+            condition = conditions.is_git_repo,
+            init = function(self)
+                self.status_dict = vim.b.gitsigns_status_dict
+                self.has_changes = self.status_dict.added ~= 0
+                    or self.status_dict.removed ~= 0
+                    or self.status_dict.changed ~= 0
+            end,
+            hl = { fg = "orange" },
+            { -- git branch name
+                provider = function(self)
+                    return " " .. self.status_dict.head
+                end,
+            },
+            {
+                condition = function(self)
+                    return self.has_changes
+                end,
+                provider = "(",
+            },
+            {
+                hl = { fg = "green" },
+                provider = function(self)
+                    local count = self.status_dict.added or 0
+                    return count > 0 and ("+" .. count)
+                end,
+            },
+            {
+                hl = { fg = "red" },
+                provider = function(self)
+                    local count = self.status_dict.removed or 0
+                    return count > 0 and ("-" .. count)
+                end,
+            },
+            {
+                hl = { fg = "blue" },
+                provider = function(self)
+                    local count = self.status_dict.changed or 0
+                    return count > 0 and ("~" .. count)
+                end,
+            },
+            {
+                condition = function(self)
+                    return self.has_changes
+                end,
+                provider = ")",
+            },
+        }
+
+        Diagnostics = utils.surround({ "[", "]" }, nil, { Diagnostics })
+
+        local Align = { provider = "%=" }
+        local Space = { provider = " " }
 
         -- stylua: ignore
-        FilenameBlock = utils.insert(
-            FilenameBlock,
-            FileIcon,
-            utils.insert(FilenameModifier, Filename),
-            FileFlags,
-            -- FileType,
-            -- FileEncoding,
-            -- FileFormat,
-            -- FileSize,
-            -- FileLastModified,
-            -- Ruler,
-            -- ScrollBar
-            { provider = "%<"}
-        )
+        local LeftBlock = { ViMode, Space, Git, Space, Diagnostics, Space }
+        local CenterBlock = { FilenameBlock, Space }
+        local RightBlock = { Ruler, Space, FileEncoding, Space, LspActive, Space, FileType }
 
+        -- stylua: ignore
         local StatusLine = {
-            ViMode,
-            FilenameBlock,
+            LeftBlock, Align,
+            CenterBlock, Align,
+            RightBlock
         }
 
-        local colors = {
-            bright_bg = utils.get_highlight("Folded").bg,
-            bright_fg = utils.get_highlight("Folded").fg,
-            red = utils.get_highlight("DiagnosticError").fg,
-            dark_red = utils.get_highlight("DiffDelete").bg,
-            green = utils.get_highlight("String").fg,
-            blue = utils.get_highlight("Function").fg,
-            gray = utils.get_highlight("NonText").fg,
-            orange = utils.get_highlight("Constant").fg,
-            purple = utils.get_highlight("Statement").fg,
-            cyan = utils.get_highlight("Special").fg,
-            diag_warn = utils.get_highlight("DiagnosticWarn").fg,
-            diag_error = utils.get_highlight("DiagnosticError").fg,
-            diag_hint = utils.get_highlight("DiagnosticHint").fg,
-            diag_info = utils.get_highlight("DiagnosticInfo").fg,
-            git_del = utils.get_highlight("diffDeleted").fg,
-            git_add = utils.get_highlight("diffAdded").fg,
-            git_change = utils.get_highlight("diffChanged").fg,
-        }
+        -- TODO: Make a better color palette
+        local function setup_colors()
+            return {
+                bright_bg = utils.get_highlight("Folded").bg,
+                bright_fg = utils.get_highlight("Folded").fg,
+                red = utils.get_highlight("DiagnosticError").fg,
+                dark_red = utils.get_highlight("DiffDelete").bg,
+                green = utils.get_highlight("String").fg,
+                blue = utils.get_highlight("Function").fg,
+                gray = utils.get_highlight("NonText").fg,
+                orange = utils.get_highlight("Constant").fg,
+                purple = utils.get_highlight("Statement").fg,
+                cyan = utils.get_highlight("Special").fg,
+                diag_warn = utils.get_highlight("DiagnosticWarn").fg,
+                diag_error = utils.get_highlight("DiagnosticError").fg,
+                diag_hint = utils.get_highlight("DiagnosticHint").fg,
+                diag_info = utils.get_highlight("DiagnosticInfo").fg,
+                git_del = utils.get_highlight("diffDeleted").fg,
+                git_add = utils.get_highlight("diffAdded").fg,
+                git_change = utils.get_highlight("diffChanged").fg,
+            }
+        end
 
-        require("heirline").setup({
-            statusline = StatusLine,
-            opts = {
-                colors = colors,
-            },
+        local heirline = require("heirline")
+        heirline.load_colors(setup_colors)
+        heirline.setup({
+            statusline = { StatusLine },
         })
+
+        vim.api.nvim_create_augroup("Heirline", { clear = true })
+        vim.api.nvim_create_autocmd("ColorScheme", {
+            callback = function()
+                utils.on_colorscheme(setup_colors)
+            end,
+            group = "Heirline",
+        })
+        -- vim.opt.statusline = 'neo%=this is in the middle%=vim'
     end,
 }
