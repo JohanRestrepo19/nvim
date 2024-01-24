@@ -122,7 +122,7 @@ return {
         local FileEncoding = {
             provider = function()
                 local enc = (vim.bo.fenc ~= "" and vim.bo.fenc) or vim.o.enc
-                return enc ~= "utf-8" and enc:upper()
+                return enc:upper()
             end,
         }
 
@@ -133,13 +133,6 @@ return {
             -- %P = percentage through file of displayed window
             -- provider = "%7(%l/%3L%):%2c %P",
             provider = "Ln %l, Col %c",
-        }
-
-        local LspActive = {
-            condition = conditions.lsp_attached,
-            update = { "LspAttach", "LspDetach" },
-            hl = { fg = "green", bold = true },
-            provider = " [LSP]",
         }
 
         local Diagnostics = {
@@ -190,7 +183,6 @@ return {
                     or self.status_dict.removed ~= 0
                     or self.status_dict.changed ~= 0
             end,
-            hl = { fg = "orange" },
             { -- git branch name
                 provider = function(self)
                     return " " .. self.status_dict.head
@@ -231,15 +223,13 @@ return {
             },
         }
 
-        Diagnostics = utils.surround({ "[", "]" }, nil, { Diagnostics })
-
         local Align = { provider = "%=" }
         local Space = { provider = " " }
 
         -- stylua: ignore
         local LeftBlock = { ViMode, Space, Git, Space, Diagnostics, Space }
         local CenterBlock = { FilenameBlock, Space }
-        local RightBlock = { Ruler, Space, FileEncoding, Space, LspActive, Space, FileType }
+        local RightBlock = { Ruler, Space, FileEncoding, Space, FileType }
 
         -- stylua: ignore
         local StatusLine = {
