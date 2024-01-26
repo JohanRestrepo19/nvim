@@ -2,9 +2,50 @@
 
 return {
     {
+        "craftzdog/solarized-osaka.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            local solarized_osaka = require("solarized-osaka")
+            solarized_osaka.setup({
+                transparent = true,
+                terminal_colors = true,
+                styles = {
+                    comments = { italic = true },
+                    keywords = { italic = true },
+                    functions = {},
+                    variables = {},
+                    sidebars = "transparent",
+                    floats = "transparent",
+                },
+                sidebars = { "qf", "help" },
+                day_brightness = 0.3,
+                hide_inactive_statusline = false,
+                dim_inactive = false,
+                lualine_bold = false,
+
+                ---@param colors ColorScheme
+                on_colors = function() end,
+
+                ---@param highlights Highlights
+                ---@param colors ColorScheme
+                on_highlights = function(highlights, colors)
+                    highlights.NormalFloat = { bg = colors.bg_dark }
+                    highlights.DiagnosticVirtualTextError = { bg = colors.none, fg = colors.error }
+                    highlights.DiagnosticVirtualTextWarn = { bg = colors.none, fg = colors.warning }
+                    highlights.DiagnosticVirtualTextInfo = { bg = colors.none, fg = colors.info }
+                    highlights.DiagnosticVirtualTextHint = { bg = colors.none, fg = colors.hint }
+                    highlights.StatusLine = { bg = colors.none, fg = colors.none }
+                    highlights.TelescopeSelection = { bg = colors.base03 }
+                end,
+            })
+            vim.cmd.colorscheme("solarized-osaka")
+        end,
+    },
+    {
         "rose-pine/neovim",
         name = "rose-pine",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("rose-pine").setup({

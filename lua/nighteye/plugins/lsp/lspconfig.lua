@@ -11,7 +11,11 @@ return {
     config = function()
         -- NOTE: lspconfig related configs
         local lspconfig = require("lspconfig")
-        require("fidget").setup({})
+        require("fidget").setup({
+            notification = {
+                window = { winblend = 0 },
+            },
+        })
 
         -- Diagnostic symbols in the sign column (gutter)
         local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
