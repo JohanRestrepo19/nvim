@@ -16,7 +16,7 @@ return {
 
                 -- Diagnostics
                 diagnostics.flake8,
-                diagnostics.eslint_d.with({
+                diagnostics.eslint.with({
                     condition = function(utils)
                         return utils.root_has_file({
                             ".eslintrc.js",

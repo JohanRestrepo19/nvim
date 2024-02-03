@@ -1,3 +1,4 @@
+-- TODO: Adjust components bg colors
 return {
     "rebelot/heirline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
