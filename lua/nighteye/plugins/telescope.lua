@@ -1,3 +1,5 @@
+local is_inside_work_tree = {}
+
 return {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
@@ -95,8 +97,26 @@ return {
         telescope.load_extension("ui-select")
 
         local opts = { noremap = true, silent = true }
-        vim.keymap.set("n", "<c-p>", builtin.find_files, opts)
+
+        vim.keymap.set("n", "<c-p>", function()
+            local cwd = vim.fn.getcwd()
+            if is_inside_work_tree[cwd] == nil then
+                vim.fn.system("git rev-parse --is-inside-work-tree")
+                is_inside_work_tree[cwd] = vim.v.shell_error == 0
+            end
+
+            if is_inside_work_tree[cwd] then
+                builtin.git_files()
+            else
+                builtin.find_files()
+            end
+        end, opts)
         vim.keymap.set("n", "<leader>ft", builtin.live_grep, opts)
+        vim.keymap.set("n", "<leader>fw", builtin.grep_string, opts)
+        vim.keymap.set("n", "<leader>fW", function()
+            local word = vim.fn.expand("<cWORD>")
+            builtin.grep_string({ search = word })
+        end, opts)
         vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
         vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
         vim.keymap.set("n", "<leader>e", telescope.extensions.file_browser.file_browser, opts)
