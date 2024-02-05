@@ -102,7 +102,7 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
@@ -223,7 +223,7 @@ return {
     },
     {
         "catppuccin/nvim",
-        lazy = false,
+        lazy = true,
         name = "catppuccin",
         priority = 1000,
         config = function()

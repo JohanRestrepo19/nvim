@@ -102,8 +102,8 @@ return {
             ensure_installed = {
                 "autopep8",
                 "flake8",
-                "prettierd",
-                "eslint_d",
+                "prettier",
+                "eslint",
             },
         })
     end,
