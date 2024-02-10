@@ -152,10 +152,10 @@ return {
                         TelescopeBorder = { fg = borders_color, bg = "none" },
 
                         -- CursorLine
-                        CursorLineNr = { fg = palette.dragonBlue },
+                        CursorLineNr = { fg = palette.fujiWhite },
 
                         -- StatusLine
-                        StatusLine = { bg = "none", fg = "none" },
+                        StatusLine = { bg = palette.winterBlue  },
                     }
                 end,
                 theme = "wave", -- Load "wave" theme when 'background' option is not set

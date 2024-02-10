@@ -1,10 +1,37 @@
 -- TODO: Adjust components bg colors
+
 return {
     "rebelot/heirline.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         local conditions = require("heirline.conditions")
         local utils = require("heirline.utils")
+
+        --- @param target table
+        --- @param ... table[]
+        ---@return table
+        local function spread(target, ...)
+            for i = 1, select("#", ...) do
+                local source = select(i, ...)
+                for key, value in pairs(source) do
+                    target[key] = value
+                end
+            end
+            return target
+        end
+
+        --- @param hl_tbl table | nil
+        --- @return table
+        local function make_hl(hl_tbl)
+            local statusline = utils.get_highlight("StatusLine")
+            local base_hl = { bg = statusline.bg, fg = statusline.fg }
+
+            if not hl_tbl then
+                return base_hl
+            end
+
+            return spread({}, base_hl, hl_tbl)
+        end
 
         local ViMode = {
             static = {
@@ -36,7 +63,7 @@ return {
             end,
             hl = function(self)
                 local mode = self.mode
-                return { fg = self.mode_colors[mode], bold = true }
+                return make_hl({ fg = self.mode_colors[mode], bold = true })
             end,
             provider = function(self)
                 return " %1(" .. self.mode .. "%)"
@@ -57,7 +84,7 @@ return {
                     require("nvim-web-devicons").get_icon_color(filename, extension, { default = true })
             end,
             hl = function(self)
-                return { fg = self.icon_color }
+                return make_hl({ fg = self.icon_color })
             end,
             provider = function(self)
                 return self.icon and (self.icon .. " ")
@@ -67,13 +94,13 @@ return {
         local FilenameModifier = {
             hl = function()
                 if vim.bo.modified then
-                    return { fg = "cyan", bold = true, force = true }
+                    return make_hl({ fg = "cyan", bold = true, force = true })
                 end
             end,
         }
 
         local Filename = {
-            hl = { fg = utils.get_highlight("Directory").fg },
+            hl = make_hl(),
             provider = function(self)
                 local filename = vim.fn.fnamemodify(self.filename, ":.")
                 if filename == "" then
@@ -100,7 +127,7 @@ return {
                     return not vim.bo.modifiable or vim.bo.readonly
                 end,
                 provider = " ",
-                hl = { fg = "orange" },
+                hl = make_hl({ fg = "orange" }),
             },
         }
 
@@ -117,7 +144,7 @@ return {
             provider = function()
                 return string.upper(vim.bo.filetype)
             end,
-            hl = { fg = utils.get_highlight("Type").fg, bold = true },
+            hl = make_hl({ bold = true }),
         }
 
         local FileEncoding = {
@@ -151,25 +178,25 @@ return {
                 self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
             end,
             {
-                hl = { fg = "diag_error" },
+                hl = make_hl({ fg = "diag_error" }),
                 provider = function(self)
                     return (self.error_icon .. self.errors .. " ")
                 end,
             },
             {
-                hl = { fg = "diag_warn" },
+                hl = make_hl({ fg = "diag_warn" }),
                 provider = function(self)
                     return (self.warn_icon .. self.warnings .. " ")
                 end,
             },
             {
-                hl = { fg = "diag_info" },
+                hl = make_hl({ fg = "diag_info" }),
                 provider = function(self)
                     return (self.info_icon .. self.info .. " ")
                 end,
             },
             {
-                hl = { fg = "diag_hint" },
+                hl = make_hl({ fg = "diag_hint" }),
                 provider = function(self)
                     return (self.hint_icon .. self.hints)
                 end,
@@ -196,21 +223,21 @@ return {
                 provider = "(",
             },
             {
-                hl = { fg = "git_add" },
+                hl = make_hl({ fg = "git_add" }),
                 provider = function(self)
                     local count = self.status_dict.added or 0
                     return count > 0 and ("+" .. count)
                 end,
             },
             {
-                hl = { fg = "git_del" },
+                hl = make_hl({ fg = "git_del" }),
                 provider = function(self)
                     local count = self.status_dict.removed or 0
                     return count > 0 and ("-" .. count)
                 end,
             },
             {
-                hl = { fg = "git_change" },
+                hl = make_hl({ fg = "git_change" }),
                 provider = function(self)
                     local count = self.status_dict.changed or 0
                     return count > 0 and ("~" .. count)
