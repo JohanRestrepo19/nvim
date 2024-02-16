@@ -1,6 +1,5 @@
 return {
     "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
         { "j-hui/fidget.nvim", tag = "v1.1.0" },

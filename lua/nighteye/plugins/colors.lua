@@ -24,7 +24,7 @@ return {
                 dim_inactive = false,
                 lualine_bold = false,
 
-                ---@param colors ColorScheme
+                --- @param colors ColorScheme
                 on_colors = function() end,
 
                 ---@param highlights Highlights
@@ -102,7 +102,7 @@ return {
     },
     {
         "rebelot/kanagawa.nvim",
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require("kanagawa").setup({
@@ -155,7 +155,7 @@ return {
                         CursorLineNr = { fg = palette.fujiWhite },
 
                         -- StatusLine
-                        StatusLine = { bg = palette.winterBlue  },
+                        StatusLine = { bg = theme.ui.bg_gutter, fg = theme.ui.fg },
                     }
                 end,
                 theme = "wave", -- Load "wave" theme when 'background' option is not set
@@ -276,6 +276,64 @@ return {
 
             -- setup must be called before loading
             vim.cmd.colorscheme("catppuccin")
+        end,
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("nightfox").setup({
+                options = {
+                    -- Compiled file's destination location
+                    compile_path = vim.fn.stdpath("cache") .. "/nightfox",
+                    compile_file_suffix = "_compiled", -- Compiled file suffix
+                    transparent = true, -- Disable setting background
+                    terminal_colors = true, -- Set terminal colors (vim.g.terminal_color_*) used in `:terminal`
+                    dim_inactive = false, -- Non focused panes set to alternative background
+                    module_default = true, -- Default enable value for modules
+                    colorblind = {
+                        enable = false, -- Enable colorblind support
+                        simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
+                        severity = {
+                            protan = 0, -- Severity [0,1] for protan (red)
+                            deutan = 0, -- Severity [0,1] for deutan (green)
+                            tritan = 0, -- Severity [0,1] for tritan (blue)
+                        },
+                    },
+                    styles = { -- Style to be applied to different syntax groups
+                        comments = "italic", -- Value is any valid attr-list value `:help attr-list`
+                        conditionals = "NONE",
+                        constants = "NONE",
+                        functions = "italic,bold",
+                        keywords = "bold",
+                        numbers = "NONE",
+                        operators = "NONE",
+                        strings = "NONE",
+                        types = "italic",
+                        variables = "NONE",
+                    },
+                    inverse = { -- Inverse highlight for different types
+                        match_paren = false,
+                        visual = false,
+                        search = false,
+                    },
+                    modules = { -- List of various plugins and additional options
+                        -- ...
+                    },
+                },
+                palettes = {},
+                specs = {},
+                groups = {
+                    all = {
+                        DiagnosticVirtualTextErro = { bg = "none" },
+                        DiagnosticVirtualTextWarn = { bg = "none" },
+                        DiagnosticVirtualTextInfo = { bg = "none" },
+                        DiagnosticVirtualTextHint = { bg = "none" },
+                    },
+                },
+            })
+            vim.cmd.colorscheme("nordfox")
         end,
     },
 }

@@ -9,7 +9,7 @@ vim.opt.hlsearch = false
 vim.opt.ignorecase = true
 vim.opt.mouse = "a"
 vim.opt.number = true
-vim.opt.numberwidth = 2
+vim.opt.numberwidth = 4
 vim.opt.pumheight = 5
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 8
@@ -45,7 +45,7 @@ vim.opt.laststatus = 3
 vim.opt.backspace = "start,eol,indent"
 vim.opt.path:append({ "**" })
 
--- vim.opt.guicursor = ""
+vim.opt.guicursor = ""
 
 -- vim.opt.list = true
 -- vim.opt.listchars:append "eol:↲"

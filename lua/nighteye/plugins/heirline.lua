@@ -9,7 +9,7 @@ return {
 
         --- @param target table
         --- @param ... table[]
-        ---@return table
+        --- @return table
         local function spread(target, ...)
             for i = 1, select("#", ...) do
                 local source = select(i, ...)
@@ -30,7 +30,7 @@ return {
                 return base_hl
             end
 
-            return spread({}, base_hl, hl_tbl)
+            return spread({}, hl_tbl, base_hl)
         end
 
         local ViMode = {
