@@ -328,10 +328,13 @@ return {
                 specs = {},
                 groups = {
                     all = {
+                        CursorLine = { bg = "none" },
+                        CursorLineNr = { fg = "palette.cyan" },
                         DiagnosticVirtualTextError = { bg = "none" },
-                        DiagnosticVirtualTextWarn = { bg = "none" },
-                        DiagnosticVirtualTextInfo = { bg = "none" },
                         DiagnosticVirtualTextHint = { bg = "none" },
+                        DiagnosticVirtualTextInfo = { bg = "none" },
+                        DiagnosticVirtualTextWarn = { bg = "none" },
+                        WinSeparator = { fg = "palette.blue" },
                     },
                 },
             })

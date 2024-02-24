@@ -69,6 +69,8 @@ return {
                 "pyright",
                 "tailwindcss",
                 "tsserver",
+                "eslint",
+                "ruff_lsp",
             },
             automatic_installation = true,
             handlers = {
@@ -99,10 +101,8 @@ return {
 
         require("mason-tool-installer").setup({
             ensure_installed = {
-                "autopep8",
-                "flake8",
                 "prettier",
-                "eslint",
+                "stylua",
             },
         })
     end,

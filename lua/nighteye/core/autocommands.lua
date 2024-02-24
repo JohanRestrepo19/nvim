@@ -14,8 +14,8 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 })
 
 -- Lsp keymaps
-vim.api.nvim_create_autocmd('LspAttach', {
-    group = vim.api.nvim_create_augroup('NighteyeLspConfig', {}),
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("NighteyeLspConfig", {}),
     callback = function(ev)
         local bufopts = { noremap = true, silent = true, buffer = ev.buf }
 
@@ -28,13 +28,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
                 async = true,
                 bufnr = ev.buf,
                 filter = function(client)
-                    return client.name == "null-ls"
-                end
+                    -- TODO: Find out a way to improve formatting
+                    return client.name == "null-ls" or client.name == "ruff_lsp"
+                end,
             })
         end, bufopts)
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, bufopts)
         vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, bufopts)
         vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, bufopts)
         vim.keymap.set("n", "gl", vim.diagnostic.open_float, bufopts)
-    end
+    end,
 })
