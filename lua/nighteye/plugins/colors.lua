@@ -12,8 +12,8 @@ return {
                 terminal_colors = true,
                 styles = {
                     comments = { italic = true },
-                    keywords = { italic = true },
-                    functions = {},
+                    keywords = { bold = true, italic = false },
+                    functions = { bold = true, italic = true },
                     variables = {},
                     sidebars = "transparent",
                     floats = "transparent",
@@ -35,7 +35,7 @@ return {
                     highlights.DiagnosticVirtualTextWarn = { bg = colors.none, fg = colors.warning }
                     highlights.DiagnosticVirtualTextInfo = { bg = colors.none, fg = colors.info }
                     highlights.DiagnosticVirtualTextHint = { bg = colors.none, fg = colors.hint }
-                    highlights.StatusLine = { bg = colors.none, fg = colors.none }
+                    highlights.StatusLine = { bg = colors.base03, fg = colors.none }
                     highlights.TelescopeSelection = { bg = colors.base03 }
                 end,
             })
@@ -94,6 +94,7 @@ return {
                     DiffAdd = { fg = "foam" },
                     DiffChange = { fg = "rose" },
                     DiffDelete = { fg = "love" },
+                    StatusLine = { bg = "overlay" },
                 },
             })
 
@@ -186,8 +187,8 @@ return {
                     -- Style to be applied to different syntax groups
                     -- Value is any valid attr-list value for `:help nvim_set_hl`
                     comments = { italic = true },
-                    keywords = {},
-                    functions = { bold = false },
+                    keywords = { bold = true, italic = false },
+                    functions = { bold = true, italic = true },
                     variables = {},
                     -- Background styles. Can be "dark", "transparent" or "normal"
                     sidebars = "transparent", -- style for sidebars, see below
@@ -210,6 +211,7 @@ return {
                 ---@param colors ColorScheme
                 on_highlights = function(highlights, colors)
                     highlights.NormalFloat = { bg = colors.bg_dark }
+                    highlights.WinSeparator = { fg = colors.fg }
                     highlights.DiagnosticVirtualTextError = { bg = colors.none, fg = colors.error }
                     highlights.DiagnosticVirtualTextWarn = { bg = colors.none, fg = colors.warning }
                     highlights.DiagnosticVirtualTextInfo = { bg = colors.none, fg = colors.info }
@@ -306,11 +308,11 @@ return {
                         conditionals = "NONE",
                         constants = "NONE",
                         functions = "italic,bold",
-                        keywords = "bold",
+                        keywords = "NONE",
                         numbers = "NONE",
                         operators = "NONE",
                         strings = "NONE",
-                        types = "italic",
+                        types = "italic,bold",
                         variables = "NONE",
                     },
                     inverse = { -- Inverse highlight for different types
@@ -326,7 +328,7 @@ return {
                 specs = {},
                 groups = {
                     all = {
-                        DiagnosticVirtualTextErro = { bg = "none" },
+                        DiagnosticVirtualTextError = { bg = "none" },
                         DiagnosticVirtualTextWarn = { bg = "none" },
                         DiagnosticVirtualTextInfo = { bg = "none" },
                         DiagnosticVirtualTextHint = { bg = "none" },

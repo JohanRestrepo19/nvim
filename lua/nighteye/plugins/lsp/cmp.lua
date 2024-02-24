@@ -51,18 +51,20 @@ return {
             }),
             formatting = {
                 fields = { "abbr", "kind", "menu" },
-                format = function(entry, vim_item)
-                    local kind = lspkind.cmp_format({
-                        mode = "symbol_text",
-                        maxwidth = 50,
-                        ellipsis_char = "...",
-                    })(entry, vim_item)
-
-                    local strings = vim.split(kind.kind, "%s", { trimempty = true })
-                    kind.kind = (strings[1] or "") .. " "
-                    kind.menu = "[" .. (strings[2] or "") .. "]"
-                    return kind
-                end,
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                    show_labelDetails = true,
+                    menu = {
+                        nvim_lsp = "[LSP]",
+                        nvim_lua = "[api]",
+                        buffer = "[buf]",
+                        path = "[path]",
+                        luasnip = "[snip]",
+                        gh_issues = "[issues]",
+                    },
+                }),
             },
             confirm_opts = {
                 behavior = cmp.ConfirmBehavior.Replace,
