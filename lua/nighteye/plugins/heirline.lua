@@ -30,11 +30,47 @@ return {
                 return base_hl
             end
 
-            return spread({}, hl_tbl, base_hl)
+            return spread({}, base_hl, hl_tbl)
         end
 
         local ViMode = {
             static = {
+                mode_names = { -- change the strings if you like it vvvvverbose!
+                    n = "NORMAL",
+                    no = "N?",
+                    nov = "N?",
+                    noV = "N?",
+                    ["no\22"] = "N?",
+                    niI = "Ni",
+                    niR = "Nr",
+                    niV = "Nv",
+                    nt = "Nt",
+                    v = "VISUAL",
+                    vs = "Vs",
+                    V = "V_",
+                    Vs = "Vs",
+                    ["\22"] = "VISUAL_B",
+                    ["\22s"] = "VISUAL_B",
+                    s = "S",
+                    S = "S_",
+                    ["\19"] = "^S",
+                    i = "INSERT",
+                    ic = "Ic",
+                    ix = "Ix",
+                    R = "REPLACE",
+                    Rc = "Rc",
+                    Rx = "Rx",
+                    Rv = "Rv",
+                    Rvc = "Rv",
+                    Rvx = "Rv",
+                    c = "COMMAND",
+                    cv = "Ex",
+                    r = "...",
+                    rm = "M",
+                    ["r?"] = "?",
+                    ["!"] = "!",
+                    t = "TERMINAL",
+                },
                 mode_colors = {
                     n = "red",
                     i = "green",
@@ -61,12 +97,11 @@ return {
             init = function(self)
                 self.mode = vim.fn.mode()
             end,
-            hl = function(self)
-                local mode = self.mode
-                return make_hl({ fg = self.mode_colors[mode], bold = true })
+            hl = function()
+                return make_hl({ bg = "none", bold = true })
             end,
             provider = function(self)
-                return " %1(" .. self.mode .. "%)"
+                return " %1(" .. self.mode_names[self.mode] .. "%)"
             end,
         }
 
@@ -178,25 +213,25 @@ return {
                 self.hints = #vim.diagnostic.get(0, { severity = vim.diagnostic.severity.HINT })
             end,
             {
-                hl = make_hl({ fg = "diag_error" }),
+                hl = make_hl(),
                 provider = function(self)
                     return (self.error_icon .. self.errors .. " ")
                 end,
             },
             {
-                hl = make_hl({ fg = "diag_warn" }),
+                hl = make_hl(),
                 provider = function(self)
                     return (self.warn_icon .. self.warnings .. " ")
                 end,
             },
             {
-                hl = make_hl({ fg = "diag_info" }),
+                hl = make_hl(),
                 provider = function(self)
                     return (self.info_icon .. self.info .. " ")
                 end,
             },
             {
-                hl = make_hl({ fg = "diag_hint" }),
+                hl = make_hl(),
                 provider = function(self)
                     return (self.hint_icon .. self.hints)
                 end,
@@ -223,21 +258,21 @@ return {
                 provider = "(",
             },
             {
-                hl = make_hl({ fg = "git_add" }),
+                hl = make_hl(),
                 provider = function(self)
                     local count = self.status_dict.added or 0
                     return count > 0 and ("+" .. count)
                 end,
             },
             {
-                hl = make_hl({ fg = "git_del" }),
+                hl = make_hl(),
                 provider = function(self)
                     local count = self.status_dict.removed or 0
                     return count > 0 and ("-" .. count)
                 end,
             },
             {
-                hl = make_hl({ fg = "git_change" }),
+                hl = make_hl(),
                 provider = function(self)
                     local count = self.status_dict.changed or 0
                     return count > 0 and ("~" .. count)
