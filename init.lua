@@ -6,6 +6,5 @@
 -- ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝
 
 -- TODO:
--- Configure prettierd on none-ls
 
 require("nighteye")

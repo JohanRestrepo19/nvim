@@ -1,3 +1,5 @@
+-- TODO: Remove none-ls when conform is working properly.
+
 return {
     "nvimtools/none-ls.nvim",
     config = function()
