@@ -23,16 +23,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
         vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
         vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, bufopts)
         vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
-        vim.keymap.set("n", "<leader>ff", function()
-            vim.lsp.buf.format({
-                async = true,
-                bufnr = ev.buf,
-                filter = function(client)
-                    -- TODO: Find out a way to improve formatting
-                    return client.name == "null-ls" or client.name == "ruff_lsp"
-                end,
-            })
-        end, bufopts)
         vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, bufopts)
         vim.keymap.set("n", "<C-j>", vim.diagnostic.goto_next, bufopts)
         vim.keymap.set("n", "<C-k>", vim.diagnostic.goto_prev, bufopts)
