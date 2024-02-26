@@ -1,5 +1,12 @@
 return {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {},
+    config = function()
+        local todo_comments = require("todo-comments")
+        local opts = { noremap = true, silent = true }
+
+        todo_comments.setup({})
+
+        vim.keymap.set("n", "<leader>tl", ":TodoLocList<cr>", opts)
+    end,
 }
